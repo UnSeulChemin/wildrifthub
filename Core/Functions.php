@@ -3,6 +3,10 @@ namespace App\Core;
 
 class Functions
 {
+    /**
+     * view only `../` `../../`
+     * @return string|null
+     */
     public static function pathRedirect(): string|null
     {
         if (str_contains($_GET["p"], "/"))
@@ -16,11 +20,19 @@ class Functions
         return null;
     }
 
+    /**
+     * self only `../`
+     * @return void
+     */
     private static function redirect(): void
     {
         header('Location: ../'); exit;
     }
 
+    /**
+     * self only `./`
+     * @return void
+     */
     private static function redirectCurrentPage(): void
     {
         header('Location: ./'); exit;
