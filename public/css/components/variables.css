@@ -6,9 +6,16 @@
     /* Main Blocs */
     --background-color-body: #ffffff;
     --background-color-header: #333333;
+    --background-color-section: #3399CC;
 
     /* Title */
     --color-title: #00008B;
+
+    /* Link */
+    --color-link: #ffffff;
+    --background-color-link: #3399CC;
+    --color-link-hover: #000000;
+    --background-color-link-hover: #ffffff;
 
     /* Flash */
     --flash-active: #000000;
