@@ -58,7 +58,7 @@ Section, Link, Card
 
 .link-menu
 {
-    width: 150px;
+    width: 125px;
     color: var(--color-link);
     background-color: var(--background-color-link);
 
@@ -69,8 +69,8 @@ Section, Link, Card
 
 .link-menu:hover
 {
-    color: var(--color-link-hover);
-    background-color: var(--background-color-link-hover);
+    color: black;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .link-section
@@ -106,146 +106,6 @@ Section, Link, Card
 .link-submit:hover
 {
     color: var(--color-link-hover);
-}
-
-.link-paginate
-{
-    width: 25px;
-    color: var(--color-link);
-    background-color: var(--background-color-link);
-
-    margin-right: 25px;
-    padding: 8px;
-    border-radius: 5px;
-}
-
-.link-paginate:last-child
-{
-    margin-right: 0;
-}
-
-.link-paginate:hover
-{
-    color: var(--color-link-hover);
-}
-
-/* Card */
-.div-card
-{
-    width: 20%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    position: relative;
-}
-
-.figure-card
-{
-    width: 100%;
-    
-    box-sizing: border-box;
-
-    border: 3px solid var(--border-card);
-}
-
-/* Card Absolute */
-.c
-{
-    color: var(--color-link);
-    background-color: var(--background-color-link);
-
-    box-sizing: border-box;
-
-    position: absolute;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 3px solid var(--border-card);
-}
-
-.c-rarity
-{
-    font-size: 1em;
-    width: 50px;
-    height: 50px;
-
-    right: 5px;
-    top: 5px;
-
-    border-radius: 50%;
-}
-
-.c-rarity:hover
-{
-    color: var(--color-link-hover);
-}
-
-.c-character
-{
-    font-size: 1em;
-    width: 100%;
-
-    bottom: 0px;
-
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.c-character:hover
-{
-    color: var(--color-link-hover);
-}
-
-/* Card {id} */
-.figure-card-id
-{
-    height: 450px;
-}
-
-.figure-card-id img
-{
-    width: 300px;
-}
-
-.div-key-card-id
-{
-    width: 30%;
-}
-
-.div-key-card-id p
-{
-    font-size: 1.2em;
-    font-weight: bold;
-    color: var(--color-title);
-
-    margin-bottom: 25px;
-}
-
-.div-key-card-id p:last-child
-{
-    margin-bottom: 0;
-}
-
-.div-value-card-id
-{
-    width: 70%;
-}
-
-.div-value-card-id p
-{
-    font-size: 1.2em;
-    font-weight: bold;
-
-    margin-bottom: 25px;
-}
-
-.div-value-card-id p:last-child
-{
-    margin-bottom: 0;
 }
 
 .logo
