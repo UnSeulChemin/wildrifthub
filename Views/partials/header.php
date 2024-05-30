@@ -1,7 +1,8 @@
 <header>
     <nav role="navigation" aria-label="Main navigation" class="flex-between-center">
 
-        <div>
+        <div class="flex-center-center-gap-20">
+            <img class="logo" src="<?= $pathRedirect; ?>public/images/favicon/favicon.png" alt="Logo">
             <h1>WildRift Hub</h1>
         </div>
 

@@ -16,3 +16,11 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.flex-center-center-gap-20
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
