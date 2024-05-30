@@ -16,9 +16,3 @@
     justify-content: space-between;
     align-items: center;
 }
-
-.flex-gap-50
-{
-    display: flex;
-    gap: 50px
-}
