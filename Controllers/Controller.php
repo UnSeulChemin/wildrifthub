@@ -6,7 +6,7 @@ use App\Core\Functions;
 abstract class Controller
 {
     protected $template = 'base';
-    protected $title = 'GoddessSSR';
+    protected $title = 'WildRift Hub';
 
     /**
      * function render
