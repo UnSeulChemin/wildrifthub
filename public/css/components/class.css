@@ -1,0 +1,245 @@
+/* Sumary (CTRL + F)
+Section, Link, Card
+*/
+
+/* Section */
+.section-content
+{
+    padding: 30px 0;
+}
+
+.section-card
+{
+    display: flex;
+    justify-content: center;
+    /* align-items: baseline; */
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.section-card-id
+{
+    width: 80%;
+
+    margin: auto;
+}
+
+/* Link */
+.link-h1
+{
+    color: var(--color-link);
+    background-color: var(--background-color-link);
+
+    padding: 5px 10px;
+}
+
+.link-h1:hover
+{
+    color: var(--color-link-hover);
+    background-color: var(--background-color-link-hover);
+}
+
+.link-hyper-text
+{
+    width: 75px;
+    color: var(--color-link);
+    background-color: var(--background-color-link);
+
+    border-radius: 2px;
+}
+
+.link-hyper-text:hover
+{
+    color: var(--color-link-hover);
+}
+
+.link-menu
+{
+    width: 100px;
+    color: var(--color-link);
+    background-color: var(--background-color-link);
+
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.link-menu:hover
+{
+    color: var(--color-link-hover);
+    background-color: var(--background-color-link-hover);
+}
+
+.link-section
+{
+    width: 150px;
+    color: var(--color-link);
+    background-color: var(--background-color-link);
+
+    padding: 8px;
+    border-radius: 5px;    
+}
+
+.link-section:hover
+{
+    color: var(--color-link-hover);
+    background-color: var(--background-color-link-hover);
+}
+
+.link-submit
+{
+    cursor: pointer;
+    width: 250px;
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    color: var(--color-link);
+    background-color: var(--background-color-link);
+
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.link-submit:hover
+{
+    color: var(--color-link-hover);
+}
+
+.link-paginate
+{
+    width: 25px;
+    color: var(--color-link);
+    background-color: var(--background-color-link);
+
+    margin-right: 25px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.link-paginate:last-child
+{
+    margin-right: 0;
+}
+
+.link-paginate:hover
+{
+    color: var(--color-link-hover);
+}
+
+/* Card */
+.div-card
+{
+    width: 20%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+}
+
+.figure-card
+{
+    width: 100%;
+    
+    box-sizing: border-box;
+
+    border: 3px solid var(--border-card);
+}
+
+/* Card Absolute */
+.c
+{
+    color: var(--color-link);
+    background-color: var(--background-color-link);
+
+    box-sizing: border-box;
+
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid var(--border-card);
+}
+
+.c-rarity
+{
+    font-size: 1em;
+    width: 50px;
+    height: 50px;
+
+    right: 5px;
+    top: 5px;
+
+    border-radius: 50%;
+}
+
+.c-rarity:hover
+{
+    color: var(--color-link-hover);
+}
+
+.c-character
+{
+    font-size: 1em;
+    width: 100%;
+
+    bottom: 0px;
+
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.c-character:hover
+{
+    color: var(--color-link-hover);
+}
+
+/* Card {id} */
+.figure-card-id
+{
+    height: 450px;
+}
+
+.figure-card-id img
+{
+    width: 300px;
+}
+
+.div-key-card-id
+{
+    width: 30%;
+}
+
+.div-key-card-id p
+{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--color-title);
+
+    margin-bottom: 25px;
+}
+
+.div-key-card-id p:last-child
+{
+    margin-bottom: 0;
+}
+
+.div-value-card-id
+{
+    width: 70%;
+}
+
+.div-value-card-id p
+{
+    font-size: 1.2em;
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+.div-value-card-id p:last-child
+{
+    margin-bottom: 0;
+}

@@ -1,0 +1,15 @@
+:root
+{
+    /* Font */
+    --font-family: "Montserrat", "Open Sans", sans-serif;
+
+    /* Main Blocs */
+    --background-color-body: #ffffff;
+    --background-color-header: #333333;
+
+    /* Title */
+    --color-title: #00008B;
+
+    /* Flash */
+    --flash-active: #000000;
+}

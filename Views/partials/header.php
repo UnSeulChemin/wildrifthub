@@ -1,8 +1,15 @@
 <header>
-    <a role="link" class="link-h1" href="<?= $pathRedirect; ?>./">Free hub (dans free hub, aram rank, ect grissez non pro) new bug hex flash.. montrer extrait autre</a>
-    <a role="link" class="link-h1" href="<?= $pathRedirect; ?>./">Champions (petit tips, ect) grizze avec ecrit pro</a>
+    <nav role="navigation" aria-label="Main navigation" class="flex-between-center">
 
-    <a role="link" class="link-h1" href="<?= $pathRedirect; ?>./">Become Pro</a>
-    <a role="link" class="link-h1" href="<?= $pathRedirect; ?>./">Login</a>
+        <div>
+            <h1><a role="link" class="link-h1" href="<?= $pathRedirect; ?>./">GoddessSSR</a></h1>
+        </div>
+
+        <ul role="list" class="flex">
+            <li role="listitem" class="m-r-15"><a role="link" class="link-menu" href="<?= $pathRedirect; ?>./">Free hub</a></li>
+            <li role="listitem" class="m-r-15"><a role="link" class="link-menu" href="<?= $pathRedirect; ?>./">Champions</a></li>
+            <li role="listitem"><a role="link" class="link-menu" href="<?= $pathRedirect; ?>./">Become Pro</a></li>
+            <li role="listitem"><a role="link" class="link-menu" href="<?= $pathRedirect; ?>./">Login</a></li>
+        </ul>
     </nav>
 </header>
