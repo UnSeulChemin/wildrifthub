@@ -22,21 +22,20 @@ class ChampionsController extends Controller
     }
 
     /**
-     * route /champions/name/{string}
+     * route /champions/champion/{string}
      * @param $name
      * @return void
      */
-    public function name($name = null)
+    public function champion($string = null)
     {
-        Functions::checkerParamHero($name);
+        Functions::checkerParamHero($string);
 
         $championModel = new ChampionModel;
 
-        $champion = $championModel->findName($name);
-
+        $champion = $championModel->findName($string);
         $pathRedirect = Functions::pathRedirect();
 
-        $this->title = 'WildRift Hub | '.ucfirst($name);
-        $this->render('champions/name', ["champion" => $champion, "pathRedirect" => $pathRedirect]);
+        $this->title = 'WildRift Hub | '.ucfirst($string);
+        $this->render('champions/champion', ["champion" => $champion, "pathRedirect" => $pathRedirect]);
     }
 }
