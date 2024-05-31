@@ -26,16 +26,16 @@ class ChampionsController extends Controller
      * @param $name
      * @return void
      */
-    public function champion($string = null)
+    public function champion($name = null)
     {
-        Functions::checkerParamHero($string);
+        Functions::checkerParamHero($name);
 
         $championModel = new ChampionModel;
 
-        $champion = $championModel->findName($string);
+        $champion = $championModel->findName($name);
         $pathRedirect = Functions::pathRedirect();
 
-        $this->title = 'WildRift Hub | '.ucfirst($string);
+        $this->title = 'WildRift Hub | '.ucfirst($champion->name);
         $this->render('champions/champion', ["champion" => $champion, "pathRedirect" => $pathRedirect]);
     }
 }
