@@ -58,18 +58,14 @@ Section, Link, Card
 
 .link-menu
 {
-    width: 125px;
     color: var(--color-link);
-    background-color: var(--background-color-link);
 
     padding: 5px;
-    border: 2px solid var(--color-link);
     border-radius: 10px;
 }
 
 .link-menu:hover
 {
-    color: black;
     background-color: rgba(255, 255, 255, 0.6);
 }
 
