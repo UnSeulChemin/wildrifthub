@@ -4,24 +4,18 @@ namespace App\Core;
 class Functions
 {
     /**
-     * check value string
-     * @param $value
-     * @return boolean
+     * all heros name to verificate param {hero}
      */
-    public static function checkerString($value): bool
-    {
-        if (!is_string($value) || !isset($value) || empty($value)) { self::redirectCurrentPage(); }
-        return true;
-    }
+    private const ALL_HEROS = ['ahri', 'warwick'];
 
     /**
-     * check value exist
+     * check param hero exist
      * @param $value
      * @return boolean
      */
-    public static function checkerFinder($value): bool
+    public static function checkerParamHero($value): bool
     {
-        if (!$value) { self::redirect(); }
+        if (!in_array($value, self::ALL_HEROS) || !is_string($value) || !isset($value) || empty($value)) { self::redirectCurrentPage(); }
         return true;
     }
 

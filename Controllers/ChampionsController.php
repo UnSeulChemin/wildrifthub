@@ -19,12 +19,11 @@ class ChampionsController extends Controller
 
     public function name($name = null)
     {
-        Functions::checkerString($name);
+        Functions::checkerParamHero($name);
 
         $championModel = new ChampionModel;
 
         $champion = $championModel->findName($name);
-        Functions::checkerFinder($champion);
 
         $pathRedirect = Functions::pathRedirect();
 
