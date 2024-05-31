@@ -20,6 +20,17 @@ class Model extends Database
     }
 
     /**
+     * model->findName($name)
+     * @param string $name
+     * @return void
+     */
+    public function findName(string $name)
+    {
+        $query = $this->requete("SELECT * FROM {$this->table} WHERE name = '$name'");
+        return $query->fetch();
+    }
+
+    /**
      * model->findBy(['key' => $value])
      * @param array $targets
      * @return void
