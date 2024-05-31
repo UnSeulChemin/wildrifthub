@@ -24,3 +24,9 @@
     align-items: center;
     gap: 20px;
 }
+
+.flex-gap-50
+{
+    display: flex;
+    gap: 200px;
+}
