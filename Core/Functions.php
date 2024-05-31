@@ -6,7 +6,7 @@ class Functions
     /**
      * all heros name to verificate param {hero}
      */
-    private const ALL_HEROS = ['ahri', 'warwick'];
+    private const ALL_HEROS = ['aatrox', 'ahri', 'akali', 'alistar', 'amumu', 'annie', 'ashe', 'aurelionsol'];
 
     /**
      * check param hero exist
