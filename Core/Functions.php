@@ -4,6 +4,28 @@ namespace App\Core;
 class Functions
 {
     /**
+     * check value string
+     * @param $value
+     * @return boolean
+     */
+    public static function checkerString($value): bool
+    {
+        if (!is_string($value) || !isset($value) || empty($value)) { self::redirectCurrentPage(); }
+        return true;
+    }
+
+    /**
+     * check value exist
+     * @param $value
+     * @return boolean
+     */
+    public static function checkerFinder($value): bool
+    {
+        if (!$value) { self::redirect(); }
+        return true;
+    }
+
+    /**
      * view only `../` `../../`
      * @return string|null
      */
