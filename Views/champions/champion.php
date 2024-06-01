@@ -9,7 +9,8 @@
     </figure>
 
     <p>petit tips, ect. grizze avec ecrit pro</p>
-
+<p>type de champ.. early , mid game ect</p>
+<p>role : tank dps ect</p>
     <div class="m-t-30">
         <a class="link-section" href="javascript:history.go(-1)">Back</a>
     </div>
