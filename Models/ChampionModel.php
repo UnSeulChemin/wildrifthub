@@ -7,6 +7,9 @@ class ChampionModel extends Model
     protected $image;
     protected $extension;
     protected $name;
+    protected $role;
+    protected $free;
+    protected $pro;
     protected $created_at;
 
     public function __construct()
@@ -55,6 +58,39 @@ class ChampionModel extends Model
     public function setName($name)
     {
         $this->name = $name;
+        return $this;
+    }
+
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    public function setRole($role)
+    {
+        $this->role = $role;
+        return $this;
+    }
+
+    public function getFree()
+    {
+        return $this->free;
+    }
+
+    public function setFree($free)
+    {
+        $this->free = $free;
+        return $this;
+    }
+
+    public function getPro()
+    {
+        return $this->pro;
+    }
+
+    public function setPro($pro)
+    {
+        $this->pro = $pro;
         return $this;
     }
 

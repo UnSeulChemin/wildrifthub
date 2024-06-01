@@ -4,14 +4,18 @@
 
     <figure class="figure-card">
         <a role="link" class="flex" href="<?= $pathRedirect; ?>champions/name/<?= $champion->name ?>">
-            <img class="" alt="<?= $champion->name?>" src="<?= $pathRedirect; ?>public/images/champions/<?= $champion->image.".".$champion->extension ?>">
+            <img class="aa" alt="<?= $champion->name?>" src="<?= $pathRedirect; ?>public/images/champions/<?= $champion->image.".".$champion->extension ?>">
         </a>
     </figure>
 
-    <p>petit tips, ect. grizze avec ecrit pro</p>
-<p>type de champ.. early , mid game ect</p>
-<p>role : tank dps ect</p>
-<p>difficulté a mmaitriser.. difficulté a prendre en main..</p>
+    <p>Role : <?php echo $champion->role ?></p>
+
+    <h4>Basic tips</h4>
+    <p><?php echo $champion->free ?></p>
+
+    <h4>Pro tips</h4>
+    <p>u need to be pro.. click here (grissé?)</p>
+
     <div class="m-t-30">
         <a class="link-section" href="javascript:history.go(-1)">Back</a>
     </div>
