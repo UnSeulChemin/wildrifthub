@@ -11,6 +11,7 @@
     <p>petit tips, ect. grizze avec ecrit pro</p>
 <p>type de champ.. early , mid game ect</p>
 <p>role : tank dps ect</p>
+<p>difficulté a mmaitriser.. difficulté a prendre en main..</p>
     <div class="m-t-30">
         <a class="link-section" href="javascript:history.go(-1)">Back</a>
     </div>
