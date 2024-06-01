@@ -1,16 +1,31 @@
 <?php
 namespace App\Models;
 
+use App\Models\Trait\CreatedAtTrait;
+
 class ChampionModel extends Model
 {
+    use CreatedAtTrait;
+
     protected $id;
+
+    /* Image name */
     protected $image;
+
+    /* Image extension */
     protected $extension;
+
+    /* Champion name */
     protected $name;
+
+    /* Champion role */
     protected $role;
+
+    /* Basic tips Lontext */
     protected $free;
+
+    /* Pro tips Lontext */
     protected $pro;
-    protected $created_at;
 
     public function __construct()
     {
@@ -91,17 +106,6 @@ class ChampionModel extends Model
     public function setPro($pro)
     {
         $this->pro = $pro;
-        return $this;
-    }
-
-    public function getCreated_at()
-    {
-        return $this->created_at;
-    }
-
-    public function setCreated_at($created_at)
-    {
-        $this->created_at = $created_at;
         return $this;
     }
 }
