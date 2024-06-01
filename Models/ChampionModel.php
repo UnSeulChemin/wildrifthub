@@ -21,10 +21,10 @@ class ChampionModel extends Model
     /* Champion role */
     protected $role;
 
-    /* Basic tips Lontext */
+    /* Champion Free tips */
     protected $free;
 
-    /* Pro tips Lontext */
+    /* Champion Pro tips */
     protected $pro;
 
     public function __construct()
