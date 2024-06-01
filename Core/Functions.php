@@ -1,12 +1,14 @@
 <?php
 namespace App\Core;
 
+use App\Core\Trait\AllHerosTrait;
+
 class Functions
 {
     /**
-     * all heros name to verificate param {hero}
+     * containt all heros name
      */
-    private const ALL_HEROS = ['aatrox', 'ahri', 'akali', 'alistar', 'amumu', 'annie', 'ashe', 'aurelionsol'];
+    use AllHerosTrait;
 
     /**
      * check param hero exist
