@@ -10,13 +10,6 @@
     align-items: center;
 }
 
-.flex-between-center
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .flex-center-center-gap-20
 {
     display: flex;
@@ -25,8 +18,9 @@
     gap: 20px;
 }
 
-.flex-gap-50
+.flex-between-center
 {
     display: flex;
-    gap: 200px;
+    justify-content: space-between;
+    align-items: center;
 }
