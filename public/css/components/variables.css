@@ -10,4 +10,7 @@
 
     /* Link */
     --color-link: #ebebeb;
+
+    /* Flash */
+    --flash-active: #000000;
 }
