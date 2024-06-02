@@ -22,52 +22,8 @@
     background-color: var(--color-link);
 }
 
-.link-section
-{
-    width: 150px;
-    color: var(--color-link);
-    background-color: var(--background-color-link);
-
-    padding: 8px;
-    border-radius: 5px;    
-}
-
-.link-section:hover
-{
-    color: var(--color-link-hover);
-    background-color: var(--background-color-link-hover);
-}
-
-.link-submit
-{
-    cursor: pointer;
-    width: 250px;
-    font-size: 1.1em;
-    font-family: var(--font-family);
-    color: var(--color-link);
-    background-color: var(--background-color-link);
-
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-}
-
-.link-submit:hover
-{
-    color: var(--color-link-hover);
-}
-
+/* Image */
 .logo
 {
     width: 50px;
-}
-
-.champions-logo
-{
-    width: 50px;
-}
-
-.aa
-{
-    width: 200px;
 }
