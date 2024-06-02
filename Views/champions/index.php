@@ -1,6 +1,4 @@
 <section class="section-content">
-
-    <h3>Champions</h3>
    
    <section class="section-card">
        <?php foreach($champions as $image): ?>
