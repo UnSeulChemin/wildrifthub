@@ -4,19 +4,10 @@
     --font-family: "Montserrat", "Open Sans", sans-serif;
 
     /* Main Blocs */
-    --background-color-body: #ffffff;
+    --background-color-body: #ebebeb;
     --background-color-header: #333333;
-    --background-color-section: #3399CC;
-
-    /* Title */
-    --color-title: #00008B;
+    --background-color-section: #71afcd;
 
     /* Link */
-    --color-link: #ffffff;
-    --background-color-link: #3399CC;
-    --color-link-hover: #000000;
-    --background-color-link-hover: #ffffff;
-
-    /* Flash */
-    --flash-active: #000000;
+    --color-link: #ebebeb;
 }
