@@ -1,3 +1,4 @@
+<?php include_once 'script/header.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 </head>
 <body>
 
-<?php require_once "partials/header.php"; ?>
+<?php require_once 'partials/header.php'; ?>
 <main role="main"><?= $content ?></main>
 
 </body>
