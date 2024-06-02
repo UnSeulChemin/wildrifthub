@@ -12,7 +12,7 @@ header
 {
     background-color: var(--background-color-header);
 
-    padding: 20px;
+    padding: 20px 30px;
 }
 
 h1
