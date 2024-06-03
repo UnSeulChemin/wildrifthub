@@ -1,5 +1,8 @@
 <section class="section-content">
 
-<p>lien param, rank (grissez non pro)</p>
+    <p>ARAM</p>
+    <p>ARAM XX (pro)</p>
+    <p>RANKED</p>
+    <p>RANKED SOUV (pro)</p>
 
 </section>

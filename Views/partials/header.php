@@ -16,5 +16,6 @@
             <li role="listitem" class="m-r-30"><a role="link" class="<?= $activePro ?>link-menu" href="<?= $pathRedirect; ?>pro">Become Pro</a></li>
             <li role="listitem"><a role="link" class="<?= $activeLogin ?>link-menu" href="<?= $pathRedirect; ?>login">Login</a></li>
         </ul>
+
     </nav>
 </header>
