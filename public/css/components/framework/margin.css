@@ -18,6 +18,11 @@
     margin-top: 15px;
 }
 
+.m-r-50
+{
+    margin-right: 50px;
+}
+
 .m-r-30
 {
     margin-right: 30px;
@@ -28,6 +33,11 @@
     margin-right: 15px;
 }
 
+.m-b-50
+{
+    margin-bottom: 50px;
+}
+
 .m-b-30
 {
     margin-bottom: 30px;
@@ -36,6 +46,11 @@
 .m-b-15
 {
     margin-bottom: 15px;
+}
+
+.m-l-50
+{
+    margin-left: 50px;
 }
 
 .m-l-30
