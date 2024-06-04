@@ -10,17 +10,25 @@
     align-items: center;
 }
 
+.flex-between-center
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-column-center-center
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .flex-center-center-gap-20
 {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-}
-
-.flex-between-center
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }

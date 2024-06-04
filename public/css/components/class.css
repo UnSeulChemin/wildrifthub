@@ -7,6 +7,15 @@
     padding: 30px 0;
 }
 
+.section-card
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 35px;
+}
+
 /* Link */
 .link-menu
 {
@@ -20,6 +29,24 @@
 {
     color: var(--background-color-section);
     background-color: var(--color-link);
+}
+
+.link-card
+{
+    width: 100%;
+    color: var(--color-link);
+    background-color: var(--background-color-header);
+    box-sizing: border-box;
+
+    padding: 10px;
+    border-top: 2px solid var(--background-color-section);
+    border-radius: 0 0 5px 5px;
+}
+
+/* Card */
+.div-card
+{
+    width: 20%;
 }
 
 /* Image */

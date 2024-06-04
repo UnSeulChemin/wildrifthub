@@ -11,6 +11,9 @@
     /* Link */
     --color-link: #ebebeb;
 
+    /* Card */
+    --border-card: #615dfa;
+
     /* Flash */
     --flash-active: #71afcd;
 }
