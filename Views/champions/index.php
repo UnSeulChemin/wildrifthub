@@ -5,7 +5,7 @@
             <div class="div-card">
                <figure class="figure-image">
                     <a role="link" class="flex" href="<?= $pathRedirect; ?>champions/champion/<?= $image->name ?>">
-                        <img alt="<?= $image->name?>" src="<?= $pathRedirect; ?>public/images/champions/<?= $image->thumbnail.".".$image->extension ?>">
+                        <img alt="<?= $image->name?>" src="<?= $pathRedirect; ?>public/images/champions/thumbnail/<?= $image->thumbnail.".".$image->extension ?>">
                     </a>
                </figure>
                <div class="flex-column-center-center">
