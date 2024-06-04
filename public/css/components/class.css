@@ -20,31 +20,25 @@
 {
     width: 80%;
     background-color: var(--background-color-header);
+    box-sizing: border-box;
 
     margin: auto;
     padding: 20px;
     border-radius: 0 0 5px 5px; 
 }
 
-.section-card-name-content
-{
-    background-color: var(--background-color-header);
-
-    margin-top: 50px;
-    padding: 20px;
-}
-
-
-.section-card-name
+.section-card-name-image
 {
     width: 80%;
 
     margin: auto;
+}
 
-    display: flex;
-    gap: 50px;
+.section-card-name-content
+{
+    background-color: var(--background-color-content);
 
-    margin-top: 50px;
+    padding: 20px;
 }
 
 /* Link */

@@ -9,6 +9,12 @@
     gap: 20px;
 }
 
+.flex-gap-50
+{
+    display: flex;
+    gap: 50px;
+}
+
 .flex-center-center
 {
     display: flex;
