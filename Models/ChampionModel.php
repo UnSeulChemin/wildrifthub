@@ -9,7 +9,10 @@ class ChampionModel extends Model
 
     protected $id;
 
-    /* Image name */
+    /* Image thumbnail */
+    protected $thumbnail;
+
+    /* Image splash-art */
     protected $image;
 
     /* Image extension */
@@ -40,6 +43,17 @@ class ChampionModel extends Model
     public function setId($id)
     {
         $this->id = $id;
+        return $this;
+    }
+
+    public function getThumbnail()
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail($thumbnail)
+    {
+        $this->thumbnail = $thumbnail;
         return $this;
     }
 
