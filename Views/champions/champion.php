@@ -26,7 +26,6 @@
     </section>
 
 
-
     <section class="section-card-name-image flex-around-center m-t-50">
 
             <article class="flex-gap-50">
