@@ -23,6 +23,13 @@
     align-items: center;
 }
 
+.flex-around-center
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .flex-column-center-center
 {
     display: flex;

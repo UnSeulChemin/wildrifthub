@@ -16,6 +16,27 @@
     gap: 35px;
 }
 
+.section-card-name-head
+{
+    width: 80%;
+    background-color: var(--background-color-header);
+
+    margin: auto;
+    padding: 20px;
+    border-radius: 0 0 5px 5px; 
+}
+
+
+.section-card-id
+{
+    width: 80%;
+
+    margin: auto;
+
+    display: flex;
+    gap: 50px;
+}
+
 /* Link */
 .link-menu
 {

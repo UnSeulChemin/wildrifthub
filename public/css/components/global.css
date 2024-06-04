@@ -22,6 +22,18 @@ h1
     color: var(--color-link);
 }
 
+h3
+{
+    font-size: 1.2em;
+    color: var(--background-color-section);
+}
+
+h4
+{
+    font-size: 1.1em;   
+    color: var(--color-link);
+}
+
 p
 {
     font-size: 1.1em;
