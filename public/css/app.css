@@ -9,6 +9,7 @@
 @import "components/framework/flash.css";
 
 /* UI */
+@import "components/ui/keyframes.css";
 @import "components/ui/webkit.css";
 @import "components/ui/scroll-bar.css";
 

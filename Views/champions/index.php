@@ -3,7 +3,7 @@
    <section class="section-card">
         <?php foreach($champions as $image): ?>
             <div class="div-card">
-               <figure>
+               <figure class="figure-image">
                     <a role="link" class="flex" href="<?= $pathRedirect; ?>champions/champion/<?= $image->name ?>">
                         <img alt="<?= $image->name?>" src="<?= $pathRedirect; ?>public/images/champions/<?= $image->image.".".$image->extension ?>">
                     </a>
