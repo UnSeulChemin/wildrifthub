@@ -3,6 +3,12 @@
     display: flex;
 }
 
+.flex-gap-20
+{
+    display: flex;
+    gap: 20px;
+}
+
 .flex-center-center
 {
     display: flex;

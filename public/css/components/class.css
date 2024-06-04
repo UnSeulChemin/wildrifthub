@@ -43,6 +43,12 @@
     border-radius: 0 0 5px 5px;
 }
 
+.link-card:hover
+{
+    color: var(--background-color-section);
+    background-color: var(--color-link);
+}
+
 /* Card */
 .div-card
 {
