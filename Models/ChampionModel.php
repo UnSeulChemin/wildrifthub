@@ -13,7 +13,7 @@ class ChampionModel extends Model
     protected $thumbnail;
 
     /* Image splash-art */
-    protected $image;
+    protected $splashart;
 
     /* Image extension */
     protected $extension;
@@ -57,14 +57,14 @@ class ChampionModel extends Model
         return $this;
     }
 
-    public function getImage()
+    public function getSplashart()
     {
-        return $this->image;
+        return $this->splashart;
     }
 
-    public function setImage($image)
+    public function setSplashart($splashart)
     {
-        $this->image = $image;
+        $this->splashart = $splashart;
         return $this;
     }
 

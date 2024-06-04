@@ -21,7 +21,7 @@
     <section class="section-card-name-image m-t-50">
         <figure class="figure-card-id">
             <img alt="<?= $champion->name ?>"
-            src="<?= $pathRedirect; ?>public/images/champions/<?= $champion->image.".".$champion->extension ?>">
+            src="<?= $pathRedirect; ?>public/images/champions/<?= $champion->splashart.".".$champion->extension ?>">
         </figure>
     </section>
 
