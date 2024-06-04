@@ -26,8 +26,16 @@
     border-radius: 0 0 5px 5px; 
 }
 
+.section-card-name-content
+{
+    background-color: var(--background-color-header);
 
-.section-card-id
+    margin-top: 50px;
+    padding: 20px;
+}
+
+
+.section-card-name
 {
     width: 80%;
 
@@ -35,6 +43,8 @@
 
     display: flex;
     gap: 50px;
+
+    margin-top: 50px;
 }
 
 /* Link */
@@ -65,6 +75,22 @@
 }
 
 .link-card:hover
+{
+    color: var(--background-color-section);
+    background-color: var(--color-link);
+}
+
+.link-back
+{
+    width: 180px;
+    color: var(--color-link);
+    background-color: var(--background-color-header);
+
+    padding: 8px;
+    border-radius: 5px; 
+}
+
+.link-back:hover
 {
     color: var(--background-color-section);
     background-color: var(--color-link);

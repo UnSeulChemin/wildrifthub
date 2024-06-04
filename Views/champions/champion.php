@@ -21,26 +21,28 @@
 
 
 
-    <section class="section-card-id">
+    <section class="section-card-name">
 
             <figure class="figure-card-id">
                 <img alt="<?= $champion->name ?>"
                     src="<?= $pathRedirect; ?>public/images/champions/<?= $champion->name.".".$champion->extension ?>">
             </figure>
 
-            <div class="flex-center-center width-100">
+    </section>
 
-                <h4>Basic tips</h4>
-                <p><?php echo $champion->free ?></p>
 
-                <h4>Pro tips</h4>
-                <p>u need to be pro.. click here (grissé?)</p>
+    <section class="section-card-name-content">
 
-            </div>
+        <h5>Basic tips for <span class="active"><?= ucfirst($champion->name) ?></span></h5>
+        <p><?php echo $champion->free ?></p>
+
+        <h5>Pro tips for <span class="active"><?= ucfirst($champion->name) ?></span></h5>
+        <p>u need to be pro.. click here (grissé?)</p>
+
     </section>
 
     <div class="m-t-30">
-        <a class="link-section" href="javascript:history.go(-1)">Back</a>
+        <a class="link-back" href="javascript:history.go(-1)">Back</a>
     </div>
 
 </section>
