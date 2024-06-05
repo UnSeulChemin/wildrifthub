@@ -13,7 +13,7 @@
 
         <div>
             <h3>Difficulty</h3>   
-            <img height="150" src="<?= $difficulty ?>">
+            <img height="150" src="<?= $championDifficulty ?>">
         </div>
 
     </section>
