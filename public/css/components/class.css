@@ -9,18 +9,10 @@
 
 .section-news
 {
+    text-align: left;
     background-color: var(--background-color-section);
 
-    padding: 20px;
-}
-
-.section-card
-{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    gap: 35px;
+    padding: 25px;
 }
 
 .section-card-name-head

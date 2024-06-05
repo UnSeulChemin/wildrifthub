@@ -1,13 +1,17 @@
 <section class="section-news m-t-30">
-        <h4>Latest heros add</h4>
-        <?php foreach($championsLatest as $image): ?>
-            <p><?= $image->name ?></p>
-        <?php endforeach; ?>
+        <h5>Latest heros add</h5>
+        <div class="flex-left-center-gap-50 m-t-15">
+            <?php foreach($championsLatest as $image): ?>
+                <div>
+                    <a class="link-card" href="<?= $pathRedirect; ?>champions/champion/<?= $image->name ?>"><?= ucfirst($image->name) ?></a>
+                </div>
+            <?php endforeach; ?>
+        </div>
 </section>
 
 <section class="section-content">
 
-   <section class="section-card">
+   <section class="flex-center-wrap-gap-35">
         <?php foreach($champions as $image): ?>
             <div class="div-card">
                <figure class="figure-image">

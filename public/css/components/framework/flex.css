@@ -36,6 +36,13 @@
     align-items: center;
 }
 
+.flex-center-wrap
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .flex-column-center-center
 {
     display: flex;
@@ -50,4 +57,20 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+.flex-left-center-gap-50
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 50px;
+}
+
+.flex-center-wrap-gap-35
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
 }
