@@ -15,10 +15,11 @@ class ChampionsController extends Controller
         $championModel = new ChampionModel;
 
         $champions = $championModel->findAllOrderBy('name ASC');
+        $championsLatest = $championModel->findAllOrderByLimit('id DESC', 2);
         $pathRedirect = Functions::pathRedirect();
 
         $this->title = 'WildRift Hub | Champions';
-        $this->render('champions/index', ["champions" => $champions, "pathRedirect" => $pathRedirect]);
+        $this->render('champions/index', ["champions" => $champions, "championsLatest" =>  $championsLatest, "pathRedirect" => $pathRedirect]);
     }
 
     /**

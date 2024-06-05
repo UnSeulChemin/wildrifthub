@@ -1,3 +1,10 @@
+<section class="section-news m-t-30">
+        <h4>Latest heros add</h4>
+        <?php foreach($championsLatest as $image): ?>
+            <p><?= $image->name ?></p>
+        <?php endforeach; ?>
+</section>
+
 <section class="section-content">
 
    <section class="section-card">
