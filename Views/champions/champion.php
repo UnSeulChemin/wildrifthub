@@ -11,9 +11,9 @@
             <h4><?= ucfirst($champion->role) ?></h4>
         </div>
 
-        <div>
+        <div class="flex-center-center-gap-20">
             <h3>Difficulty</h3>   
-            <img height="150" src="<?= $championDifficulty ?>">
+            <img class="difficulty" src="<?= $championDifficulty ?>">
         </div>
 
     </section>
