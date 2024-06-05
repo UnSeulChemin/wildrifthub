@@ -34,9 +34,12 @@ class ChampionsController extends Controller
         $championModel = new ChampionModel;
 
         $champion = $championModel->findName($name);
+
+        $difficulty = Functions::checkerDifficulty($champion->difficulty);
+
         $pathRedirect = Functions::pathRedirect();
 
         $this->title = 'WildRift Hub | '.ucfirst($champion->name);
-        $this->render('champions/champion', ["champion" => $champion, "pathRedirect" => $pathRedirect]);
+        $this->render('champions/champion', ["champion" => $champion, "difficulty" => $difficulty, "pathRedirect" => $pathRedirect]);
     }
 }

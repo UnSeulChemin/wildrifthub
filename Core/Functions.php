@@ -2,6 +2,7 @@
 namespace App\Core;
 
 use App\Core\Trait\AllHerosTrait;
+use App\Core\Trait\AllDifficultyTrait;
 
 class Functions
 {
@@ -9,6 +10,11 @@ class Functions
      * containt all heros name
      */
     use AllHerosTrait;
+
+    /**
+     * containt all difficulty value
+     */
+    use AllDifficultyTrait;
 
     /**
      * check param hero exist
@@ -19,6 +25,27 @@ class Functions
     {
         if (!in_array($value, self::ALL_HEROS) || !is_string($value) || !isset($value) || empty($value)) { self::redirectCurrentPage(); }
         return true;
+    }
+
+    /**
+     * check difficulty value
+     * @param $difficulty
+     * @return string|null
+     */
+    public static function checkerDifficulty($difficulty): string|null
+    {
+        if (in_array($difficulty, self::ALL_DIFFICULTY) && is_string($difficulty))
+        {
+            switch ($difficulty)
+            {
+                case 1: return '../../public/images/tools/star/evaluation1.png'; break;
+                case 2: return "../../public/images/tools/star/evaluation2.png"; break;
+                case 3: return "../../public/images/tools/star/evaluation3.png"; break;
+                case 4: return "../../public/images/tools/star/evaluation4.png"; break;
+                case 5: return "../../public/images/tools/star/evaluation5.png"; break;
+            }   
+        }
+        return null;
     }
 
     /**

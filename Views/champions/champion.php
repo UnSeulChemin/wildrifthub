@@ -13,7 +13,7 @@
 
         <div>
             <h3>Difficulty</h3>   
-            <h4>***</h4> 
+            <img height="150" src="<?= $difficulty ?>">
         </div>
 
     </section>

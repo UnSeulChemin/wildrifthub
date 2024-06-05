@@ -24,6 +24,9 @@ class ChampionModel extends Model
     /* Champion role */
     protected $role;
 
+    /* Champion difficulty */
+    protected $difficulty;
+
     /* Champion Free tips */
     protected $free;
 
@@ -98,6 +101,17 @@ class ChampionModel extends Model
     public function setRole($role)
     {
         $this->role = $role;
+        return $this;
+    }
+
+    public function getDifficulty()
+    {
+        return $this->difficulty;
+    }
+
+    public function setDifficulty($difficulty)
+    {
+        $this->difficulty = $difficulty;
         return $this;
     }
 
