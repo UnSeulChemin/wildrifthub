@@ -2,3 +2,15 @@
 {
     color: var(--flash-active);
 }
+
+.flash-warning
+{
+    width: 250px;
+    background-color: var(--flash-warning);
+
+    margin: 0 auto 20px;
+    padding: 15px;
+    border-radius: 5px;
+
+    box-sizing: border-box;
+}

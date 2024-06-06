@@ -62,3 +62,25 @@ img
 
     display: flex;
 }
+
+form div
+{
+    margin-bottom: 20px;
+}
+
+form div input
+{
+    width: 250px;
+    background-color: var(--background-color-form-input);
+
+    padding: 5px;
+    border: 1px solid var(--border-form);
+    border-radius: 5px;
+
+    box-sizing: border-box;
+}
+
+form div input:focus
+{
+    background-color: var(--background-color-form-focus);
+}

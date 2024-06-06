@@ -12,6 +12,12 @@
     /* Link */
     --color-link: #ebebeb;
 
+    /* Form */
+    --background-color-form-input: #f5f5ef;
+    --border-form: #333333;
+    --background-color-form-focus: #ffffff;
+
     /* Flash */
     --flash-active: #71afcd;
+    --flash-warning: #DC143C;
 }
