@@ -13,6 +13,11 @@ class UserModel extends Model
         $this->table = "user";
     }
 
+    public function findOneByEmail(string $email)
+    {
+        return $this->requete("SELECT * FROM {$this->table} WHERE email = ?", [$email])->fetch();
+    }
+
     public function setSession()
     {
         $_SESSION['user'] = [

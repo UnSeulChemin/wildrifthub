@@ -15,16 +15,54 @@ class ProController extends Controller
     {
         if (Form::validate($_POST, ['email', 'password']))
         {
-            $email = strip_tags($_POST['email']);
-            $password = strip_tags($_POST['password']);
-
-            $userModel = new userModel;
-            $userModel->setEmail($email)->setPassword($password);
-
-            if ($userModel->create())
+            if (Form::validateEmail($_POST, ['email']))
             {
-                header("Location: ./");
-                exit;
+                $email = strip_tags($_POST['email']);
+
+                $userModel = new UserModel;
+                $user = $userModel->findBy(["email" => $email]);
+
+                if (!$user)
+                {
+                    if (Form::validatePassword($_POST, ['password']))
+                    {
+                        $password = password_hash(strip_tags($_POST['password']), PASSWORD_ARGON2I);
+                        $roles = ["ROLE_USER"];
+    
+                        $userModel = new userModel;
+                        $userModel->setEmail($email)->setPassword($password)->setRoles($roles, "encode");
+            
+                        if ($userModel->create())
+                        {
+                            $userArray = $userModel->findOneByEmail($email);
+                            $user = $userModel->hydrate($userArray);
+                            $user->setSession();
+                            header("Location: ./");
+                            exit;
+                        }
+                    }
+
+                    else
+                    {
+                        $_SESSION['warning'] = !empty($_POST) ? "Password not enough strong." : '';
+                        $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
+                        $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
+                    }
+                }
+
+                else
+                {
+                    $_SESSION['warning'] = !empty($_POST) ? "Email already taken." : '';
+                    $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
+                    $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
+                }
+            }
+
+            else
+            {
+                $_SESSION['warning'] = !empty($_POST) ? "Incorrect email format." : '';
+                $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
+                $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
             }
         }
 

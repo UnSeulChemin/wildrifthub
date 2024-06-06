@@ -168,12 +168,12 @@ class Model extends Database
     }
 
     /**
-     * self only
+     * requete
      * @param string $sql
      * @param array|null $attributes
      * @return void
      */
-    private function requete(string $sql, array $attributes = null)
+    public function requete(string $sql, array $attributes = null)
     {
         $this->db = Database::getInstance();
 

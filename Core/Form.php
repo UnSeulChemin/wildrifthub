@@ -22,6 +22,33 @@ class Form
         return true;
     }
 
+    public static function validateEmail(array $form, array $emails)
+    {
+        foreach ($emails as $email)
+        {
+            if (!filter_var($form[$email], FILTER_VALIDATE_EMAIL))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static function validatePassword(array $form, array $passwords)
+    {
+        foreach ($passwords as $password)
+        {
+            // at least 5 characters, at least 1 numeric character, at least 1 lowercase letter,
+            // at least 1 uppercase letter, at least 1 special character.
+            $passwordPattern = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?([^\w\s]|[_])).{5,}$/";
+            if (!preg_match($passwordPattern, $form[$password]))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private function addAttributes(array $attributes): string
     {
         $string = '';
