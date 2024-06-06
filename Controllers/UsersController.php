@@ -5,10 +5,10 @@ use App\Core\Form;
 use App\Core\Functions;
 use App\Models\UserModel;
 
-class ProController extends Controller
+class UsersController extends Controller
 {
     /**
-     * route /pro
+     * route /users
      * @return void
      */
     public function index()
@@ -76,7 +76,20 @@ class ProController extends Controller
         $form = self::form($email, $password);
 
         $this->title = 'WildRift Hub | Pro';
-        $this->render('pro/index', ['proForm' => $form->create()]);
+        $this->render('users/index', ['registerForm' => $form->create()]);
+    }
+
+    public function logout()
+    {
+        unset($_SESSION['user']);
+        header('Location: '.Functions::pathRedirect().'./');
+        exit;
+    }
+
+    public function login()
+    {
+        $this->title = 'WildRift Hub | Login';
+        $this->render('users/login');
     }
 
     /**

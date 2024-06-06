@@ -13,8 +13,12 @@
         </ul>
 
         <ul role="list" class="flex-gap-20">
-            <li role="listitem"><a role="link" class="<?= $activePro ?>link-menu" href="<?= $pathRedirect; ?>pro">Become Pro</a></li>
-            <li role="listitem"><a role="link" class="<?= $activeLogin ?>link-menu" href="<?= $pathRedirect; ?>login">Login</a></li>
+            <li role="listitem"><a role="link" class="<?= $activePro ?>link-menu" href="<?= $pathRedirect; ?>users">Become Pro</a></li>
+            <?php if ($sessionUser): ?>
+                <li role="listitem"><a role="link" class="link-menu" href="<?= $pathRedirect; ?>users/logout">Logout</a></li>
+            <?php else: ?>
+                <li role="listitem"><a role="link" class="<?= $activeLogin ?>link-menu" href="<?= $pathRedirect; ?>users/login">Login</a></li>
+            <?php endif; ?>
         </ul>
 
     </nav>

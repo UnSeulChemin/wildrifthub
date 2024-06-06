@@ -22,6 +22,15 @@ class Functions
      */
     use AllDeniedPath;
 
+    public static function sessionUser(): bool
+    {
+        if (isset($_SESSION['user']) && !empty($_SESSION['user']['id']))
+        {
+            return true;
+        }
+        return false;
+    }
+
     /**
      * check param hero exist
      * @param $value

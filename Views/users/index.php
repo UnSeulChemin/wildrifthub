@@ -13,6 +13,6 @@
         </div>
     <?php endif; ?>
 
-    <?= $proForm; ?>
+    <?= $registerForm; ?>
 
 </section>
