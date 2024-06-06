@@ -1,8 +1,6 @@
 <?php
 namespace App\Controllers;
 
-use App\Core\Form;
-
 class LoginController extends Controller
 {
     /**

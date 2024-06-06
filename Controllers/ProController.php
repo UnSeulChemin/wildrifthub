@@ -1,6 +1,8 @@
 <?php
 namespace App\Controllers;
 
+use App\Core\Form;
+
 class ProController extends Controller
 {
     /**
