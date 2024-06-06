@@ -3,6 +3,7 @@ namespace App\Core;
 
 use App\Core\Trait\AllHerosTrait;
 use App\Core\Trait\AllDifficultyTrait;
+use App\Core\Trait\AllDeniedPath;
 
 class Functions
 {
@@ -15,6 +16,11 @@ class Functions
      * containt all difficulty value
      */
     use AllDifficultyTrait;
+
+    /**
+     * containt all denied path
+     */
+    use AllDeniedPath;
 
     /**
      * check param hero exist
@@ -46,6 +52,16 @@ class Functions
             }   
         }
         return null;
+    }
+
+    /**
+     * path denied
+     * @return boolean
+     */
+    public static function pathDenied(): bool
+    {
+        if (in_array(basename($_GET['p']), self::ALL_DENIED_PATH)) { self::redirectCurrentPage(); }
+        return true;
     }
 
     /**
