@@ -15,6 +15,7 @@
     padding: 25px;
 }
 
+/* Section Name */
 .section-card-name-head
 {
     width: 80%;
@@ -22,7 +23,7 @@
     box-sizing: border-box;
 
     margin: auto;
-    padding: 20px;
+    padding: 20px 0;
     border-radius: 0 0 5px 5px; 
 }
 
@@ -31,6 +32,11 @@
     width: 80%;
 
     margin: auto;
+}
+
+.section-card-name-recommended
+{
+    border: 1px solid #000;
 }
 
 .section-card-name-content

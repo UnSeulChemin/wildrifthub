@@ -19,19 +19,21 @@
     </section>
 
     <section class="section-card-name-image m-t-50">
+
         <figure class="figure-card-id">
             <img alt="<?= $champion->name ?>"
             src="<?= $pathRedirect; ?>public/images/champions/splashart/<?= $champion->splashart.".".$champion->extension ?>">
         </figure>
+
     </section>
 
-
-    <section class="section-card-name-image flex-around-center m-t-50">
+    <section class="section-card-name-recommended flex-around-center m-t-50">
 
             <article class="flex-gap-50">
 
                 <div class="flex">
                     <p>Core build</p>
+                    <p>relation item... </p>
                     <p>luden</p>
                     <p>orbe</p>
                 </div>
