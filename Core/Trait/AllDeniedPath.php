@@ -6,5 +6,5 @@ Trait AllDeniedPath
     /**
      * all denied path
      */
-    private const ALL_DENIED_PATH = ['form'];
+    private const ALL_DENIED_PATH = ['registerForm', 'loginForm'];
 }

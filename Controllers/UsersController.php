@@ -117,4 +117,23 @@ class UsersController extends Controller
             ->endForm();
         return $form;
     }
+
+    public static function loginForm($email = null, $password = null)
+    {
+        Functions::pathDenied();
+
+        $form = new Form;
+        $form->startForm()
+            ->startDiv()
+                ->addInput('email', 'email',
+                    ['placeholder' => 'Email', 'value' => $email, 'required' => true, 'autofocus' => true])
+            ->endDiv()
+            ->startDiv()
+                ->addInput('password', 'password',
+                    ['placeholder' => 'Password', 'required' => true])
+            ->endDiv()
+            ->addButton('Registration', ['type' => 'submit', 'class' => 'link-submit', 'role' => 'button'])
+            ->endForm();
+        return $form;
+    }
 }
