@@ -73,7 +73,7 @@ class UsersController extends Controller
             $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
         }
 
-        $form = self::form($email, $password);
+        $form = self::registerForm($email, $password);
 
         $this->title = 'WildRift Hub | Pro';
         $this->render('users/index', ['registerForm' => $form->create()]);
@@ -93,13 +93,13 @@ class UsersController extends Controller
     }
 
     /**
-     * route /pro self::form
+     * route /users self::registerForm
      *
      * @param $email
      * @param $password
      * @return void
      */
-    public static function form($email = null, $password = null)
+    public static function registerForm($email = null, $password = null)
     {
         Functions::pathDenied();
 

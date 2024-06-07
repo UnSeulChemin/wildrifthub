@@ -13,6 +13,7 @@
 
 <?php require_once 'partials/header.php'; ?>
 <main role="main"><?= $content ?></main>
+<?php require_once 'partials/footer.php'; ?>
 
 </body>
 </html>
