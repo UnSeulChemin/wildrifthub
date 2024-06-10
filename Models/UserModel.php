@@ -6,6 +6,10 @@ class UserModel extends Model
     protected $id;
     protected $email;
     protected $password;
+
+    /* Champion Pro tips */
+    protected $pro;
+
     protected $roles;
 
     public function __construct()
@@ -23,6 +27,7 @@ class UserModel extends Model
         $_SESSION['user'] = [
             'id' => $this->id,
             'email' => $this->email,
+            'pro' => $this->pro,
             'roles' => $this->roles
         ];
     }
@@ -57,6 +62,17 @@ class UserModel extends Model
     public function setPassword($password)
     {
         $this->password = $password;
+        return $this;
+    }
+
+    public function getPro()
+    {
+        return $this->pro;
+    }
+
+    public function setPro($pro)
+    {
+        $this->pro = $pro;
         return $this;
     }
 

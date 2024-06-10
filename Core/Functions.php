@@ -40,6 +40,15 @@ class Functions
         return false;
     }
 
+    public static function sessionPro(): bool
+    {
+        if (isset($_SESSION["user"]) && str_contains("Y", $_SESSION["user"]["pro"]))
+        {
+            return true;
+        }
+        return false;
+    }
+
     /**
      * check param hero exist
      * @param $value

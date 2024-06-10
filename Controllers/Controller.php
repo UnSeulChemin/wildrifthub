@@ -9,7 +9,7 @@ abstract class Controller
     protected $title = 'WildRift Hub';
 
     /**
-     * function render
+     * view render
      * @param string $file
      * @param array $data
      * @return void
@@ -23,6 +23,7 @@ abstract class Controller
         $title = $this->title;
         $sessionUser = Functions::sessionUser();
         $sessionAdmin = Functions::sessionAdmin();
+        $sessionPro = Functions::sessionPro();
         $pathRedirect = Functions::pathRedirect();
         $content = ob_get_clean();
 
