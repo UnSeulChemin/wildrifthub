@@ -14,7 +14,7 @@ abstract class Controller
      * @param array $data
      * @return void
      */
-    public function render(string $file, array $data = [])
+    public function render(string $file, array $data = []): void
     {
         extract($data);
 

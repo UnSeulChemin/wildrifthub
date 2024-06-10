@@ -11,17 +11,17 @@ class UsersController extends Controller
      * route /users
      * @return void
      */
-    public function index()
+    public function index(): void
     {
+        $this->title = 'WildRift Hub | Become Pro';
         $this->render('users/index');
     }
 
     /**
      * route /users/register
-     *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
         $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
@@ -49,11 +49,15 @@ class UsersController extends Controller
 
         $form = self::registerForm($email, $password);
 
-        $this->title = 'WildRift Hub | Pro';
-        $this->render('users/register', ['error' => $error, 'registerForm' => $form->create()]);
+        $this->title = 'WildRift Hub | Register';
+        $this->render('users/register', ['registerForm' => $form->create(), 'error' => $error]);
     }
 
-    public function login()
+    /**
+     * route /users/login
+     * @return void
+     */
+    public function login(): void
     {
         $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
         $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
@@ -74,17 +78,16 @@ class UsersController extends Controller
         $form = self::loginForm($email, $password);
 
         $this->title = 'WildRift Hub | Login';
-        $this->render('users/login', ['error' => $error, 'loginForm' => $form->create()]);
+        $this->render('users/login', ['loginForm' => $form->create(), 'error' => $error]);
     }
 
     /**
-     * route /users self::registerForm
-     *
+     * self::registerForm
      * @param $email
      * @param $password
      * @return void
      */
-    public static function registerForm($email = null, $password = null)
+    public static function registerForm($email = null, $password = null): Form
     {
         Functions::pathDenied();
 
@@ -109,7 +112,7 @@ class UsersController extends Controller
      * @param $password
      * @return void
      */
-    public static function loginForm($email = null, $password = null)
+    public static function loginForm($email = null, $password = null): Form
     {
         Functions::pathDenied();
 
@@ -133,6 +136,7 @@ class UsersController extends Controller
      * 1: Incorrect email format
      * 2: Email already taken
      * 3: Password not enough strong
+     * 4: Email and / or password is incorrect
      * @param $error
      * @return void
      */
