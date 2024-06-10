@@ -10,6 +10,9 @@
             <li role="listitem"><a role="link" class="<?= $activeHub ?>link-menu" href="<?= $pathRedirect; ?>./">Hub</a></li>
             <li role="listitem"><a role="link" class="<?= $activeChampions ?>link-menu" href="<?= $pathRedirect; ?>champions">Champions</a></li>
             <li role="listitem"><a role="link" class="<?= $activeGuides ?>link-menu" href="<?= $pathRedirect; ?>guides">Guides</a></li>
+            <?php if ($sessionAdmin): ?>
+                <li role="listitem"><a role="link" class="<?= $activeGuides ?>link-menu" href="<?= $pathRedirect; ?>guides">Admin</a></li>
+            <?php endif; ?>
         </ul>
 
         <ul role="list" class="flex-gap-20">

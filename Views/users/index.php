@@ -7,9 +7,9 @@
     <p>Form de paiement?</p>
     <p>Puis form d'inscription?</p> -->
 
-    <?php if (isset($_SESSION["warning"]) && !empty($_SESSION["warning"])): ?>
+    <?php if (isset($error) && !empty($error)): ?>
         <div class="flash-warning">
-            <p class="m-0"><?= $_SESSION["warning"]; unset($_SESSION["warning"]); ?></p>
+            <p class="m-0"><?= $error; unset($error); ?></p>
         </div>
     <?php endif; ?>
 

@@ -31,6 +31,15 @@ class Functions
         return false;
     }
 
+    public static function sessionAdmin(): bool
+    {
+        if (isset($_SESSION["user"]) && in_array("ROLE_ADMIN", $_SESSION["user"]["roles"]))
+        {
+            return true;
+        }
+        return false;
+    }
+
     /**
      * check param hero exist
      * @param $value
