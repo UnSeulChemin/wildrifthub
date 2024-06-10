@@ -1,9 +1,9 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\UserModel;
 use App\Core\Form;
 use App\Core\Functions;
-use App\Models\UserModel;
 
 class UsersController extends Controller
 {
@@ -13,9 +13,20 @@ class UsersController extends Controller
      */
     public function index()
     {
+        $this->render('users/index');
+    }
+
+    /**
+     * route /users/register
+     *
+     * @return void
+     */
+    public function register()
+    {
         $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
         $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
         $error = '';
+        $roles = ["ROLE_USER"];
 
         if (Form::validate($_POST, ['email', 'password'])):
             if (Form::validateEmail($_POST, ['email'])):
@@ -24,8 +35,6 @@ class UsersController extends Controller
                 if (!$user):
                     if (Form::validatePassword($_POST, ['password'])):
                         $passwordHash = password_hash(strip_tags($password), PASSWORD_ARGON2I);
-                        $roles = ["ROLE_USER"];
-                        $userModel = new userModel;
                         $userModel->setEmail($email)->setPassword($passwordHash)->setRoles($roles, "encode");
                         if ($userModel->create()):
                             $userArray = $userModel->findOneByEmail($email);
@@ -41,7 +50,7 @@ class UsersController extends Controller
         $form = self::registerForm($email, $password);
 
         $this->title = 'WildRift Hub | Pro';
-        $this->render('users/index', ['error' => $error, 'registerForm' => $form->create()]);
+        $this->render('users/register', ['error' => $error, 'registerForm' => $form->create()]);
     }
 
     public function login()

@@ -1,18 +1,8 @@
 <section class="section-content">
 
-    <!-- <p>How to become pro?</p>
-    <p>Register an account.</p>
-    <p>Paiement.</p>
+    <p>How to become pro...</p>
+    <p>First: register here :</p>
 
-    <p>Form de paiement?</p>
-    <p>Puis form d'inscription?</p> -->
-
-    <?php if (isset($error) && !empty($error)): ?>
-        <div class="flash-warning">
-            <p class="m-0"><?= $error; unset($error); ?></p>
-        </div>
-    <?php endif; ?>
-
-    <?= $registerForm; ?>
+    <a role="link" class="link-menu" href="users/register">Register</a>
 
 </section>
