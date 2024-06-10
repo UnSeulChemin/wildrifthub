@@ -62,9 +62,11 @@
         </article>
 
         <article>
-            <?php if ($sessionPro): ?>
             <h5>Pro tips for <span class="active"><?= ucfirst($champion->name) ?></span></h5>
-            <p>u need to be pro.. click here (grissé?)</p>
+            <?php if ($sessionPro): ?>
+                <p><?= nl2br($champion->pro) ?></p>
+            <?php else: ?>
+                <p>u need to be pro.. click here (grissé?)</p>
             <?php endif; ?>
         </article>
 
