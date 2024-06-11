@@ -42,9 +42,9 @@ class UsersController extends Controller
                             $user->setSession();
                             header("Location: ./"); exit;
                         endif;
-                    else: $error = self::error(3); endif;
-                else: $error = self::error(2); endif;
-            else: $error = self::error(1); endif;
+                    else: $error = self::errorMessage(3); endif;
+                else: $error = self::errorMessage(2); endif;
+            else: $error = self::errorMessage(1); endif;
         endif;
 
         $form = self::registerForm($email, $password);
@@ -71,8 +71,8 @@ class UsersController extends Controller
                 if (password_verify($password, $user->getPassword())):
                     $user->setSession();
                     header("Location: ./"); exit;
-                else: $error = self::error(4); endif; 
-            else: $error = self::error(4); endif;
+                else: $error = self::errorMessage(4); endif; 
+            else: $error = self::errorMessage(4); endif;
         endif;
 
         $form = self::loginForm($email, $password);
@@ -82,10 +82,20 @@ class UsersController extends Controller
     }
 
     /**
-     * self::registerForm
+     * route /users/logout
+     * @return void
+     */
+    public function logout(): void
+    {
+        unset($_SESSION['user']);
+        header('Location: '.Functions::pathRedirect().'./'); exit;
+    }
+
+    /**
+     * self registerForm
      * @param $email
      * @param $password
-     * @return void
+     * @return Form
      */
     public static function registerForm($email = null, $password = null): Form
     {
@@ -107,10 +117,10 @@ class UsersController extends Controller
     }
 
     /**
-     * route /users self::loginForm
+     * self loginForm
      * @param $email
      * @param $password
-     * @return void
+     * @return Form
      */
     public static function loginForm($email = null, $password = null): Form
     {
@@ -132,17 +142,13 @@ class UsersController extends Controller
     }
 
     /**
-     * error
-     * 1: Incorrect email format
-     * 2: Email already taken
-     * 3: Password not enough strong
-     * 4: Email and / or password is incorrect
-     * @param $error
-     * @return void
+     * self errorMessage
+     * @param integer $number
+     * @return string|null
      */
-    public function error($error)
+    public function errorMessage(int $number): ?string
     {
-        switch ($error)
+        switch ($number)
         {
             case 1: return 'Incorrect email format.'; break;
             case 2: return 'Email already taken.'; break;
@@ -150,12 +156,5 @@ class UsersController extends Controller
             case 4: return 'Email and / or password is incorrect.'; break;
         }
         return null;
-    }
-
-    public function logout()
-    {
-        unset($_SESSION['user']);
-        header('Location: '.Functions::pathRedirect().'./');
-        exit;
     }
 }
