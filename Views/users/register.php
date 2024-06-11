@@ -15,4 +15,8 @@
 
     <?= $registerForm; ?>
 
+    <div class="m-t-30">
+        <a class="link-back" href="javascript:history.go(-1)">Back</a>
+    </div>
+
 </section>
