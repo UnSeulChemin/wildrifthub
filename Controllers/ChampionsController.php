@@ -10,24 +10,23 @@ class ChampionsController extends Controller
      * route /champions
      * @return void
      */
-    public function index()
+    public function index(): void
     {
         $championModel = new ChampionModel;
 
         $champions = $championModel->findAllOrderBy('name ASC');
         $championsLatest = $championModel->findAllOrderByLimit('id DESC', 2);
-        $pathRedirect = Functions::pathRedirect();
 
         $this->title = 'WildRift Hub | Champions';
-        $this->render('champions/index', ["champions" => $champions, "championsLatest" =>  $championsLatest, "pathRedirect" => $pathRedirect]);
+        $this->render('champions/index', ["champions" => $champions, "championsLatest" =>  $championsLatest]);
     }
 
     /**
      * route /champions/champion/{string}
-     * @param $name
+     * @param string|null $name
      * @return void
      */
-    public function champion($name = null)
+    public function champion(string $name = null): void
     {
         Functions::checkerParamHero($name);
 
@@ -39,6 +38,7 @@ class ChampionsController extends Controller
         $pathRedirect = Functions::pathRedirect();
 
         $this->title = 'WildRift Hub | '.ucfirst($champion->name);
-        $this->render('champions/champion', ["champion" => $champion, "championDifficulty" => $championDifficulty, "sessionPro" => $sessionPro, "pathRedirect" => $pathRedirect]);
+        $this->render('champions/champion', ["champion" => $champion, "championDifficulty" => $championDifficulty,
+            "sessionPro" => $sessionPro, "pathRedirect" => $pathRedirect]);
     }
 }

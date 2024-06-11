@@ -3,7 +3,7 @@
         <div class="flex-left-center-gap-50 m-t-15">
             <?php foreach($championsLatest as $image): ?>
                 <div>
-                    <a class="link-card" href="<?= $pathRedirect; ?>champions/champion/<?= $image->name ?>"><?= ucfirst($image->name) ?></a>
+                    <a class="link-card" href="champions/champion/<?= $image->name ?>"><?= ucfirst($image->name) ?></a>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -15,12 +15,12 @@
         <?php foreach($champions as $image): ?>
             <div class="div-card">
                <figure class="figure-image">
-                    <a role="link" class="flex" href="<?= $pathRedirect; ?>champions/champion/<?= $image->name ?>">
-                        <img alt="<?= $image->name?>" src="<?= $pathRedirect; ?>public/images/champions/thumbnail/<?= $image->thumbnail.".".$image->extension ?>">
+                    <a role="link" class="flex" href="champions/champion/<?= $image->name ?>">
+                        <img alt="<?= $image->name?>" src="public/images/champions/thumbnail/<?= $image->thumbnail.".".$image->extension ?>">
                     </a>
                </figure>
                <div class="flex-column-center-center">
-                    <a class="link-card" href="<?= $pathRedirect; ?>champions/champion/<?= $image->name ?>"><?= ucfirst($image->name) ?></a>
+                    <a class="link-card" href="champions/champion/<?= $image->name ?>"><?= ucfirst($image->name) ?></a>
                </div>
            </div>
         <?php endforeach; ?>
