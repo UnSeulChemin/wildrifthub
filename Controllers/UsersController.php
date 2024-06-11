@@ -93,8 +93,8 @@ class UsersController extends Controller
 
     /**
      * self registerForm
-     * @param $email
-     * @param $password
+     * @param string|null $email
+     * @param string|null $password
      * @return Form
      */
     public static function registerForm(string $email = null, string $password = null): Form
@@ -118,8 +118,8 @@ class UsersController extends Controller
 
     /**
      * self loginForm
-     * @param $email
-     * @param $password
+     * @param string|null $email
+     * @param string|null $password
      * @return Form
      */
     public static function loginForm(string $email = null, string $password = null): Form
@@ -143,8 +143,8 @@ class UsersController extends Controller
 
     /**
      * self errorMessage
-     * @param integer $number
-     * @return string|null
+     * @param integer|null $number
+     * @return string
      */
     public function errorMessage(int $number = null): string
     {
