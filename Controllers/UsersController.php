@@ -95,7 +95,7 @@ class UsersController extends Controller
      */
     public function logout(): void
     {
-        if (Functions::sessionUser()):
+        if (Functions::checkerSessionUser()):
 
             unset($_SESSION['user']);
             header('Location: '.Functions::pathRedirect().'./'); exit;

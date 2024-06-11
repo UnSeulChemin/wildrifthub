@@ -3,7 +3,7 @@ namespace App\Core;
 
 use App\Core\Trait\AllChampionsNameTrait;
 use App\Core\Trait\AllChampionsDifficultyTrait;
-use App\Core\Trait\AllPathDenied;
+use App\Core\Trait\AllPathsDenied;
 
 class Functions
 {
@@ -29,7 +29,11 @@ class Functions
         return false;
     }
 
-    public static function sessionUser(): bool
+    /**
+     * checker session user
+     * @return boolean
+     */
+    public static function checkerSessionUser(): bool
     {
         if (isset($_SESSION['user']) && !empty($_SESSION['user']['id']))
         {
@@ -38,7 +42,11 @@ class Functions
         return false;
     }
 
-    public static function sessionAdmin(): bool
+    /**
+     * checker session admin
+     * @return boolean
+     */
+    public static function checkerSessionAdmin(): bool
     {
         if (isset($_SESSION["user"]) && in_array("ROLE_ADMIN", $_SESSION["user"]["roles"]))
         {
@@ -46,6 +54,8 @@ class Functions
         }
         return false;
     }
+
+
 
     public static function sessionPro(): bool
     {

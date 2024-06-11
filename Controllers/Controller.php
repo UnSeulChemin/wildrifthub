@@ -21,8 +21,8 @@ abstract class Controller
         ob_start();
         require_once(ROOT.'/Views/'.$file.'.php');
         $title = $this->title;
-        $sessionUser = Functions::sessionUser();
-        $sessionAdmin = Functions::sessionAdmin();
+        $sessionUser = Functions::checkerSessionUser();
+        $sessionAdmin = Functions::checkerSessionAdmin();
         $sessionPro = Functions::sessionPro();
         $pathRedirect = Functions::pathRedirect();
         $content = ob_get_clean();
