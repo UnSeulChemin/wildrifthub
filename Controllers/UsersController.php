@@ -44,9 +44,9 @@ class UsersController extends Controller
                                 $user->setSession();
                                 header("Location: ./"); exit;
                             endif;
-                        else: $error = self::errorMessage(3); endif;
-                    else: $error = self::errorMessage(2); endif;
-                else: $error = self::errorMessage(1); endif;
+                        else: $error = Functions::errorMessage(3); endif;
+                    else: $error = Functions::errorMessage(2); endif;
+                else: $error = Functions::errorMessage(1); endif;
             endif;
 
         else: header('Location: '.Functions::pathRedirect().'./'); exit; endif;
@@ -77,8 +77,8 @@ class UsersController extends Controller
                     if (password_verify($password, $user->getPassword())):
                         $user->setSession();
                         header("Location: ./"); exit;
-                    else: $error = self::errorMessage(4); endif; 
-                else: $error = self::errorMessage(4); endif;
+                    else: $error = Functions::errorMessage(4); endif; 
+                else: $error = Functions::errorMessage(4); endif;
             endif;
 
         else: header('Location: '.Functions::pathRedirect().'./'); exit; endif;   
@@ -151,23 +151,5 @@ class UsersController extends Controller
             ->addButton('Login', ['type' => 'submit', 'class' => 'link-submit', 'role' => 'button'])
             ->endForm();
         return $form;
-    }
-
-    /**
-     * self errorMessage
-     * @param integer|null $number
-     * @return string
-     */
-    public function errorMessage(int $number = null): string
-    {
-        Functions::pathDenied();
-
-        switch ($number)
-        {
-            case 1: return 'Incorrect email format.'; break;
-            case 2: return 'Email already taken.'; break;
-            case 3: return 'Password not enough strong.'; break;
-            case 4: return 'Email and / or password is incorrect.'; break;
-        }
     }
 }

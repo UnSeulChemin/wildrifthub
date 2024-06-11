@@ -70,6 +70,22 @@ class Functions
     }
 
     /**
+     * self errorMessage
+     * @param integer|null $number
+     * @return string
+     */
+    public static function errorMessage(int $number = null): string
+    {
+        switch ($number)
+        {
+            case 1: return 'Incorrect email format.'; break;
+            case 2: return 'Email already taken.'; break;
+            case 3: return 'Password not enough strong.'; break;
+            case 4: return 'Email and / or password is incorrect.'; break;
+        }
+    }
+
+    /**
      * check difficulty value
      * @param $difficulty
      * @return string|null
