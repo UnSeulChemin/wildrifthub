@@ -63,7 +63,7 @@ class Functions
      * @param $value
      * @return boolean
      */
-    public static function checkerParamHero($value): bool
+    public static function checkerChampion($value): bool
     {
         if (!in_array($value, self::ALL_HEROS) || !is_string($value) || !isset($value) || empty($value)) { self::redirectCurrentPage(); }
         return true;

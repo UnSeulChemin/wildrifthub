@@ -13,7 +13,6 @@ class ChampionsController extends Controller
     public function index(): void
     {
         $championModel = new ChampionModel;
-
         $champions = $championModel->findAllOrderBy('name ASC');
         $championsLatest = $championModel->findAllOrderByLimit('id DESC', 2);
 
@@ -23,16 +22,15 @@ class ChampionsController extends Controller
 
     /**
      * route /champions/champion/{string}
-     * @param string|null $name
+     * @param string|null $champion
      * @return void
      */
-    public function champion(string $name = null): void
+    public function champion(string $champion = null): void
     {
-        Functions::checkerParamHero($name);
+        Functions::checkerChampion($champion);
 
         $championModel = new ChampionModel;
-
-        $champion = $championModel->findName($name);
+        $champion = $championModel->findName($champion);
         $championDifficulty = Functions::checkerDifficulty($champion->difficulty);
         $sessionPro = Functions::sessionPro();
         $pathRedirect = Functions::pathRedirect();
