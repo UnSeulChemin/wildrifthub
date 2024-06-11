@@ -97,7 +97,7 @@ class UsersController extends Controller
      * @param $password
      * @return Form
      */
-    public static function registerForm($email = null, $password = null): Form
+    public static function registerForm(string $email = null, string $password = null): Form
     {
         Functions::pathDenied();
 
@@ -122,7 +122,7 @@ class UsersController extends Controller
      * @param $password
      * @return Form
      */
-    public static function loginForm($email = null, $password = null): Form
+    public static function loginForm(string $email = null, string $password = null): Form
     {
         Functions::pathDenied();
 
@@ -146,8 +146,10 @@ class UsersController extends Controller
      * @param integer $number
      * @return string|null
      */
-    public function errorMessage(int $number): ?string
+    public function errorMessage(int $number = null): ?string
     {
+        Functions::pathDenied();
+
         switch ($number)
         {
             case 1: return 'Incorrect email format.'; break;
