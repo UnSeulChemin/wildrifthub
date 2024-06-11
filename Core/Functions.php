@@ -13,10 +13,14 @@ class Functions
     /* containt all champions difficulty */
     use AllChampionsDifficultyTrait;
 
-    /* containt all path denied */
-    use AllPathDenied;
+    /* containt all paths denied */
+    use AllPathsDenied;
 
-    public static function sessionEmpty(): bool
+    /**
+     * checker session empty
+     * @return boolean
+     */
+    public static function checkerSessionEmpty(): bool
     {
         if (!isset($_SESSION['user']) && empty($_SESSION['user']['id']))
         {

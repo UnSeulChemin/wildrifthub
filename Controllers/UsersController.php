@@ -23,7 +23,7 @@ class UsersController extends Controller
      */
     public function register(): void
     {
-        if (Functions::sessionEmpty()):
+        if (Functions::checkerSessionEmpty()):
 
             $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
             $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
@@ -63,7 +63,7 @@ class UsersController extends Controller
      */
     public function login(): void
     {
-        if (Functions::sessionEmpty()):
+        if (Functions::checkerSessionEmpty()):
 
             $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
             $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';

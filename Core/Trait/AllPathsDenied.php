@@ -1,7 +1,7 @@
 <?php
 namespace App\Core\Trait;
 
-Trait AllPathDenied
+Trait AllPathsDenied
 {
     /**
      * all denied path
