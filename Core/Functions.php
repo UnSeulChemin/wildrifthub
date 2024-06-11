@@ -1,25 +1,19 @@
 <?php
 namespace App\Core;
 
-use App\Core\Trait\AllHerosTrait;
-use App\Core\Trait\AllDifficultyTrait;
+use App\Core\Trait\AllChampionsNameTrait;
+use App\Core\Trait\AllChampionsDifficultyTrait;
 use App\Core\Trait\AllDeniedPath;
 
 class Functions
 {
-    /**
-     * containt all heros name
-     */
-    use AllHerosTrait;
+    /* containt all champions name */
+    use AllChampionsNameTrait;
 
-    /**
-     * containt all difficulty value
-     */
-    use AllDifficultyTrait;
+    /* containt all champions difficulty */
+    use AllChampionsDifficultyTrait;
 
-    /**
-     * containt all denied path
-     */
+    /* containt all denied path */
     use AllDeniedPath;
 
     public static function sessionEmpty(): bool

@@ -1,7 +1,7 @@
 <?php
 namespace App\Core\Trait;
 
-Trait AllDifficultyTrait
+Trait AllChampionsDifficultyTrait
 {
     /**
      * all difficulty value

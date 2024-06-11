@@ -1,7 +1,7 @@
 <?php
 namespace App\Core\Trait;
 
-Trait AllHerosTrait
+Trait AllChampionsNameTrait
 {
     /**
      * all heros name to verificate param {hero}
