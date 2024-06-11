@@ -3,7 +3,7 @@ namespace App\Core;
 
 use App\Core\Trait\AllChampionsNameTrait;
 use App\Core\Trait\AllChampionsDifficultyTrait;
-use App\Core\Trait\AllDeniedPath;
+use App\Core\Trait\AllPathDenied;
 
 class Functions
 {
@@ -13,8 +13,8 @@ class Functions
     /* containt all champions difficulty */
     use AllChampionsDifficultyTrait;
 
-    /* containt all denied path */
-    use AllDeniedPath;
+    /* containt all path denied */
+    use AllPathDenied;
 
     public static function sessionEmpty(): bool
     {
