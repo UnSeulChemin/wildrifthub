@@ -146,7 +146,7 @@ class UsersController extends Controller
      * @param integer $number
      * @return string|null
      */
-    public function errorMessage(int $number = null): ?string
+    public function errorMessage(int $number = null): string
     {
         Functions::pathDenied();
 
@@ -157,6 +157,5 @@ class UsersController extends Controller
             case 3: return 'Password not enough strong.'; break;
             case 4: return 'Email and / or password is incorrect.'; break;
         }
-        return null;
     }
 }
