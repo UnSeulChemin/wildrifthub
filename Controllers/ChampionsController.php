@@ -21,7 +21,7 @@ class ChampionsController extends Controller
     }
 
     /**
-     * route /champions/champion/{string}
+     * route /champions/champion/{champion}
      * @param string|null $champion
      * @return void
      */
