@@ -32,7 +32,8 @@ class Functions
      */
     public static function checkerSessionUser(): bool
     {
-        if (isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) { return true; } return false;
+        if (isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) { return true; }
+        return false;
     }
 
     /**
@@ -57,7 +58,7 @@ class Functions
 
     /**
      * checker champion
-     * @param $value
+     * @param string|null $champion
      * @return boolean
      */
     public static function checkerChampion(string $champion = null): bool
@@ -67,12 +68,14 @@ class Functions
     }
 
     /**
-     * self errorMessage
+     * 1: Incorrect email format. 2: Email already taken. 3: Password not enough strong. 4: Email and / or password is incorrect.
      * @param integer|null $number
-     * @return string
+     * @return string|boolean
      */
-    public static function errorMessage(int $number = null): string
+    public static function errorMessage(int $number = null): string|bool
     {
+        if (!isset($number) || empty($number) || !is_int($number)) { return false; }
+
         switch ($number)
         {
             case 1: return 'Incorrect email format.'; break;
