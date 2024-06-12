@@ -4,14 +4,18 @@ namespace App\Models;
 class UserModel extends Model
 {
     /* id key primary */
-    protected $id;
+    protected int $id;
 
-    protected $email;
-    protected $password;
+    /* user email */
+    protected string $email;
 
-    /* Champion Pro tips */
-    protected $pro;
+    /* user password */
+    protected string $password;
 
+    /* user pro status */
+    protected string $pro;
+
+    /* user roles */
     protected $roles;
 
     public function __construct()

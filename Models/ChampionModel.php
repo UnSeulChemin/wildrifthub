@@ -8,31 +8,31 @@ class ChampionModel extends Model
     use CreatedAtTrait;
 
     /* id key primary */
-    protected $id;
+    protected int $id;
 
     /* image thumbnail */
-    protected $thumbnail;
+    protected string $thumbnail;
 
     /* image splash-art */
-    protected $splashart;
+    protected string $splashart;
 
     /* image extension */
-    protected $extension;
+    protected string $extension;
 
     /* champion name */
-    protected $name;
+    protected string $name;
 
     /* champion role */
-    protected $role;
+    protected string $role;
 
     /* champion difficulty */
-    protected $difficulty;
+    protected string $difficulty;
 
-    /* champion Free tips */
-    protected $free;
+    /* champion free content */
+    protected string $free;
 
-    /* champion Pro tips */
-    protected $pro;
+    /* champion pro content */
+    protected string $pro;
 
     public function __construct()
     {
