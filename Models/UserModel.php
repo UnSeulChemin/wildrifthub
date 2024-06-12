@@ -3,7 +3,9 @@ namespace App\Models;
 
 class UserModel extends Model
 {
+    /* id key primary */
     protected $id;
+
     protected $email;
     protected $password;
 
