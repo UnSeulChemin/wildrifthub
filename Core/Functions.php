@@ -68,6 +68,25 @@ class Functions
     }
 
     /**
+     * checker difficulty
+     * @param string|null $difficulty
+     * @return string|null
+     */
+    public static function checkerDifficulty(string $difficulty = null): string|null
+    {
+        if (!in_array($difficulty, self::ALL_DIFFICULTY) || !is_string($difficulty)) { return null; }
+
+        switch ($difficulty)
+        {
+            case 1: return '../../public/images/tools/star/evaluation1.png'; break;
+            case 2: return "../../public/images/tools/star/evaluation2.png"; break;
+            case 3: return "../../public/images/tools/star/evaluation3.png"; break;
+            case 4: return "../../public/images/tools/star/evaluation4.png"; break;
+            case 5: return "../../public/images/tools/star/evaluation5.png"; break;
+        }   
+    }
+
+    /**
      * 1: Incorrect email format. 2: Email already taken. 3: Password not enough strong. 4: Email and / or password is incorrect.
      * @param integer|null $number
      * @return string|boolean
@@ -86,27 +105,6 @@ class Functions
     }
 
     /**
-     * check difficulty value
-     * @param $difficulty
-     * @return string|null
-     */
-    public static function checkerDifficulty($difficulty): string|null
-    {
-        if (in_array($difficulty, self::ALL_DIFFICULTY) && is_string($difficulty))
-        {
-            switch ($difficulty)
-            {
-                case 1: return '../../public/images/tools/star/evaluation1.png'; break;
-                case 2: return "../../public/images/tools/star/evaluation2.png"; break;
-                case 3: return "../../public/images/tools/star/evaluation3.png"; break;
-                case 4: return "../../public/images/tools/star/evaluation4.png"; break;
-                case 5: return "../../public/images/tools/star/evaluation5.png"; break;
-            }   
-        }
-        return null;
-    }
-
-    /**
      * path denied
      * @return boolean
      */
@@ -117,7 +115,7 @@ class Functions
     }
 
     /**
-     * view only `../` `../../`
+     * `../` `../../`
      * @return string|null
      */
     public static function pathRedirect(): string|null
@@ -134,7 +132,7 @@ class Functions
     }
 
     /**
-     * self only `../`
+     * `../`
      * @return void
      */
     private static function redirect(): void
@@ -143,7 +141,7 @@ class Functions
     }
 
     /**
-     * self only `./`
+     * `./`
      * @return void
      */
     private static function redirectCurrentPage(): void
