@@ -3,10 +3,8 @@ namespace App\Core\Trait;
 
 Trait AllChampionsNameTrait
 {
-    /**
-     * all heros name to verificate param {hero}
-     */
-    private const ALL_HEROS =
+    /* all champions name */
+    private const ALL_CHAMPIONS_NAME =
     ['aatrox', 'ahri', 'akali', 'akshan', 'alistar', 'amumu', 'annie', 'ashe', 'aurelionsol', 'blitzcrank',
         'brand', 'braum', 'caitlyn', 'camille', 'corki', 'darius', 'diana', 'draven', 'drmundo', 'ekko',
         'evelynn', 'ezreal', 'fiddlesticks', 'fiora', 'fizz', 'galio', 'garen', 'gragas', 'graves', 'gwen',

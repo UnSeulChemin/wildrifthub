@@ -63,7 +63,7 @@ class Functions
      */
     public static function checkerChampion(string $champion = null): bool
     {
-        if (!in_array($champion, self::ALL_HEROS) || !is_string($champion) || !isset($champion) || empty($champion)) { self::redirectCurrentPage(); }
+        if (!in_array($champion, self::ALL_CHAMPIONS_NAME) || !is_string($champion) || !isset($champion) || empty($champion)) { self::redirectCurrentPage(); }
         return true;
     }
 
@@ -74,7 +74,7 @@ class Functions
      */
     public static function checkerDifficulty(string $difficulty = null): string|null
     {
-        if (!in_array($difficulty, self::ALL_DIFFICULTY) || !is_string($difficulty)) { return null; }
+        if (!in_array($difficulty, self::ALL_CHAMPIONS_DIFFICULTY) || !is_string($difficulty)) { return null; }
 
         switch ($difficulty)
         {
@@ -110,7 +110,7 @@ class Functions
      */
     public static function pathDenied(): bool
     {
-        if (in_array(basename($_GET['p']), self::ALL_DENIED_PATH)) { self::redirectCurrentPage(); }
+        if (in_array(basename($_GET['p']), self::ALL_PATHS_DENIED)) { self::redirectCurrentPage(); }
         return true;
     }
 
