@@ -22,10 +22,7 @@ class Functions
      */
     public static function checkerSessionEmpty(): bool
     {
-        if (!isset($_SESSION['user']) && empty($_SESSION['user']['id']))
-        {
-            return true;
-        }
+        if (!isset($_SESSION['user']) && empty($_SESSION['user']['id'])) { return true; }
         return false;
     }
 
@@ -35,11 +32,7 @@ class Functions
      */
     public static function checkerSessionUser(): bool
     {
-        if (isset($_SESSION['user']) && !empty($_SESSION['user']['id']))
-        {
-            return true;
-        }
-        return false;
+        if (isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) { return true; } return false;
     }
 
     /**
@@ -48,10 +41,7 @@ class Functions
      */
     public static function checkerSessionAdmin(): bool
     {
-        if (isset($_SESSION["user"]) && !empty($_SESSION['user']['id']) && in_array("ROLE_ADMIN", $_SESSION["user"]["roles"]))
-        {
-            return true;
-        }
+        if (isset($_SESSION["user"]) && !empty($_SESSION['user']['id']) && in_array("ROLE_ADMIN", $_SESSION["user"]["roles"])) { return true; }
         return false;
     }
 
@@ -61,23 +51,18 @@ class Functions
      */
     public static function checkerSessionPro(): bool
     {
-        if (isset($_SESSION["user"]) && !empty($_SESSION['user']['id']) && str_contains("Y", $_SESSION["user"]["pro"]))
-        {
-            return true;
-        }
+        if (isset($_SESSION["user"]) && !empty($_SESSION['user']['id']) && str_contains("Y", $_SESSION["user"]["pro"])) { return true; }
         return false;
     }
 
-
-
     /**
-     * check param hero exist
+     * checker champion
      * @param $value
      * @return boolean
      */
-    public static function checkerChampion($value): bool
+    public static function checkerChampion(string $champion = null): bool
     {
-        if (!in_array($value, self::ALL_HEROS) || !is_string($value) || !isset($value) || empty($value)) { self::redirectCurrentPage(); }
+        if (!in_array($champion, self::ALL_HEROS) || !is_string($champion) || !isset($champion) || empty($champion)) { self::redirectCurrentPage(); }
         return true;
     }
 
