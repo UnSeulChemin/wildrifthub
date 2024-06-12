@@ -48,23 +48,27 @@ class Functions
      */
     public static function checkerSessionAdmin(): bool
     {
-        if (isset($_SESSION["user"]) && in_array("ROLE_ADMIN", $_SESSION["user"]["roles"]))
+        if (isset($_SESSION["user"]) && !empty($_SESSION['user']['id']) && in_array("ROLE_ADMIN", $_SESSION["user"]["roles"]))
         {
             return true;
         }
         return false;
     }
 
-
-
-    public static function sessionPro(): bool
+    /**
+     * checker session pro
+     * @return boolean
+     */
+    public static function checkerSessionPro(): bool
     {
-        if (isset($_SESSION["user"]) && str_contains("Y", $_SESSION["user"]["pro"]))
+        if (isset($_SESSION["user"]) && !empty($_SESSION['user']['id']) && str_contains("Y", $_SESSION["user"]["pro"]))
         {
             return true;
         }
         return false;
     }
+
+
 
     /**
      * check param hero exist

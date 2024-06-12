@@ -16,7 +16,11 @@
         </ul>
 
         <ul role="list" class="flex-gap-20">
-            <li role="listitem"><a role="link" class="<?= $activePro ?>link-menu" href="<?= $pathRedirect; ?>users">Become Pro</a></li>
+            <?php if ($sessionPro): ?>
+                <li role="listitem"><a role="link" class="<?= $activePro ?>link-menu" href="<?= $pathRedirect; ?>users">Pro</a></li>
+            <?php else: ?>
+                <li role="listitem"><a role="link" class="<?= $activePro ?>link-menu" href="<?= $pathRedirect; ?>users">Become Pro</a></li>
+            <?php endif; ?>
             <?php if ($sessionUser): ?>
                 <li role="listitem"><a role="link" class="link-menu" href="<?= $pathRedirect; ?>users/logout">Logout</a></li>
             <?php else: ?>
