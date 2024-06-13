@@ -5,6 +5,7 @@ use App\Models\Trait\CreatedAtTrait;
 
 class ChampionModel extends Model
 {
+    /* creted_at trait */
     use CreatedAtTrait;
 
     /* id key primary */

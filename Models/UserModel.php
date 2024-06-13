@@ -1,8 +1,13 @@
 <?php
 namespace App\Models;
 
+use App\Models\Trait\CreatedAtTrait;
+
 class UserModel extends Model
 {
+    /* creted_at trait */
+    use CreatedAtTrait;
+
     /* id key primary */
     protected int $id;
 
