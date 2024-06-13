@@ -1,5 +1,5 @@
 <section class="section-news m-t-30">
-        <h5>Latest heros add</h5>
+        <h2>Latest champions</h2>
         <div class="flex-left-center-gap-50 m-t-15">
             <?php foreach($championsLatest as $image): ?>
                 <div>

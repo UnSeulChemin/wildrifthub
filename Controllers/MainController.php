@@ -9,6 +9,6 @@ class MainController extends Controller
      */    
     public function index(): void
     {
-        $this->render('main/index');
+        $this->render('hub/index');
     }
 }
