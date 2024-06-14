@@ -8,6 +8,7 @@
 	<link rel="shortcut icon" type="image/png" href="<?= $pathRedirect; ?>public/images/favicon/favicon.png">
 	<link rel="stylesheet" type="text/css" href="<?= $pathRedirect; ?>public/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="<?= $pathRedirect; ?>public/css/app.css">
+    <script src="https://kit.fontawesome.com/118716b668.js" crossorigin="anonymous"></script>
 </head>
 <body>
 

@@ -73,7 +73,7 @@
     </section>
 
     <div class="m-t-30">
-        <a class="link-back" href="javascript:history.go(-1)">Back</a>
+        <a class="link-section" href="javascript:history.go(-1)">Back</a>
     </div>
 
 </section>
