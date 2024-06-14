@@ -1,6 +1,6 @@
 <section class="section-content">
 
-    <section class="section-card-name-head flex-around-center">
+    <section class="section-card-head flex-around-center">
 
         <div>
             <h3><?= ucfirst($champion->name) ?></h3>
@@ -18,7 +18,7 @@
 
     </section>
 
-    <section class="section-card-name-image m-t-50">
+    <section class="section-card-image m-t-50">
 
         <figure class="figure-card-id">
             <img alt="<?= $champion->name ?>"
@@ -27,7 +27,7 @@
 
     </section>
 
-    <section class="section-card-name-recommended flex-around-center m-t-50">
+    <section class="section-card-recommended flex-around-center m-t-50">
 
             <article class="flex-gap-50">
 
@@ -54,7 +54,7 @@
 
     </section>
 
-    <section class="section-card-name-content m-t-50">
+    <section class="section-card-content m-t-50">
 
         <article>
             <h5>Basic tips for <span class="active"><?= ucfirst($champion->name) ?></span></h5>

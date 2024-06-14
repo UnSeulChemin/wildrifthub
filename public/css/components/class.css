@@ -15,8 +15,8 @@
     padding: 25px;
 }
 
-/* Section Name */
-.section-card-name-head
+/* Section Card */
+.section-card-head
 {
     width: 80%;
     background-color: var(--background-color-header);
@@ -27,19 +27,21 @@
     border-radius: 0 0 5px 5px; 
 }
 
-.section-card-name-image
+.section-card-image
 {
     width: 80%;
 
     margin: auto;
 }
 
-.section-card-name-recommended
+.section-card-recommended
 {
-    border: 1px solid #000;
+    background-color: var(--background-color-content);
+
+    padding: 20px;
 }
 
-.section-card-name-content
+.section-card-content
 {
     background-color: var(--background-color-content);
 
@@ -81,10 +83,10 @@
 
 .link-submit
 {
-    cursor: pointer;
     width: 250px;
     font-size: 1.1em;
     font-family: var(--font-family);
+    cursor: pointer;
     color: var(--color-link);
     background-color: var(--background-color-header);
 
@@ -101,9 +103,10 @@
 
 .link-back
 {
-    width: 180px;
+    width: 175px;
     color: var(--color-link);
     background-color: var(--background-color-header);
+    box-sizing: border-box;
 
     padding: 8px;
     border-radius: 5px; 
@@ -123,8 +126,6 @@
 
 .figure-image:hover
 {
-    box-sizing: border-box;
-
     border: 3px solid var(--background-color-header);
 
     animation: bounce 1s;
