@@ -1,10 +1,15 @@
 <section class="section-content">
 
-    <p>How to become pro...</p>
-    <p>First: register here :</p>
-    <p>then login</p>
-    <a role="link" class="link-menu" href="users/register">Register</a>
+    <p>Register an account first here</p>
 
-    <p>or if u have an acc</p>
-    <a role="link" class="link-menu" href="users/login">Login</a>
+    <div class="m-t-20">
+        <a role="link" class="link-section" href="users/register">Register</a>
+    </div>
+
+    <p>if u already have an account login here</p>
+
+    <div class="m-t-20">
+        <a role="link" class="link-section" href="users/login">Login</a>
+    </div>
+
 </section>
