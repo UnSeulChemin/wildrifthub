@@ -1,12 +1,15 @@
-<section class="section-news m-t-30">
+<section class="section-latest m-t-30">
+
         <h2>Latest champions</h2>
-        <div class="flex-left-center-gap-50 m-t-15">
+
+        <div class="flex-left-center-gap-50 m-t-20">
             <?php foreach($championsLatest as $image): ?>
                 <div>
                     <a class="link-card" href="champions/champion/<?= $image->name ?>"><?= ucfirst($image->name) ?></a>
                 </div>
             <?php endforeach; ?>
         </div>
+
 </section>
 
 <section class="section-content">
