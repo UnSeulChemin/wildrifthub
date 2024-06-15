@@ -79,10 +79,40 @@ class Model extends Database
      * @param integer $limit
      * @return void
      */
-    public function findAllOrderByLimit(string $orderBy, int $limit)
+    public function findAllOrderByLimit(string $orderBy, int $limit): array
     {
         $query = $this->requete("SELECT * FROM {$this->table} ORDER BY $orderBy LIMIT $limit");
         return $query->fetchAll();
+    }
+
+    /**
+     * model->findAllPaginate('id DESC', 8, 1);
+     * @param string $orderBy
+     * @param integer $eachPerPage
+     * @param integer $getId
+     * @return array
+     */
+    public function findAllPaginate(string $orderBy, int $eachPerPage, int $getId): array
+    {
+        $start = ($getId -1) * $eachPerPage;
+    
+        $query = $this->requete("SELECT * FROM {$this->table} ORDER BY $orderBy LIMIT " . $start . ", " . $eachPerPage);
+        return $query->fetchAll();
+    }
+
+    /**
+     * model->countPaginate(8)
+     * @param integer $eachPerPage
+     * @return integer
+     */
+    public function countPaginate(int $eachPerPage): int
+    {
+        $query = $this->requete("SELECT COUNT(*) AS `count` FROM {$this->table}");
+
+        if ($query->rowCount() > 0) { $countTotal = $query->fetch(); }
+
+        $counts = ceil($countTotal->count / $eachPerPage);
+        return $counts;
     }
 
     /**

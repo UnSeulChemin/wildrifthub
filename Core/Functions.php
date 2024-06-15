@@ -57,6 +57,28 @@ class Functions
     }
 
     /**
+     * checker int
+     * @param $value
+     * @return boolean
+     */
+    public static function checkerInt($value): bool
+    {
+        if (!is_numeric($value) || !isset($value) || empty($value)) { self::redirectCurrentPage(); }
+        return true;
+    }
+
+    /**
+     * checker count
+     * @param integer $value
+     * @return boolean
+     */
+    public static function checkerCount($value): bool
+    {
+        if (basename($_GET['p']) > $value) { self::redirect(); }
+        return true;
+    }
+
+    /**
      * checker champion
      * @param string|null $champion
      * @return boolean

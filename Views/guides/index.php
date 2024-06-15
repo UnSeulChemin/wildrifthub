@@ -1,7 +1,7 @@
 <section class="section-content">
 
     <div class="flex-center-center m-t-20">
-        <?php foreach($guides as $image): ?>
+        <?php foreach($guide as $image): ?>
             <div>
                 <p><?= $image->name ?></p>
             </div>
