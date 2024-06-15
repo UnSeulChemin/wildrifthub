@@ -1,6 +1,8 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\GuideModel;
+
 class GuidesController extends Controller
 {
     /**
@@ -9,7 +11,11 @@ class GuidesController extends Controller
      */
     public function index(): void
     {
+        $guideModel = new GuideModel;
+
+        $guides = $guideModel->findAll();
+
         $this->title = 'WildRift Hub | Guides';
-        $this->render('guides/index');
+        $this->render('guides/index', ["guides" => $guides]);
     }
 }
