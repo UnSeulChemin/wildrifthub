@@ -3,7 +3,7 @@
     <h2>Latest guides</h2>
 
     <div class="flex-center-center m-t-20">
-        <?php foreach($guides as $image): ?>
+        <?php foreach($guidesLatest as $image): ?>
             <div>
                 <p><?= $image->name ?></p>
             </div>

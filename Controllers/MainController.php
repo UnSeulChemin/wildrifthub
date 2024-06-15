@@ -15,9 +15,9 @@ class MainController extends Controller
         $guideModel = new GuideModel;
         $championModel = new ChampionModel;
 
-        $guides = $guideModel->findAllOrderByLimit('id DESC', '4');
+        $guidesLatest = $guideModel->findAllOrderByLimit('id DESC', 4);
         $championsLatest = $championModel->findAllOrderByLimit('id DESC', 2);
 
-        $this->render('hub/index', ["guides" => $guides, "championsLatest" =>  $championsLatest]);
+        $this->render('hub/index', ["guidesLatest" => $guidesLatest, "championsLatest" =>  $championsLatest]);
     }
 }
