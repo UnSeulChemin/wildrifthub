@@ -17,8 +17,10 @@ class GuidesController extends Controller
         $guide = $guideModel->findAllPaginate('id ASC', 8, 1);
         $count = $guideModel->countPaginate(8);
 
+        $pathRedirect = Functions::pathRedirect();
+
         $this->title = 'WildRift Hub | Guides';
-        $this->render('guides/index', ["guide" => $guide, "count" => $count]);
+        $this->render('guides/index', ["guide" => $guide, "count" => $count, "pathRedirect" => $pathRedirect]);
     }
 
     /**
@@ -26,9 +28,9 @@ class GuidesController extends Controller
      * @param $id
      * @return void
      */
-    public function page($number = null)
+    public function page($id = null)
     {
-        Functions::checkerInt($number);
+        Functions::checkerInt($id);
 
         $guideModel = new GuideModel;
 
@@ -36,10 +38,9 @@ class GuidesController extends Controller
         $count = $guideModel->countPaginate(8);
 
         Functions::checkerCount($count);
-    
         $pathRedirect = Functions::pathRedirect();
 
-        $this->title = 'GoddessSSR | Selling | Page '.$id;
-        $this->render("selling/index", ["guide" => $guide, "count" => $count]);
+        $this->title = 'WildRift Hub | Guides | Page '.$id;
+        $this->render("guides/index", ["guide" => $guide, "count" => $count, "pathRedirect" => $pathRedirect]);
     }
 }
