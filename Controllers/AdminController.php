@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\AdminModel;
 use App\Core\Form;
 use App\Core\Functions;
 
