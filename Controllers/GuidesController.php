@@ -63,7 +63,6 @@ class GuidesController extends Controller
         $this->render("guides/index", ["guide" => $guide, "count" => $count, "pathRedirect" => $pathRedirect]);
     }
 
-
     /**
      * route /guides/all
      * @return void

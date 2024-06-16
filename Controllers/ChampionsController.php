@@ -39,4 +39,22 @@ class ChampionsController extends Controller
         $this->render('champions/champion', ["champion" => $champion, "championDifficulty" => $championDifficulty,
             "sessionPro" => $sessionPro, "pathRedirect" => $pathRedirect]);
     }
+
+    /**
+     * route /goddess/rarity/{string}
+     * @param $rarity
+     * @return void
+     */
+    public function role(string $role = null)
+    {
+        Functions::checkerRole($role);
+
+        $championModel = new ChampionModel;
+        $champion = $championModel->findBy(['role' => $role]);
+
+        $pathRedirect = Functions::pathRedirect();
+
+        $this->title = 'WildRift Hub | '. ucfirst($role);
+        $this->render("champions/role", ["champion" => $champion, "pathRedirect" => $pathRedirect]);
+    }
 }

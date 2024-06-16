@@ -2,6 +2,7 @@
 namespace App\Core;
 
 use App\Core\Trait\AllChampionsNameTrait;
+use App\Core\Trait\AllChampionsRoleTrait;
 use App\Core\Trait\AllGuidesNameTrait;
 use App\Core\Trait\AllChampionsDifficultyTrait;
 use App\Core\Trait\AllPathsBasename;
@@ -11,6 +12,9 @@ class Functions
 {
     /* containt all champions name */
     use AllChampionsNameTrait;
+
+    /* containt all champions role */
+    use AllChampionsRoleTrait;
 
     /* containt all guides name */
     use AllGuidesNameTrait;
@@ -105,6 +109,17 @@ class Functions
     public static function checkerChampion(string $champion = null): bool
     {
         if (!in_array($champion, self::ALL_CHAMPIONS_NAME) || !is_string($champion) || !isset($champion) || empty($champion)) { self::redirectCurrentPage(); }
+        return true;
+    }
+
+    /**
+     * check value rarity
+     * @param $value
+     * @return boolean
+     */
+    public static function checkerRole(string $role = null): bool
+    {
+        if (!in_array($role, self::ALL_CHAMPIONS_ROLE) || !isset($role) || empty($role)) { self::redirectCurrentPage(); }
         return true;
     }
 

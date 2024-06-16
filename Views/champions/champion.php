@@ -8,7 +8,7 @@
 
         <div>
             <h3>Role</h3>
-            <h4><?= ucfirst($champion->role) ?></h4>
+            <a href="<?= $pathRedirect; ?>champions/role/<?= $champion->role ?>"><?= ucfirst($champion->role) ?></a>
         </div>
 
         <div class="flex-center-center-gap-20">
