@@ -29,8 +29,11 @@ class AdminController extends Controller
 
         $form = self::contactForm($todo);
 
+        $adminModel = new AdminModel;
+        $admins = $adminModel->findAll();
+
         $this->title = 'WildRift Hub | Admin';
-        $this->render('admin/index', ['contactForm' => $form->create()]);
+        $this->render('admin/index', ['contactForm' => $form->create(), 'admins' => $admins]);
     }
 
     /**
