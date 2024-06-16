@@ -24,6 +24,25 @@ class GuidesController extends Controller
     }
 
     /**
+     * route /guides/guide/{guide}
+     * @param string|null $guide
+     * @return void
+     */
+    public function guide(string $guide = null): void
+    {
+        Functions::checkerGuide($guide);
+
+        $guideModel = new GuideModel;
+        $guide = $guideModel->findName($guide);
+        $pathRedirect = Functions::pathRedirect();
+
+        $guideName = strtolower($guide->name);
+
+        $this->title = 'WildRift Hub | Guides | '.ucfirst($guideName);
+        $this->render('guides/guide', ['guide' => $guide, 'pathRedirect' => $pathRedirect]);
+    }
+
+    /**
      * route /guides/page/{page}
      * @param $number
      * @return void

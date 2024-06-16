@@ -2,6 +2,7 @@
 namespace App\Core;
 
 use App\Core\Trait\AllChampionsNameTrait;
+use App\Core\Trait\AllGuidesNameTrait;
 use App\Core\Trait\AllChampionsDifficultyTrait;
 use App\Core\Trait\AllPathsDenied;
 
@@ -9,6 +10,9 @@ class Functions
 {
     /* containt all champions name */
     use AllChampionsNameTrait;
+
+    /* containt all guides name */
+    use AllGuidesNameTrait;
 
     /* containt all champions difficulty */
     use AllChampionsDifficultyTrait;
@@ -77,6 +81,17 @@ class Functions
         if (basename($_GET['p']) > $value) { self::redirect(); }
         return true;
     }
+
+    /**
+     * checker guide
+     * @param string|null $guide
+     * @return boolean
+     */
+    public static function checkerGuide(string $guide = null): bool
+    {
+        if (!in_array($guide, self::ALL_GUIDES_NAME) || !is_string($guide) || !isset($guide) || empty($guide)) { self::redirectCurrentPage(); }
+        return true;
+    }    
 
     /**
      * checker champion

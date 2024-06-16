@@ -11,6 +11,12 @@ class GuideModel extends Model
     /* id key primary */
     protected int $id;
 
+    /* image thumbnail */
+    protected string $thumbnail;
+
+    /* image extension */
+    protected string $extension;
+
     /* guide name */
     protected string $name;
 
@@ -30,6 +36,28 @@ class GuideModel extends Model
     public function setId($id)
     {
         $this->id = $id;
+        return $this;
+    }
+
+    public function getThumbnail()
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail($thumbnail)
+    {
+        $this->thumbnail = $thumbnail;
+        return $this;
+    }
+
+    public function getExtension()
+    {
+        return $this->extension;
+    }
+
+    public function setExtension($extension)
+    {
+        $this->extension = $extension;
         return $this;
     }
 
