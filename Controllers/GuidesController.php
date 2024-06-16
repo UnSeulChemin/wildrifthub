@@ -25,22 +25,22 @@ class GuidesController extends Controller
 
     /**
      * route /guides/page/{page}
-     * @param $id
+     * @param $number
      * @return void
      */
-    public function page($id = null)
+    public function page($number = null): void
     {
-        Functions::checkerInt($id);
+        Functions::checkerInt($number);
 
         $guideModel = new GuideModel;
 
-        $guide = $guideModel->findAllPaginate('id ASC', 8, $id);
+        $guide = $guideModel->findAllPaginate('id ASC', 8, $number);
         $count = $guideModel->countPaginate(8);
 
         Functions::checkerCount($count);
         $pathRedirect = Functions::pathRedirect();
 
-        $this->title = 'WildRift Hub | Guides | Page '.$id;
+        $this->title = 'WildRift Hub | Guides | Page '.$number;
         $this->render("guides/index", ["guide" => $guide, "count" => $count, "pathRedirect" => $pathRedirect]);
     }
 }
