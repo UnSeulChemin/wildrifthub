@@ -4,6 +4,7 @@ namespace App\Core;
 use App\Core\Trait\AllChampionsNameTrait;
 use App\Core\Trait\AllGuidesNameTrait;
 use App\Core\Trait\AllChampionsDifficultyTrait;
+use App\Core\Trait\AllPathsBasename;
 use App\Core\Trait\AllPathsDenied;
 
 class Functions
@@ -16,6 +17,9 @@ class Functions
 
     /* containt all champions difficulty */
     use AllChampionsDifficultyTrait;
+
+    /* containt all paths basename */
+    use AllPathsBasename;
 
     /* containt all paths denied */
     use AllPathsDenied;
@@ -121,6 +125,16 @@ class Functions
             case 4: return "../../public/images/champions/difficulty/evaluation4.png"; break;
             case 5: return "../../public/images/champions/difficulty/evaluation5.png"; break;
         }   
+    }
+
+    /**
+     * checker basename
+     * @return boolean
+     */
+    public static function checkerBasename(): bool
+    {
+        if (!in_array(basename($_GET['p']), self::ALL_PATHS_BASENAME)) { self::redirectCurrentPage(); }
+        return true;
     }
 
     /**

@@ -62,4 +62,22 @@ class GuidesController extends Controller
         $this->title = 'WildRift Hub | Guides | Page '.$number;
         $this->render("guides/index", ["guide" => $guide, "count" => $count, "pathRedirect" => $pathRedirect]);
     }
+
+
+    /**
+     * route /guides/all
+     * @return void
+     */
+    public function all(): void
+    {
+        Functions::checkerBasename();
+
+        $guideModel = new GuideModel;
+        $guides = $guideModel->findAllOrderBy('id DESC');
+
+        $pathRedirect = Functions::pathRedirect();
+
+        $this->title = 'WildRift Hub | Guides | All';
+        $this->render("guides/all", ["guides" => $guides, "pathRedirect" => $pathRedirect]);
+    }
 }
