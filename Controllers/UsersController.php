@@ -23,33 +23,33 @@ class UsersController extends Controller
      */
     public function register(): void
     {
-        if (Functions::checkerSessionEmpty()):
+        if (!Functions::checkerSessionEmpty()):
+            header('Location: '.Functions::pathRedirect().'./'); exit;
+        endif;
 
-            $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
-            $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
-            $error = '';
-            $roles = ["ROLE_USER"];
+        $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
+        $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
+        $error = '';
+        $roles = ["ROLE_USER"];
 
-            if (Form::validate($_POST, ['email', 'password'])):
-                if (Form::validateEmail($_POST, ['email'])):
-                    $userModel = new UserModel;
-                    $user = $userModel->findBy(["email" => $email]);
-                    if (!$user):
-                        if (Form::validatePassword($_POST, ['password'])):
-                            $passwordHash = password_hash(strip_tags($password), PASSWORD_ARGON2I);
-                            $userModel->setEmail($email)->setPassword($passwordHash)->setRoles($roles, "encode");
-                            if ($userModel->create()):
-                                $userArray = $userModel->findOneByEmail($email);
-                                $user = $userModel->hydrate($userArray);
-                                $user->setSession();
-                                header("Location: ./"); exit;
-                            endif;
-                        else: $error = Functions::errorMessage(3); endif;
-                    else: $error = Functions::errorMessage(2); endif;
-                else: $error = Functions::errorMessage(1); endif;
-            endif;
-
-        else: header('Location: '.Functions::pathRedirect().'./'); exit; endif;
+        if (Form::validate($_POST, ['email', 'password'])):
+            if (Form::validateEmail($_POST, ['email'])):
+                $userModel = new UserModel;
+                $user = $userModel->findBy(["email" => $email]);
+                if (!$user):
+                    if (Form::validatePassword($_POST, ['password'])):
+                        $passwordHash = password_hash(strip_tags($password), PASSWORD_ARGON2I);
+                        $userModel->setEmail($email)->setPassword($passwordHash)->setRoles($roles, "encode");
+                        if ($userModel->create()):
+                            $userArray = $userModel->findOneByEmail($email);
+                            $user = $userModel->hydrate($userArray);
+                            $user->setSession();
+                            header("Location: ./"); exit;
+                        endif;
+                    else: $error = Functions::errorMessage(3); endif;
+                else: $error = Functions::errorMessage(2); endif;
+            else: $error = Functions::errorMessage(1); endif;
+        endif;
 
         $form = self::registerForm($email, $password);
 
@@ -63,25 +63,25 @@ class UsersController extends Controller
      */
     public function login(): void
     {
-        if (Functions::checkerSessionEmpty()):
+        if (!Functions::checkerSessionEmpty()):
+            header('Location: '.Functions::pathRedirect().'./'); exit;
+        endif;
 
-            $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
-            $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
-            $error = '';
+        $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
+        $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
+        $error = '';
 
-            if (Form::validate($_POST, ['email', 'password'])):
-                $userModel = new UserModel;
-                $userArray = $userModel->findOneByEmail($email);
-                if ($userArray):
-                    $user = $userModel->hydrate($userArray);
-                    if (password_verify($password, $user->getPassword())):
-                        $user->setSession();
-                        header("Location: ./"); exit;
-                    else: $error = Functions::errorMessage(4); endif; 
-                else: $error = Functions::errorMessage(4); endif;
-            endif;
-
-        else: header('Location: '.Functions::pathRedirect().'./'); exit; endif;   
+        if (Form::validate($_POST, ['email', 'password'])):
+            $userModel = new UserModel;
+            $userArray = $userModel->findOneByEmail($email);
+            if ($userArray):
+                $user = $userModel->hydrate($userArray);
+                if (password_verify($password, $user->getPassword())):
+                    $user->setSession();
+                    header("Location: ./"); exit;
+                else: $error = Functions::errorMessage(4); endif; 
+            else: $error = Functions::errorMessage(4); endif;
+        endif;
             
         $form = self::loginForm($email, $password);
 
