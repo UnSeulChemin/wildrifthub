@@ -37,12 +37,11 @@ class AdminController extends Controller
     }
 
     /**
-     * route contactForm
-     * @param $discord
-     * @param $message
-     * @return void
+     * self contactForm
+     * @param string|null $todo
+     * @return Form
      */
-    public static function contactForm(string $todo = null)
+    public static function contactForm(string $todo = null): Form
     {
         Functions::pathDenied();
 

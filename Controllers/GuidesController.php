@@ -13,10 +13,8 @@ class GuidesController extends Controller
     public function index(): void
     {
         $guideModel = new GuideModel;
-
         $guide = $guideModel->findAllPaginate('id ASC', 8, 1);
         $count = $guideModel->countPaginate(8);
-
         $pathRedirect = Functions::pathRedirect();
 
         $this->title = 'WildRift Hub | Guides';
