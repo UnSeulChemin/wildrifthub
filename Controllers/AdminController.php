@@ -30,10 +30,10 @@ class AdminController extends Controller
         $form = self::contactForm($todo);
 
         $adminModel = new AdminModel;
-        $admins = $adminModel->findAll();
+        $admins = $adminModel->findAllOrderBy('id DESC');
 
         $this->title = 'WildRift Hub | Admin';
-        $this->render('admin/index', ['contactForm' => $form->create(), 'admins' => $admins]);
+        $this->render('admin/index', ['admins' => $admins, 'contactForm' => $form->create()]);
     }
 
     /**
@@ -41,7 +41,7 @@ class AdminController extends Controller
      * @param string|null $todo
      * @return Form
      */
-    public static function contactForm(string $todo = null): Form
+    private static function contactForm(string $todo = null): Form
     {
         Functions::pathDenied();
 
