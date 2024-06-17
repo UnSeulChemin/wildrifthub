@@ -13,8 +13,10 @@ class UsersController extends Controller
      */
     public function index(): void
     {
+        $sessionPro = Functions::checkerSessionPro();
+
         $this->title = 'WildRift Hub | Become Pro';
-        $this->render('users/index');
+        $this->render('users/index', ["sessionPro" => $sessionPro]);
     }
 
     /**
