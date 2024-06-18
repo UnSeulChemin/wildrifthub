@@ -24,10 +24,13 @@ abstract class Controller
         ob_start();
         require_once(ROOT.'/Views/'.$file.'.php');
         $title = $this->title;
+
+        // functions static
         $sessionUser = Functions::checkerSessionUser();
         $sessionAdmin = Functions::checkerSessionAdmin();
         $sessionPro = Functions::checkerSessionPro();
         $pathRedirect = Functions::pathRedirect();
+
         $content = ob_get_clean();
 
         require_once(ROOT.'/Views/'.$this->template.'.php');
