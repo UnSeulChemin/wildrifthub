@@ -27,15 +27,18 @@ class UsersController extends Controller
      */
     public function register(): void
     {
+        // checker session empty
         if (!Functions::checkerSessionEmpty()):
             header('Location: '.Functions::pathRedirect().'./'); exit;
         endif;
 
+        // environment variables
         $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
         $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
         $error = '';
         $roles = ["ROLE_USER"];
 
+        // form validate
         if (Form::validate($_POST, ['email', 'password'])):
             if (Form::validateEmail($_POST, ['email'])):
                 $userModel = new UserModel;
@@ -55,8 +58,10 @@ class UsersController extends Controller
             else: $error = Functions::errorMessage(1); endif;
         endif;
 
+        // form create
         $form = self::registerForm($email, $password);
 
+        // view
         $this->title = 'WildRift Hub | Register';
         $this->render('users/register', ['registerForm' => $form->create(), 'error' => $error]);
     }
