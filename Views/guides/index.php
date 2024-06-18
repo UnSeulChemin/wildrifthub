@@ -4,12 +4,12 @@
         <?php foreach($guide as $image): ?>
             <div class="div-card">
                <figure class="figure-image">
-                    <a role="link" class="flex" href="<?= $pathRedirect; ?>guides/guide/<?= strtolower($image->name) ?>">
+                    <a role="link" class="flex" href="<?= $pathRedirect; ?>guides/guide/<?= $image->name ?>">
                         <img alt="<?= $image->name?>" src="<?= $pathRedirect; ?>public/images/guides/thumbnail/<?= $image->thumbnail.".".$image->extension ?>">
                     </a>
                </figure>
                <div class="flex-column-center-center">
-                    <a class="link-card" href="<?= $pathRedirect; ?>guides/guide/<?= strtolower($image->name) ?>"><?= $image->name ?></a>
+                    <a class="link-card" href="<?= $pathRedirect; ?>guides/guide/<?= $image->name ?>"><?= strtoupper($image->name) ?></a>
                </div>
            </div>
         <?php endforeach; ?>
