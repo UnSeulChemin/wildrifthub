@@ -13,8 +13,10 @@ class UsersController extends Controller
      */
     public function index(): void
     {
+        // functions static
         $sessionPro = Functions::checkerSessionPro();
 
+        // view
         $this->title = 'WildRift Hub | Become Pro';
         $this->render('users/index', ["sessionPro" => $sessionPro]);
     }
@@ -111,7 +113,7 @@ class UsersController extends Controller
      * @param string|null $password
      * @return Form
      */
-    public static function registerForm(string $email = null, string $password = null): Form
+    private static function registerForm(string $email = null, string $password = null): Form
     {
         Functions::pathDenied();
 
@@ -136,7 +138,7 @@ class UsersController extends Controller
      * @param string|null $password
      * @return Form
      */
-    public static function loginForm(string $email = null, string $password = null): Form
+    private static function loginForm(string $email = null, string $password = null): Form
     {
         Functions::pathDenied();
 
