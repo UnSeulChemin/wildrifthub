@@ -42,33 +42,34 @@ class GuidesController extends Controller
         // functions static
         $pathRedirect = Functions::pathRedirect();
 
-        // view        
+        // view
         $this->title = 'WildRift Hub | '.ucfirst($guide->name);
         $this->render('guides/guide', ['guide' => $guide, 'pathRedirect' => $pathRedirect]);
     }
 
     /**
      * route /guides/page/{page}
-     * @param $number
+     * @param $page
      * @return void
      */
-    public function page($number = null): void
+    public function page($page = null): void
     {
         // checker int
-        Functions::checkerInt($number);
+        Functions::checkerInt($page);
 
         // class instance
         $guideModel = new GuideModel;
-        $guide = $guideModel->findAllPaginate('id ASC', 8, $number);
+        $guide = $guideModel->findAllPaginate('id ASC', 8, $page);
         $count = $guideModel->countPaginate(8);
 
         // checker count
         Functions::checkerCount($count);
 
-        // functions static        
+        // functions static
         $pathRedirect = Functions::pathRedirect();
 
-        $this->title = 'WildRift Hub | Guides | Page '.$number;
+        // view
+        $this->title = 'WildRift Hub | Guides | Page '.$page;
         $this->render("guides/index", ["guide" => $guide, "count" => $count, "pathRedirect" => $pathRedirect]);
     }
 
@@ -78,13 +79,17 @@ class GuidesController extends Controller
      */
     public function all(): void
     {
+        // checker basename
         Functions::checkerBasename();
 
+        // class instance
         $guideModel = new GuideModel;
         $guides = $guideModel->findAllOrderBy('id DESC');
 
+        // functions static
         $pathRedirect = Functions::pathRedirect();
 
+        // view
         $this->title = 'WildRift Hub | Guides | All';
         $this->render("guides/all", ["guides" => $guides, "pathRedirect" => $pathRedirect]);
     }

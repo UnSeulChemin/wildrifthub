@@ -18,6 +18,10 @@
     </section>
 
     <div class="m-tb-30">
+        <a class="link-section" href="guides"">See guides</a>
+    </div>
+
+    <div class="m-tb-30">
         <a class="link-section" href="guides/all"">All guides</a>
     </div>
 
