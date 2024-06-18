@@ -54,14 +54,18 @@ class GuidesController extends Controller
      */
     public function page($number = null): void
     {
+        // checker int
         Functions::checkerInt($number);
 
+        // class instance
         $guideModel = new GuideModel;
-
         $guide = $guideModel->findAllPaginate('id ASC', 8, $number);
         $count = $guideModel->countPaginate(8);
 
+        // checker count
         Functions::checkerCount($count);
+
+        // functions static        
         $pathRedirect = Functions::pathRedirect();
 
         $this->title = 'WildRift Hub | Guides | Page '.$number;
