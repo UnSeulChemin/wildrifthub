@@ -35,9 +35,9 @@ class ChampionsController extends Controller
         // class instance
         $championModel = new ChampionModel;
         $champion = $championModel->findName($champion);
+        $championDifficulty = Functions::checkerDifficulty($champion->difficulty);
 
         // functions static
-        $championDifficulty = Functions::checkerDifficulty($champion->difficulty);
         $sessionPro = Functions::checkerSessionPro();
         $pathRedirect = Functions::pathRedirect();
 
@@ -57,12 +57,14 @@ class ChampionsController extends Controller
         // checker role
         Functions::checkerRole($role);
 
+        // class instance        
         $championModel = new ChampionModel;
-        $champion = $championModel->findBy(['role' => $role]);
+        $champions = $championModel->findBy(['role' => $role]);
 
+        // functions static
         $pathRedirect = Functions::pathRedirect();
 
         $this->title = 'WildRift Hub | '. ucfirst($role);
-        $this->render("champions/role", ["champion" => $champion, "pathRedirect" => $pathRedirect]);
+        $this->render("champions/role", ["champions" => $champions, "pathRedirect" => $pathRedirect]);
     }
 }
