@@ -38,13 +38,12 @@ class GuidesController extends Controller
         // class instance
         $guideModel = new GuideModel;
         $guide = $guideModel->findName($guide);
-        $guideName = strtolower($guide->name);
 
         // functions static
         $pathRedirect = Functions::pathRedirect();
 
         // view        
-        $this->title = 'WildRift Hub | Guides | '.ucfirst($guideName);
+        $this->title = 'WildRift Hub | '.ucfirst($guide->name);
         $this->render('guides/guide', ['guide' => $guide, 'pathRedirect' => $pathRedirect]);
     }
 
