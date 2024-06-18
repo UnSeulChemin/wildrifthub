@@ -18,7 +18,7 @@ class AdminController extends Controller
             header('Location: '.Functions::pathRedirect().'./'); exit;
         endif;
 
-        // environment variable
+        // environment variables
         $todo = isset($_POST['todo']) ? strip_tags($_POST['todo']) : '';
 
         // form validate
