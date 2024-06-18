@@ -12,10 +12,12 @@ class ChampionsController extends Controller
      */
     public function index(): void
     {
+        // class instance
         $championModel = new ChampionModel;
         $champions = $championModel->findAllOrderBy('name ASC');
         $championsLatest = $championModel->findAllOrderByLimit('id DESC', 2);
 
+        // view
         $this->title = 'WildRift Hub | Champions';
         $this->render('champions/index', ["champions" => $champions, "championsLatest" =>  $championsLatest]);
     }
@@ -27,26 +29,32 @@ class ChampionsController extends Controller
      */
     public function champion(string $champion = null): void
     {
+        // checker champion
         Functions::checkerChampion($champion);
 
+        // class instance
         $championModel = new ChampionModel;
         $champion = $championModel->findName($champion);
+
+        // functions static
         $championDifficulty = Functions::checkerDifficulty($champion->difficulty);
         $sessionPro = Functions::checkerSessionPro();
         $pathRedirect = Functions::pathRedirect();
 
+        // view
         $this->title = 'WildRift Hub | '.ucfirst($champion->name);
         $this->render('champions/champion', ["champion" => $champion, "championDifficulty" => $championDifficulty,
             "sessionPro" => $sessionPro, "pathRedirect" => $pathRedirect]);
     }
 
     /**
-     * route /goddess/rarity/{string}
-     * @param $rarity
+     * route /champions/role/{role}
+     * @param string|null $role
      * @return void
      */
-    public function role(string $role = null)
+    public function role(string $role = null): void
     {
+        // checker role
         Functions::checkerRole($role);
 
         $championModel = new ChampionModel;
