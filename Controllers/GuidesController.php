@@ -12,11 +12,15 @@ class GuidesController extends Controller
      */
     public function index(): void
     {
+        // class instance
         $guideModel = new GuideModel;
         $guide = $guideModel->findAllPaginate('id ASC', 8, 1);
         $count = $guideModel->countPaginate(8);
+
+        // functions static
         $pathRedirect = Functions::pathRedirect();
 
+        // view
         $this->title = 'WildRift Hub | Guides';
         $this->render('guides/index', ["guide" => $guide, "count" => $count, "pathRedirect" => $pathRedirect]);
     }

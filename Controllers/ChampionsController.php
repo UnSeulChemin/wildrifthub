@@ -57,7 +57,7 @@ class ChampionsController extends Controller
         // checker role
         Functions::checkerRole($role);
 
-        // class instance        
+        // class instance
         $championModel = new ChampionModel;
         $champions = $championModel->findBy(['role' => $role]);
 
