@@ -64,6 +64,7 @@ class ChampionsController extends Controller
         // functions static
         $pathRedirect = Functions::pathRedirect();
 
+        // view
         $this->title = 'WildRift Hub | '. ucfirst($role);
         $this->render("champions/role", ["champions" => $champions, "pathRedirect" => $pathRedirect]);
     }
