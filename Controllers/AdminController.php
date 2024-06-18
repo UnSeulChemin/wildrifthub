@@ -13,12 +13,15 @@ class AdminController extends Controller
      */    
     public function index(): void
     {
+        // checker admin 
         if (!Functions::checkerSessionAdmin()):
             header('Location: '.Functions::pathRedirect().'./'); exit;
         endif;
 
+        // environment variable
         $todo = isset($_POST['todo']) ? strip_tags($_POST['todo']) : '';
 
+        // form validate
         if (Form::validate($_POST, ['todo'])):
             $adminModel = new AdminModel;
             $adminModel->setTodo($todo);
@@ -27,11 +30,14 @@ class AdminController extends Controller
             endif;
         endif;
 
+        // form create
         $form = self::contactForm($todo);
 
+        // class instance
         $adminModel = new AdminModel;
         $admins = $adminModel->findAllOrderBy('id DESC');
 
+        // view
         $this->title = 'WildRift Hub | Admin';
         $this->render('admin/index', ['admins' => $admins, 'contactForm' => $form->create()]);
     }
@@ -43,8 +49,10 @@ class AdminController extends Controller
      */
     private static function contactForm(string $todo = null): Form
     {
+        // path not allowed
         Functions::pathDenied();
 
+        // form
         $form = new Form;
         $form->startForm()
             ->startDiv()
