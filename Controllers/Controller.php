@@ -5,7 +5,10 @@ use App\Core\Functions;
 
 abstract class Controller
 {
+    /* view template */
     protected $template = 'base';
+
+    /* view title */
     protected $title = 'WildRift Hub';
 
     /**
