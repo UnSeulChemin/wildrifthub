@@ -72,14 +72,17 @@ class UsersController extends Controller
      */
     public function login(): void
     {
+        // checker session empty
         if (!Functions::checkerSessionEmpty()):
             header('Location: '.Functions::pathRedirect().'./'); exit;
         endif;
 
+        // environment variables
         $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
         $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
         $error = '';
 
+        // form validate
         if (Form::validate($_POST, ['email', 'password'])):
             $userModel = new UserModel;
             $userArray = $userModel->findOneByEmail($email);
@@ -91,9 +94,11 @@ class UsersController extends Controller
                 else: $error = Functions::errorMessage(4); endif; 
             else: $error = Functions::errorMessage(4); endif;
         endif;
-            
+         
+        // form create
         $form = self::loginForm($email, $password);
 
+        // view
         $this->title = 'WildRift Hub | Login';
         $this->render('users/login', ['loginForm' => $form->create(), 'error' => $error]);
     }
@@ -104,11 +109,10 @@ class UsersController extends Controller
      */
     public function logout(): void
     {
+        // checker session user
         if (Functions::checkerSessionUser()):
-
             unset($_SESSION['user']);
             header('Location: '.Functions::pathRedirect().'./'); exit;
-
         else: header('Location: '.Functions::pathRedirect().'./'); exit; endif;
     }
 
