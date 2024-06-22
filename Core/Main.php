@@ -5,17 +5,19 @@ use App\Controllers\MainController;
 
 class Main
 {
-    public function start()
+    /**
+     * view router
+     * @return void
+     */
+    public function start(): void
     {
         session_start();
 
         $uri = $_SERVER['REQUEST_URI'];
 
 		if ($_SERVER['SERVER_NAME'] == 'localhost'):
-			$basename = "/wildrifthub/";
-		else:
-			$basename = "www.wildrifthub.com";
-		endif;
+			$basename = '/wildrifthub/';
+		else: $basename = 'www.wildrifthub.com'; endif;
 
         if (!empty($uri) && $uri != '/' && $uri[-1] === '/' && $uri != $basename)
         {
@@ -28,7 +30,7 @@ class Main
 
         $params = explode('/', $_GET['p']);
 
-        if ($params[0] != "")
+        if ($params[0] != '')
         {
             $controller = '\\App\\Controllers\\'.ucfirst(array_shift($params)).'Controller';
             $action = isset($params[0]) ? array_shift($params) : 'index';
@@ -42,7 +44,7 @@ class Main
             else
             {
                 http_response_code(404);
-                header("Location: ./");
+                header('Location: ./');
                 exit;
             }
         }
