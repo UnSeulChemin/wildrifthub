@@ -19,7 +19,7 @@ class ChampionsController extends Controller
 
         // view
         $this->title = 'WildRift Hub | Champions';
-        $this->render('champions/index', ["champions" => $champions, "championsLatest" =>  $championsLatest]);
+        $this->render('champions/index', ['champions' => $champions, 'championsLatest' =>  $championsLatest]);
     }
 
     /**
@@ -43,8 +43,8 @@ class ChampionsController extends Controller
 
         // view
         $this->title = 'WildRift Hub | '.ucfirst($champion->name);
-        $this->render('champions/champion', ["champion" => $champion, "championDifficulty" => $championDifficulty,
-            "sessionPro" => $sessionPro, "pathRedirect" => $pathRedirect]);
+        $this->render('champions/champion', ['champion' => $champion, 'championDifficulty' => $championDifficulty,
+            'sessionPro' => $sessionPro, 'pathRedirect' => $pathRedirect]);
     }
 
     /**
@@ -66,6 +66,6 @@ class ChampionsController extends Controller
 
         // view
         $this->title = 'WildRift Hub | '. ucfirst($role);
-        $this->render("champions/role", ["champions" => $champions, "pathRedirect" => $pathRedirect]);
+        $this->render('champions/role', ['champions' => $champions, 'pathRedirect' => $pathRedirect]);
     }
 }

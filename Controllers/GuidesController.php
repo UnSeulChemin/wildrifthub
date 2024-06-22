@@ -22,7 +22,7 @@ class GuidesController extends Controller
 
         // view
         $this->title = 'WildRift Hub | Guides';
-        $this->render('guides/index', ["guide" => $guide, "count" => $count, "pathRedirect" => $pathRedirect]);
+        $this->render('guides/index', ['guide' => $guide, 'count' => $count, 'pathRedirect' => $pathRedirect]);
     }
 
     /**
@@ -70,7 +70,7 @@ class GuidesController extends Controller
 
         // view
         $this->title = 'WildRift Hub | Guides | Page '.$page;
-        $this->render("guides/index", ["guide" => $guide, "count" => $count, "pathRedirect" => $pathRedirect]);
+        $this->render('guides/index', ['guide' => $guide, 'count' => $count, 'pathRedirect' => $pathRedirect]);
     }
 
     /**
@@ -91,6 +91,6 @@ class GuidesController extends Controller
 
         // view
         $this->title = 'WildRift Hub | Guides | All';
-        $this->render("guides/all", ["guides" => $guides, "pathRedirect" => $pathRedirect]);
+        $this->render('guides/all', ['guides' => $guides, 'pathRedirect' => $pathRedirect]);
     }
 }

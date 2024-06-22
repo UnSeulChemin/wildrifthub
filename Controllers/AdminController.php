@@ -26,7 +26,7 @@ class AdminController extends Controller
             $adminModel = new AdminModel;
             $adminModel->setTodo($todo);
             if ($adminModel->create()):
-                header("Location: admin"); exit;
+                header('Location: admin'); exit;
             endif;
         endif;
 

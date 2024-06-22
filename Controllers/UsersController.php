@@ -18,7 +18,7 @@ class UsersController extends Controller
 
         // view
         $this->title = 'WildRift Hub | Become Pro';
-        $this->render('users/index', ["sessionPro" => $sessionPro]);
+        $this->render('users/index', ['sessionPro' => $sessionPro]);
     }
 
     /**

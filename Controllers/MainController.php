@@ -19,6 +19,6 @@ class MainController extends Controller
         $championsLatest = $championModel->findAllOrderByLimit('id DESC', 2);
 
         // view
-        $this->render('hub/index', ["guidesLatest" => $guidesLatest, "championsLatest" =>  $championsLatest]);
+        $this->render('hub/index', ['guidesLatest' => $guidesLatest, 'championsLatest' =>  $championsLatest]);
     }
 }
