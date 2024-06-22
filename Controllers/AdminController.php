@@ -39,7 +39,7 @@ class AdminController extends Controller
 
         // view
         $this->title = 'WildRift Hub | Admin';
-        $this->render('admin/index', ['admins' => $admins, 'contactForm' => $form->create()]);
+        $this->render('admin/index', ['contactForm' => $form->create(), 'admins' => $admins]);
     }
 
     /**

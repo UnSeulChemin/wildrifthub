@@ -73,7 +73,7 @@ class UsersController extends Controller
      */
     public function login(): void
     {
-        // checker session empty
+        // checker empty
         if (!Functions::checkerSessionEmpty()):
             header('Location: '.Functions::pathRedirect().'./'); exit;
         endif;
@@ -110,7 +110,7 @@ class UsersController extends Controller
      */
     public function logout(): void
     {
-        // checker session user
+        // checker user
         if (Functions::checkerSessionUser()):
             unset($_SESSION['user']);
             header('Location: '.Functions::pathRedirect().'./'); exit;
