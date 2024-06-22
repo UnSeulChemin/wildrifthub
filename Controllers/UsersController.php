@@ -125,8 +125,10 @@ class UsersController extends Controller
      */
     private static function registerForm(string $email = null, string $password = null): Form
     {
+        // path not allowed
         Functions::pathDenied();
 
+        // form
         $form = new Form;
         $form->startForm()
             ->startDiv()
@@ -150,8 +152,10 @@ class UsersController extends Controller
      */
     private static function loginForm(string $email = null, string $password = null): Form
     {
+        // path not allowed
         Functions::pathDenied();
 
+        // form
         $form = new Form;
         $form->startForm()
             ->startDiv()
