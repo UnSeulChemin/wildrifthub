@@ -1,11 +1,16 @@
 <section class="section-content">
 
+<?php if ($sessionUser): ?>
+
     <?php if ($sessionPro): ?>
-
-    <p>Alraedy pro</p>
-    <p>See all hero tips</p>
-
+        <p>Alraedy pro</p>
+        <p>See all hero tips here</p>
     <?php else: ?>
+        <p>Alraedy loged.</p>
+        <p>Click here to become pro</p>
+    <?php endif; ?>
+
+<?php else: ?>
 
     <div class="flex-center-center">
         <p class="m-0">Register an account first here</p>
@@ -23,6 +28,6 @@
         <a role="link" class="link-section" href="users/login">Login</a>
     </div>
 
-    <?php endif; ?>
+<?php endif; ?>
 
 </section>

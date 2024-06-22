@@ -14,11 +14,12 @@ class UsersController extends Controller
     public function index(): void
     {
         // functions static
+        $sessionUser = Functions::checkerSessionUser();
         $sessionPro = Functions::checkerSessionPro();
 
         // view
         $this->title = 'WildRift Hub | Become Pro';
-        $this->render('users/index', ['sessionPro' => $sessionPro]);
+        $this->render('users/index', ['sessionUser' => $sessionUser, 'sessionPro' => $sessionPro]);
     }
 
     /**
@@ -27,7 +28,7 @@ class UsersController extends Controller
      */
     public function register(): void
     {
-        // checker session empty
+        // checker empty
         if (!Functions::checkerSessionEmpty()):
             header('Location: '.Functions::pathRedirect().'./'); exit;
         endif;
@@ -36,7 +37,7 @@ class UsersController extends Controller
         $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
         $password = isset($_POST['password']) ? strip_tags($_POST['password']) : '';
         $error = '';
-        $roles = ["ROLE_USER"];
+        $roles = ['ROLE_USER'];
 
         // form validate
         if (Form::validate($_POST, ['email', 'password'])):
