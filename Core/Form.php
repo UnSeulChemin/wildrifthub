@@ -6,10 +6,10 @@ class Form
     private $formCode = "";
 
     /**
-     * create
-     * @return void
+     * form create
+     * @return string
      */
-    public function create()
+    public function create(): string
     {
         return $this->formCode;
     }
@@ -18,9 +18,9 @@ class Form
      * validate
      * @param array $form
      * @param array $fields
-     * @return void
+     * @return boolean
      */
-    public static function validate(array $form, array $fields)
+    public static function validate(array $form, array $fields): bool
     {
         foreach ($fields as $field)
         {
@@ -36,9 +36,9 @@ class Form
      * validate email
      * @param array $form
      * @param array $emails
-     * @return void
+     * @return boolean
      */
-    public static function validateEmail(array $form, array $emails)
+    public static function validateEmail(array $form, array $emails): bool
     {
         foreach ($emails as $email)
         {
@@ -54,9 +54,9 @@ class Form
      * validate password
      * @param array $form
      * @param array $passwords
-     * @return void
+     * @return boolean
      */
-    public static function validatePassword(array $form, array $passwords)
+    public static function validatePassword(array $form, array $passwords): bool
     {
         foreach ($passwords as $password)
         {
