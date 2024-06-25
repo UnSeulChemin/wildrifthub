@@ -3,6 +3,7 @@ namespace App\Core;
 
 class Form
 {
+    /* form code */
     private $formCode = "";
 
     /**
