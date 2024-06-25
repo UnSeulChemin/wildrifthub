@@ -16,13 +16,15 @@ class Form
     }
 
     /**
-     * validate
-     * @param array $form
-     * @param array $fields
+     * form validate
+     * @param array|null $form
+     * @param array|null $fields
      * @return boolean
      */
-    public static function validate(array $form, array $fields): bool
+    public static function validate(array $form = null, array $fields = null): bool
     {
+        self::checkerArray($form, $fields);
+
         foreach ($fields as $field)
         {
             if (!isset($form[$field]) || empty($form[$field]))
@@ -34,13 +36,15 @@ class Form
     }
 
     /**
-     * validate email
+     * form validate email
      * @param array $form
      * @param array $emails
      * @return boolean
      */
-    public static function validateEmail(array $form, array $emails): bool
+    public static function validateEmail(array $form = null, array $emails = null): bool
     {
+        self::checkerArray($form, $emails);
+
         foreach ($emails as $email)
         {
             if (!filter_var($form[$email], FILTER_VALIDATE_EMAIL))
@@ -161,5 +165,17 @@ class Form
             }
         }
         return $string;
+    }
+
+    /**
+     * checker array
+     * @param $form
+     * @param $fields
+     * @return boolean
+     */
+    private function checkerArray($form, $fields): bool
+    {
+        if (!is_array($form) || !is_array($fields)) { return false; }
+        return true;
     }
 }
