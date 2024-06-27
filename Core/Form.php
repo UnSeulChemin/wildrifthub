@@ -37,8 +37,8 @@ class Form
 
     /**
      * form validate email
-     * @param array $form
-     * @param array $emails
+     * @param array|null $form
+     * @param array|null $emails
      * @return boolean
      */
     public static function validateEmail(array $form = null, array $emails = null): bool
@@ -56,12 +56,12 @@ class Form
     }
 
     /**
-     * validate password
-     * @param array $form
-     * @param array $passwords
+     * form validate password
+     * @param array|null $form
+     * @param array|null $passwords
      * @return boolean
      */
-    public static function validatePassword(array $form, array $passwords): bool
+    public static function validatePassword(array $form = null, array $passwords = null): bool
     {
         self::checkerArray($form, $passwords);
 
@@ -170,7 +170,7 @@ class Form
     }
 
     /**
-     * checker array
+     * self checkerArray
      * @param $form
      * @param $fields
      * @return boolean
