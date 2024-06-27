@@ -173,7 +173,7 @@ class Form
      * @param $fields
      * @return boolean
      */
-    private function checkerArray($form, $fields): bool
+    private static function checkerArray($form, $fields): bool
     {
         if (!is_array($form) || !is_array($fields)) { return false; }
         return true;
