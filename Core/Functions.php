@@ -70,12 +70,12 @@ class Functions
 
     /**
      * checker champion name
-     * @param string|null $champion
+     * @param string|null $name
      * @return boolean
      */
-    public static function checkerChampionName(string $champion = null): bool
+    public static function checkerChampionName(string $name = null): bool
     {
-        if (!in_array($champion, self::ALL_CHAMPIONS_NAME) || !is_string($champion) || !isset($champion) || empty($champion)) { self::redirectCurrentPage(); }
+        if (!in_array($name, self::ALL_CHAMPIONS_NAME) || !is_string($name) || !isset($name) || empty($name)) { self::redirectCurrentPage(); }
         return true;
     }
 
@@ -109,60 +109,61 @@ class Functions
         }
     }
 
-
-
-
     /**
-     * checker guide
-     * @param string|null $guide
+     * checker guide name
+     * @param string|null $name
      * @return boolean
      */
-    public static function checkerGuide(string $guide = null): bool
+    public static function checkerGuideName(string $name = null): bool
     {
-        if (!in_array($guide, self::ALL_GUIDES_NAME) || !is_string($guide) || !isset($guide) || empty($guide)) { self::redirectCurrentPage(); }
-        return true;
-    }    
-
-
-
-    /**
-     * checker int
-     * @param $value
-     * @return boolean
-     */
-    public static function checkerInt($value): bool
-    {
-        if (!is_numeric($value) || !isset($value) || empty($value)) { self::redirectCurrentPage(); }
+        if (!in_array($name, self::ALL_GUIDES_NAME) || !is_string($name) || !isset($name) || empty($name)) { self::redirectCurrentPage(); }
         return true;
     }
 
     /**
-     * checker count
-     * @param $value
+     * checker path basename
      * @return boolean
      */
-    public static function checkerCount($value): bool
-    {
-        if (basename($_GET['p']) > $value) { self::redirect(); }
-        return true;
-    }
-
-
-
-
-
-
-
-
-    /**
-     * checker basename
-     * @return boolean
-     */
-    public static function checkerBasename(): bool
+    public static function checkerPathBasename(): bool
     {
         if (!in_array(basename($_GET['p']), self::ALL_PATHS_BASENAME)) { self::redirectCurrentPage(); }
         return true;
     }
+
+    /**
+     * checker path int
+     * @param $parameter
+     * @return boolean
+     */
+    public static function checkerPathInt($parameter = null): bool
+    {
+        if (!is_numeric($parameter) || !isset($parameter) || empty($parameter)) { self::redirectCurrentPage(); }
+        return true;
+    }
+
+    /**
+     * checker path count
+     * @param integer|null $count
+     * @return boolean
+     */
+    public static function checkerPathCount(int $count = null): bool
+    {
+        if (!is_numeric($count) || !isset($count) || empty($count)) { self::redirectCurrentPage(); }
+
+        if (basename($_GET['p']) > $count) { self::redirect(); }
+        return true;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * 1: Incorrect email format. 2: Email already taken. 3: Password not enough strong. 4: Email and / or password is incorrect.

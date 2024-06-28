@@ -33,7 +33,7 @@ class GuidesController extends Controller
     public function guide(string $guide = null): void
     {
         // checker guide
-        Functions::checkerGuide($guide);
+        Functions::checkerGuideName($guide);
 
         // class instance
         $guideModel = new GuideModel;
@@ -55,7 +55,7 @@ class GuidesController extends Controller
     public function page($page = null): void
     {
         // checker int
-        Functions::checkerInt($page);
+        Functions::checkerPathInt($page);
 
         // class instance
         $guideModel = new GuideModel;
@@ -63,7 +63,7 @@ class GuidesController extends Controller
         $count = $guideModel->countPaginate(8);
 
         // checker count
-        Functions::checkerCount($count);
+        Functions::checkerPathCount($count);
 
         // functions static
         $pathRedirect = Functions::pathRedirect();
@@ -80,7 +80,7 @@ class GuidesController extends Controller
     public function all(): void
     {
         // checker basename
-        Functions::checkerBasename();
+        Functions::checkerPathBasename();
 
         // class instance
         $guideModel = new GuideModel;
