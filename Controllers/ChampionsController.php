@@ -30,12 +30,12 @@ class ChampionsController extends Controller
     public function champion(string $champion = null): void
     {
         // checker champion
-        Functions::checkerChampion($champion);
+        Functions::checkerChampionName($champion);
 
         // class instance
         $championModel = new ChampionModel;
         $champion = $championModel->findName($champion);
-        $championDifficulty = Functions::checkerDifficulty($champion->difficulty);
+        $championDifficulty = Functions::checkerChampionDifficulty($champion->difficulty);
 
         // functions static
         $sessionPro = Functions::checkerSessionPro();
@@ -55,7 +55,7 @@ class ChampionsController extends Controller
     public function role(string $role = null): void
     {
         // checker role
-        Functions::checkerRole($role);
+        Functions::checkerChampionRole($role);
 
         // class instance
         $championModel = new ChampionModel;

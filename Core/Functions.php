@@ -3,8 +3,8 @@ namespace App\Core;
 
 use App\Core\Trait\AllChampionsNameTrait;
 use App\Core\Trait\AllChampionsRoleTrait;
-use App\Core\Trait\AllGuidesNameTrait;
 use App\Core\Trait\AllChampionsDifficultyTrait;
+use App\Core\Trait\AllGuidesNameTrait;
 use App\Core\Trait\AllPathsBasename;
 use App\Core\Trait\AllPathsDenied;
 
@@ -16,11 +16,11 @@ class Functions
     /* containt all champions role */
     use AllChampionsRoleTrait;
 
-    /* containt all guides name */
-    use AllGuidesNameTrait;
-
     /* containt all champions difficulty */
     use AllChampionsDifficultyTrait;
+
+    /* containt all guides name */
+    use AllGuidesNameTrait;
 
     /* containt all paths basename */
     use AllPathsBasename;
@@ -69,26 +69,48 @@ class Functions
     }
 
     /**
-     * checker int
-     * @param $value
+     * checker champion name
+     * @param string|null $champion
      * @return boolean
      */
-    public static function checkerInt($value): bool
+    public static function checkerChampionName(string $champion = null): bool
     {
-        if (!is_numeric($value) || !isset($value) || empty($value)) { self::redirectCurrentPage(); }
+        if (!in_array($champion, self::ALL_CHAMPIONS_NAME) || !is_string($champion) || !isset($champion) || empty($champion)) { self::redirectCurrentPage(); }
         return true;
     }
 
     /**
-     * checker count
-     * @param integer $value
+     * checker champion role
+     * @param string|null $role
      * @return boolean
      */
-    public static function checkerCount($value): bool
+    public static function checkerChampionRole(string $role = null): bool
     {
-        if (basename($_GET['p']) > $value) { self::redirect(); }
+        if (!in_array($role, self::ALL_CHAMPIONS_ROLE) || !isset($role) || empty($role)) { self::redirectCurrentPage(); }
         return true;
     }
+
+    /**
+     * checker champion difficulty
+     * @param string|null $difficulty
+     * @return string|null
+     */
+    public static function checkerChampionDifficulty(string $difficulty = null): string|null
+    {
+        if (!in_array($difficulty, self::ALL_CHAMPIONS_DIFFICULTY) || !is_string($difficulty)) { return null; }
+
+        switch ($difficulty)
+        {
+            case 1: return '../../public/images/champions/difficulty/evaluation1.png'; break;
+            case 2: return "../../public/images/champions/difficulty/evaluation2.png"; break;
+            case 3: return "../../public/images/champions/difficulty/evaluation3.png"; break;
+            case 4: return "../../public/images/champions/difficulty/evaluation4.png"; break;
+            case 5: return "../../public/images/champions/difficulty/evaluation5.png"; break;
+        }
+    }
+
+
+
 
     /**
      * checker guide
@@ -101,46 +123,36 @@ class Functions
         return true;
     }    
 
-    /**
-     * checker champion
-     * @param string|null $champion
-     * @return boolean
-     */
-    public static function checkerChampion(string $champion = null): bool
-    {
-        if (!in_array($champion, self::ALL_CHAMPIONS_NAME) || !is_string($champion) || !isset($champion) || empty($champion)) { self::redirectCurrentPage(); }
-        return true;
-    }
+
 
     /**
-     * check value rarity
+     * checker int
      * @param $value
      * @return boolean
      */
-    public static function checkerRole(string $role = null): bool
+    public static function checkerInt($value): bool
     {
-        if (!in_array($role, self::ALL_CHAMPIONS_ROLE) || !isset($role) || empty($role)) { self::redirectCurrentPage(); }
+        if (!is_numeric($value) || !isset($value) || empty($value)) { self::redirectCurrentPage(); }
         return true;
     }
 
     /**
-     * checker difficulty
-     * @param string|null $difficulty
-     * @return string|null
+     * checker count
+     * @param $value
+     * @return boolean
      */
-    public static function checkerDifficulty(string $difficulty = null): string|null
+    public static function checkerCount($value): bool
     {
-        if (!in_array($difficulty, self::ALL_CHAMPIONS_DIFFICULTY) || !is_string($difficulty)) { return null; }
-
-        switch ($difficulty)
-        {
-            case 1: return '../../public/images/champions/difficulty/evaluation1.png'; break;
-            case 2: return "../../public/images/champions/difficulty/evaluation2.png"; break;
-            case 3: return "../../public/images/champions/difficulty/evaluation3.png"; break;
-            case 4: return "../../public/images/champions/difficulty/evaluation4.png"; break;
-            case 5: return "../../public/images/champions/difficulty/evaluation5.png"; break;
-        }   
+        if (basename($_GET['p']) > $value) { self::redirect(); }
+        return true;
     }
+
+
+
+
+
+
+
 
     /**
      * checker basename
