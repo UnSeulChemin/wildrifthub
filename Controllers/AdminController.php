@@ -13,7 +13,7 @@ class AdminController extends Controller
      */    
     public function index(): void
     {
-        // checker admin
+        // checker session admin
         if (!Functions::checkerSessionAdmin()):
             header('Location: '.Functions::getPathRedirect().'./'); exit;
         endif;

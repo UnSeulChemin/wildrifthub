@@ -29,7 +29,7 @@ class ChampionsController extends Controller
      */
     public function champion(string $champion = null): void
     {
-        // checker champion
+        // checker champion name
         Functions::checkerChampionName($champion);
 
         // class instance
@@ -54,7 +54,7 @@ class ChampionsController extends Controller
      */
     public function role(string $role = null): void
     {
-        // checker role
+        // checker champion role
         Functions::checkerChampionRole($role);
 
         // class instance
