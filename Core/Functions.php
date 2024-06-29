@@ -75,7 +75,7 @@ class Functions
      */
     public static function checkerChampionName(string $name = null): bool
     {
-        if (!in_array($name, self::ALL_CHAMPIONS_NAME) || !is_string($name) || !isset($name) || empty($name)) { self::redirectCurrentPage(); }
+        if (!in_array($name, self::ALL_CHAMPIONS_NAME) || !is_string($name) || !isset($name) || empty($name)) { self::pathRedirectCurrent(); }
         return true;
     }
 
@@ -86,7 +86,7 @@ class Functions
      */
     public static function checkerChampionRole(string $role = null): bool
     {
-        if (!in_array($role, self::ALL_CHAMPIONS_ROLE) || !isset($role) || empty($role)) { self::redirectCurrentPage(); }
+        if (!in_array($role, self::ALL_CHAMPIONS_ROLE) || !isset($role) || empty($role)) { self::pathRedirectCurrent(); }
         return true;
     }
 
@@ -116,7 +116,17 @@ class Functions
      */
     public static function checkerGuideName(string $name = null): bool
     {
-        if (!in_array($name, self::ALL_GUIDES_NAME) || !is_string($name) || !isset($name) || empty($name)) { self::redirectCurrentPage(); }
+        if (!in_array($name, self::ALL_GUIDES_NAME) || !is_string($name) || !isset($name) || empty($name)) { self::pathRedirectCurrent(); }
+        return true;
+    }
+
+    /**
+     * checker path denied
+     * @return boolean
+     */
+    public static function checkerPathDenied(): bool
+    {
+        if (in_array(basename($_GET['p']), self::ALL_PATHS_DENIED)) { self::pathRedirectCurrent(); }
         return true;
     }
 
@@ -126,7 +136,7 @@ class Functions
      */
     public static function checkerPathBasename(): bool
     {
-        if (!in_array(basename($_GET['p']), self::ALL_PATHS_BASENAME)) { self::redirectCurrentPage(); }
+        if (!in_array(basename($_GET['p']), self::ALL_PATHS_BASENAME)) { self::pathRedirectCurrent(); }
         return true;
     }
 
@@ -137,7 +147,7 @@ class Functions
      */
     public static function checkerPathInt($parameter = null): bool
     {
-        if (!is_numeric($parameter) || !isset($parameter) || empty($parameter)) { self::redirectCurrentPage(); }
+        if (!is_numeric($parameter) || !isset($parameter) || empty($parameter)) { self::pathRedirectCurrent(); }
         return true;
     }
 
@@ -148,31 +158,37 @@ class Functions
      */
     public static function checkerPathCount(int $count = null): bool
     {
-        if (!is_numeric($count) || !isset($count) || empty($count)) { self::redirectCurrentPage(); }
+        if (!is_numeric($count) || !isset($count) || empty($count)) { self::pathRedirectCurrent(); }
 
-        if (basename($_GET['p']) > $count) { self::redirect(); }
+        if (basename($_GET['p']) > $count) { self::pathRedirect(); }
         return true;
     }
 
+    /**
+     * `../` OR `../../`
+     * @return string|null
+     */
+    public static function getPathRedirect(): string|null
+    {
+        if (str_contains($_GET["p"], "/"))
+        {
+            $getP = substr_count($_GET["p"], "/");
 
-
-
-
-
-
-
-
-
-
+            if ($getP == 1) { return "../"; }
+            else if ($getP == 2) { return "../../"; }
+            else { http_response_code(404); self::pathRedirect(); }
+        }
+        return null;
+    }
 
     /**
-     * 1: Incorrect email format. 2: Email already taken. 3: Password not enough strong. 4: Email and / or password is incorrect.
+     * 1: Incorrect email format. ; 2: Email already taken. ; 3: Password not enough strong. ; 4: Email and / or password is incorrect.
      * @param integer|null $number
      * @return string|boolean
      */
-    public static function errorMessage(int $number = null): string|bool
+    public static function getErrorMessage(int $number = null): string|bool
     {
-        if (!isset($number) || empty($number) || !is_int($number)) { return false; }
+        if (!is_numeric($number) || !isset($number) || empty($number)) { return false; }
 
         switch ($number)
         {
@@ -184,37 +200,10 @@ class Functions
     }
 
     /**
-     * path denied
-     * @return boolean
-     */
-    public static function pathDenied(): bool
-    {
-        if (in_array(basename($_GET['p']), self::ALL_PATHS_DENIED)) { self::redirectCurrentPage(); }
-        return true;
-    }
-
-    /**
-     * `../` `../../`
-     * @return string|null
-     */
-    public static function pathRedirect(): string|null
-    {
-        if (str_contains($_GET["p"], "/"))
-        {
-            $getP = substr_count($_GET["p"], "/");
-
-            if ($getP == 1) { return "../"; }
-            else if ($getP == 2) { return "../../"; }
-            else { http_response_code(404); self::redirect(); }
-        }
-        return null;
-    }
-
-    /**
      * `../`
      * @return void
      */
-    private static function redirect(): void
+    private static function pathRedirect(): void
     {
         header('Location: ../'); exit;
     }
@@ -223,7 +212,7 @@ class Functions
      * `./`
      * @return void
      */
-    private static function redirectCurrentPage(): void
+    private static function pathRedirectCurrent(): void
     {
         header('Location: ./'); exit;
     }

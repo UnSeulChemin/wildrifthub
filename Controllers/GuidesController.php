@@ -18,7 +18,7 @@ class GuidesController extends Controller
         $count = $guideModel->countPaginate(8);
 
         // functions static
-        $pathRedirect = Functions::pathRedirect();
+        $pathRedirect = Functions::getPathRedirect();
 
         // view
         $this->title = 'WildRift Hub | Guides';
@@ -40,7 +40,7 @@ class GuidesController extends Controller
         $guide = $guideModel->findName($guide);
 
         // functions static
-        $pathRedirect = Functions::pathRedirect();
+        $pathRedirect = Functions::getPathRedirect();
 
         // view
         $this->title = 'WildRift Hub | '.ucfirst($guide->name);
@@ -66,7 +66,7 @@ class GuidesController extends Controller
         Functions::checkerPathCount($count);
 
         // functions static
-        $pathRedirect = Functions::pathRedirect();
+        $pathRedirect = Functions::getPathRedirect();
 
         // view
         $this->title = 'WildRift Hub | Guides | Page '.$page;
@@ -87,7 +87,7 @@ class GuidesController extends Controller
         $guides = $guideModel->findAllOrderBy('id DESC');
 
         // functions static
-        $pathRedirect = Functions::pathRedirect();
+        $pathRedirect = Functions::getPathRedirect();
 
         // view
         $this->title = 'WildRift Hub | Guides | All';

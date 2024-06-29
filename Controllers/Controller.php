@@ -29,7 +29,7 @@ abstract class Controller
         $sessionUser = Functions::checkerSessionUser();
         $sessionAdmin = Functions::checkerSessionAdmin();
         $sessionPro = Functions::checkerSessionPro();
-        $pathRedirect = Functions::pathRedirect();
+        $pathRedirect = Functions::getPathRedirect();
 
         $content = ob_get_clean();
 

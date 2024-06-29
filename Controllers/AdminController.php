@@ -50,7 +50,7 @@ class AdminController extends Controller
     private static function contactForm(string $todo = null): Form
     {
         // path not allowed
-        Functions::pathDenied();
+        Functions::checkerPathDenied();
 
         // form
         $form = new Form;

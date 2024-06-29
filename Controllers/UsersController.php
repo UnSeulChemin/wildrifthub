@@ -54,9 +54,9 @@ class UsersController extends Controller
                             $user->setSession();
                             header('Location: ./'); exit;
                         endif;
-                    else: $error = Functions::errorMessage(3); endif;
-                else: $error = Functions::errorMessage(2); endif;
-            else: $error = Functions::errorMessage(1); endif;
+                    else: $error = Functions::getErrorMessage(3); endif;
+                else: $error = Functions::getErrorMessage(2); endif;
+            else: $error = Functions::getErrorMessage(1); endif;
         endif;
 
         // form create
@@ -92,8 +92,8 @@ class UsersController extends Controller
                 if (password_verify($password, $user->getPassword())):
                     $user->setSession();
                     header('Location: ./'); exit;
-                else: $error = Functions::errorMessage(4); endif; 
-            else: $error = Functions::errorMessage(4); endif;
+                else: $error = Functions::getErrorMessage(4); endif; 
+            else: $error = Functions::getErrorMessage(4); endif;
         endif;
          
         // form create
@@ -126,7 +126,7 @@ class UsersController extends Controller
     private static function registerForm(string $email = null, string $password = null): Form
     {
         // path not allowed
-        Functions::pathDenied();
+        Functions::checkerPathDenied();
 
         // form
         $form = new Form;
@@ -153,7 +153,7 @@ class UsersController extends Controller
     private static function loginForm(string $email = null, string $password = null): Form
     {
         // path not allowed
-        Functions::pathDenied();
+        Functions::checkerPathDenied();
 
         // form
         $form = new Form;
