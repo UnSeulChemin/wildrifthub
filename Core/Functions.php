@@ -5,8 +5,8 @@ use App\Core\Trait\AllChampionsNameTrait;
 use App\Core\Trait\AllChampionsRoleTrait;
 use App\Core\Trait\AllChampionsDifficultyTrait;
 use App\Core\Trait\AllGuidesNameTrait;
-use App\Core\Trait\AllPathsBasename;
 use App\Core\Trait\AllPathsDenied;
+use App\Core\Trait\AllPathsBasename;
 
 class Functions
 {
@@ -22,11 +22,11 @@ class Functions
     /* containt all guides name */
     use AllGuidesNameTrait;
 
-    /* containt all paths basename */
-    use AllPathsBasename;
-
     /* containt all paths denied */
     use AllPathsDenied;
+
+    /* containt all paths basename */
+    use AllPathsBasename;
 
     /**
      * checker session empty
