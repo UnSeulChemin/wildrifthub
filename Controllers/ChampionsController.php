@@ -39,7 +39,7 @@ class ChampionsController extends Controller
 
         // functions static
         $sessionPro = Functions::checkerSessionPro();
-        $pathRedirect = Functions::pathRedirect();
+        $pathRedirect = Functions::getPathRedirect();
 
         // view
         $this->title = 'WildRift Hub | '.ucfirst($champion->name);
@@ -62,7 +62,7 @@ class ChampionsController extends Controller
         $champions = $championModel->findBy(['role' => $role]);
 
         // functions static
-        $pathRedirect = Functions::pathRedirect();
+        $pathRedirect = Functions::getPathRedirect();
 
         // view
         $this->title = 'WildRift Hub | '. ucfirst($role);

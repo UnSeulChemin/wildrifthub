@@ -15,7 +15,7 @@ class AdminController extends Controller
     {
         // checker admin
         if (!Functions::checkerSessionAdmin()):
-            header('Location: '.Functions::pathRedirect().'./'); exit;
+            header('Location: '.Functions::getPathRedirect().'./'); exit;
         endif;
 
         // environment variables
