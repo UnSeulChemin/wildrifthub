@@ -28,9 +28,9 @@ class UsersController extends Controller
      */
     public function register(): void
     {
-        // checker empty
+        // checker session empty
         if (!Functions::checkerSessionEmpty()):
-            header('Location: '.Functions::pathRedirect().'./'); exit;
+            header('Location: '.Functions::getPathRedirect().'./'); exit;
         endif;
 
         // environment variables
@@ -73,9 +73,9 @@ class UsersController extends Controller
      */
     public function login(): void
     {
-        // checker empty
+        // checker session empty
         if (!Functions::checkerSessionEmpty()):
-            header('Location: '.Functions::pathRedirect().'./'); exit;
+            header('Location: '.Functions::getPathRedirect().'./'); exit;
         endif;
 
         // environment variables
@@ -110,11 +110,11 @@ class UsersController extends Controller
      */
     public function logout(): void
     {
-        // checker user
+        // checker session user
         if (Functions::checkerSessionUser()):
             unset($_SESSION['user']);
-            header('Location: '.Functions::pathRedirect().'./'); exit;
-        else: header('Location: '.Functions::pathRedirect().'./'); exit; endif;
+            header('Location: '.Functions::getPathRedirect().'./'); exit;
+        else: header('Location: '.Functions::getPathRedirect().'./'); exit; endif;
     }
 
     /**
@@ -125,7 +125,7 @@ class UsersController extends Controller
      */
     private static function registerForm(string $email = null, string $password = null): Form
     {
-        // path not allowed
+        // checker path denied
         Functions::checkerPathDenied();
 
         // form
@@ -152,7 +152,7 @@ class UsersController extends Controller
      */
     private static function loginForm(string $email = null, string $password = null): Form
     {
-        // path not allowed
+        // checker path denied
         Functions::checkerPathDenied();
 
         // form
