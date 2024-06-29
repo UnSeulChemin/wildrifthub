@@ -49,7 +49,7 @@ class AdminController extends Controller
      */
     private static function contactForm(string $todo = null): Form
     {
-        // path not allowed
+        // checker path denied
         Functions::checkerPathDenied();
 
         // form
