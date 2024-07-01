@@ -35,6 +35,7 @@ class ChampionModel extends Model
     /* champion pro content */
     protected string $pro;
 
+    /* magic methods */
     public function __construct()
     {
         $this->table = "champion";
