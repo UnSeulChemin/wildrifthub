@@ -5,10 +5,10 @@ use App\Models\Trait\CreatedAtTrait;
 
 class ChampionModel extends Model
 {
-    /* creted_at trait */
+    /* containt created_at */
     use CreatedAtTrait;
 
-    /* id key primary */
+    /* key primary id */
     protected int $id;
 
     /* image thumbnail */

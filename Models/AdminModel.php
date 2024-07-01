@@ -5,13 +5,13 @@ use App\Models\Trait\CreatedAtTrait;
 
 class AdminModel extends Model
 {
-    /* creted_at trait */
+    /* containt created_at */
     use CreatedAtTrait;
 
-    /* id key primary */
+    /* key primary id */
     protected int $id;
 
-    /* admin todo */
+    /* column todo */
     protected string $todo;
 
     public function __construct()
