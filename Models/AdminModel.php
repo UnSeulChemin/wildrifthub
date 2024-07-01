@@ -14,20 +14,27 @@ class AdminModel extends Model
     /* column todo */
     protected string $todo;
 
-    /* magic methods */
+    /* magic method __construct */
     public function __construct()
     {
         $this->table = "admin";
     }
 
-    /* getter id */
-    public function getId()
+    /**
+     * getter id
+     * @return integer
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    /* setter id */
-    public function setId($id)
+    /**
+     * setter id
+     * @param integer $id
+     * @return self
+     */
+    public function setId(int $id): self
     {
         $this->id = $id;
         return $this;
@@ -45,9 +52,9 @@ class AdminModel extends Model
     /**
      * setter todo
      * @param string $todo
-     * @return void
+     * @return self
      */
-    public function setTodo(string $todo)
+    public function setTodo(string $todo): self
     {
         $this->todo = $todo;
         return $this;
