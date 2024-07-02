@@ -35,106 +35,135 @@ class ChampionModel extends Model
     /* champion pro content */
     protected string $pro;
 
-    /* magic methods */
+    /* magic method __construct */
     public function __construct()
     {
         $this->table = "champion";
     }
 
-    public function getId()
+    /**
+     * getter id
+     * @return integer
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId($id)
+    /**
+     * setter id
+     * @param integer $id
+     * @return self
+     */
+    public function setId(int $id): self
     {
         $this->id = $id;
         return $this;
     }
 
-    public function getThumbnail()
+    /**
+     * getter thumbnail
+     * @return string
+     */
+    public function getThumbnail(): string
     {
         return $this->thumbnail;
     }
 
-    public function setThumbnail($thumbnail)
+    /**
+     * setter thumbnail
+     * @param string $thumbnail
+     * @return self
+     */
+    public function setThumbnail(string $thumbnail): self
     {
         $this->thumbnail = $thumbnail;
         return $this;
     }
 
-    public function getSplashart()
+
+
+    /**
+     * getter thumbnail
+     * @return string
+     */
+    public function getSplashart(): string
     {
         return $this->splashart;
     }
 
-    public function setSplashart($splashart)
+    /**
+     * setter thumbnail
+     * @param string $thumbnail
+     * @return self
+     */
+    public function setSplashart(string $splashart): self
     {
         $this->splashart = $splashart;
         return $this;
     }
 
-    public function getExtension()
+    public function getExtension(): string
     {
         return $this->extension;
     }
 
-    public function setExtension($extension)
+    public function setExtension(string $extension): self
     {
         $this->extension = $extension;
         return $this;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function setName($name)
+    public function setName(string $name): self
     {
         $this->name = $name;
         return $this;
     }
 
-    public function getRole()
+    public function getRole(): string
     {
         return $this->role;
     }
 
-    public function setRole($role)
+    public function setRole(string $role): self
     {
         $this->role = $role;
         return $this;
     }
 
-    public function getDifficulty()
+    public function getDifficulty(): string
     {
         return $this->difficulty;
     }
 
-    public function setDifficulty($difficulty)
+    public function setDifficulty(string $difficulty): self
     {
         $this->difficulty = $difficulty;
         return $this;
     }
 
-    public function getFree()
+    public function getFree(): string
     {
         return $this->free;
     }
 
-    public function setFree($free)
+    public function setFree(string $free): self
     {
         $this->free = $free;
         return $this;
     }
 
-    public function getPro()
+    public function getPro(): string
     {
         return $this->pro;
     }
 
-    public function setPro($pro)
+    public function setPro(string $pro): self
     {
         $this->pro = $pro;
         return $this;
