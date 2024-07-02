@@ -9,7 +9,7 @@ Trait CreatedAtTrait
 
     /**
      * getter created_at
-     * @return integer
+     * @return DateTimeImmutable
      */
     public function getCreated_at(): DateTimeImmutable
     {
@@ -21,7 +21,7 @@ Trait CreatedAtTrait
      * @param string $created_at
      * @return self
      */
-    public function setCreated_at($created_at): self
+    public function setCreated_at(string $created_at): self
     {
         $this->created_at = $created_at;
         return $this;
