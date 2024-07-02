@@ -1,16 +1,27 @@
 <?php
 namespace App\Models\Trait;
 
+use DateTimeImmutable;
+
 Trait CreatedAtTrait
 {
     protected $created_at;
 
-    public function getCreated_at()
+    /**
+     * getter created_at
+     * @return integer
+     */
+    public function getCreated_at(): DateTimeImmutable
     {
         return $this->created_at;
     }
 
-    public function setCreated_at($created_at)
+    /**
+     * setter created_at
+     * @param string $created_at
+     * @return self
+     */
+    public function setCreated_at($created_at): self
     {
         $this->created_at = $created_at;
         return $this;
