@@ -3,7 +3,7 @@ namespace App\Models;
 
 use App\Models\Trait\CreatedAtTrait;
 
-class AdminModel extends Model
+class TodoModel extends Model
 {
     /* containt created_at */
     use CreatedAtTrait;
@@ -11,13 +11,13 @@ class AdminModel extends Model
     /* key primary id */
     protected int $id;
 
-    /* column todo */
-    protected string $todo;
+    /* column content */
+    protected string $content;
 
     /* magic method __construct */
     public function __construct()
     {
-        $this->table = "admin";
+        $this->table = 'todo';
     }
 
     /**
@@ -41,22 +41,22 @@ class AdminModel extends Model
     }
 
     /**
-     * getter todo
+     * getter content
      * @return string
      */
-    public function getTodo(): string
+    public function getContent(): string
     {
-        return $this->todo;
+        return $this->content;
     }
 
     /**
-     * setter todo
-     * @param string $todo
+     * setter content
+     * @param string $content
      * @return self
      */
-    public function setTodo(string $todo): self
+    public function setContent(string $content): self
     {
-        $this->todo = $todo;
+        $this->content = $content;
         return $this;
     }
 }

@@ -3,7 +3,7 @@
     <?= $contactForm; ?>
 
     <?php foreach($admins as $image): ?>
-        <p><?= $image->todo ?></p>
+        <p><?= $image->content ?></p>
     <?php endforeach; ?>
 
 </section>

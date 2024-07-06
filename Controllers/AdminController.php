@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-use App\Models\AdminModel;
+use App\Models\TodoModel;
 use App\Core\Form;
 use App\Core\Functions;
 
@@ -23,9 +23,9 @@ class AdminController extends Controller
 
         // form validate
         if (Form::validate($_POST, ['todo'])):
-            $adminModel = new AdminModel;
-            $adminModel->setTodo($todo);
-            if ($adminModel->create()):
+            $todoModel = new TodoModel;
+            $todoModel->setContent($todo);
+            if ($todoModel->create()):
                 header('Location: admin'); exit;
             endif;
         endif;
@@ -34,8 +34,8 @@ class AdminController extends Controller
         $form = self::contactForm($todo);
 
         // class instance
-        $adminModel = new AdminModel;
-        $admins = $adminModel->findAllOrderBy('id DESC');
+        $todoModel = new TodoModel;
+        $admins = $todoModel->findAllOrderBy('id DESC');
 
         // view
         $this->title = 'WildRift Hub | Admin';
