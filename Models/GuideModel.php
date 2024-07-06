@@ -23,61 +23,107 @@ class GuideModel extends Model
     /* column content */
     protected string $content;
 
+    /* magic method __construct */
     public function __construct()
     {
         $this->table = "guide";
     }
 
-    public function getId()
+    /**
+     * getter id
+     * @return integer
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId($id)
+    /**
+     * setter id
+     * @param integer $id
+     * @return self
+     */
+    public function setId(int $id): self
     {
         $this->id = $id;
         return $this;
     }
 
-    public function getThumbnail()
+    /**
+     * getter thumbnail
+     * @return string
+     */
+    public function getThumbnail(): string
     {
         return $this->thumbnail;
     }
 
-    public function setThumbnail($thumbnail)
+    /**
+     * setter thumbnail
+     * @param string $thumbnail
+     * @return self
+     */
+    public function setThumbnail(string $thumbnail): self
     {
         $this->thumbnail = $thumbnail;
         return $this;
     }
 
-    public function getExtension()
+    /**
+     * getter extension
+     * @return string
+     */
+    public function getExtension(): string
     {
         return $this->extension;
     }
 
-    public function setExtension($extension)
+    /**
+     * setter extension
+     * @param string $extension
+     * @return self
+     */
+    public function setExtension(string $extension): self
     {
         $this->extension = $extension;
         return $this;
     }
 
-    public function getName()
+    /**
+     * getter name
+     * @return string
+     */
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function setName($name)
+    /**
+     * setter name
+     * @param string $name
+     * @return self
+     */
+    public function setName(string $name): self
     {
         $this->name = $name;
         return $this;
     }
 
-    public function getContent()
+    /**
+     * getter content
+     * @return string
+     */
+    public function getContent(): string
     {
         return $this->content;
     }
 
-    public function setContent($content)
+    /**
+     * setter content
+     * @param string $content
+     * @return self
+     */
+    public function setContent(string $content): self
     {
         $this->content = $content;
         return $this;
