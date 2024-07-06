@@ -20,19 +20,19 @@ class ChampionModel extends Model
     /* image extension */
     protected string $extension;
 
-    /* champion name */
+    /* column name */
     protected string $name;
 
-    /* champion role */
+    /* column role */
     protected string $role;
 
-    /* champion difficulty */
+    /* column difficulty */
     protected string $difficulty;
 
-    /* champion free content */
+    /* column free content */
     protected string $free;
 
-    /* champion pro content */
+    /* column pro content */
     protected string $pro;
 
     /* magic method __construct */

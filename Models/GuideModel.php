@@ -17,10 +17,10 @@ class GuideModel extends Model
     /* image extension */
     protected string $extension;
 
-    /* guide name */
+    /* column name */
     protected string $name;
 
-    /* guide content */
+    /* column content */
     protected string $content;
 
     public function __construct()
