@@ -81,10 +81,8 @@ class ChampionModel extends Model
         return $this;
     }
 
-
-
     /**
-     * getter thumbnail
+     * getter splashart
      * @return string
      */
     public function getSplashart(): string
@@ -93,8 +91,8 @@ class ChampionModel extends Model
     }
 
     /**
-     * setter thumbnail
-     * @param string $thumbnail
+     * setter splashart
+     * @param string $splashart
      * @return self
      */
     public function setSplashart(string $splashart): self
@@ -103,66 +101,120 @@ class ChampionModel extends Model
         return $this;
     }
 
+    /**
+     * getter extension
+     * @return string
+     */
     public function getExtension(): string
     {
         return $this->extension;
     }
 
+    /**
+     * setter extension
+     * @param string $extension
+     * @return self
+     */
     public function setExtension(string $extension): self
     {
         $this->extension = $extension;
         return $this;
     }
 
+    /**
+     * getter name
+     * @return string
+     */
     public function getName(): string
     {
         return $this->name;
     }
 
+    /**
+     * setter name
+     * @param string $name
+     * @return self
+     */
     public function setName(string $name): self
     {
         $this->name = $name;
         return $this;
     }
 
+    /**
+     * getter role
+     * @return string
+     */
     public function getRole(): string
     {
         return $this->role;
     }
 
+    /**
+     * setter role
+     * @param string $role
+     * @return self
+     */
     public function setRole(string $role): self
     {
         $this->role = $role;
         return $this;
     }
 
+    /**
+     * getter difficulty
+     * @return string
+     */
     public function getDifficulty(): string
     {
         return $this->difficulty;
     }
 
+    /**
+     * setter difficulty
+     * @param string $difficulty
+     * @return self
+     */
     public function setDifficulty(string $difficulty): self
     {
         $this->difficulty = $difficulty;
         return $this;
     }
 
+    /**
+     * getter free
+     * @return string
+     */
     public function getFree(): string
     {
         return $this->free;
     }
 
+    /**
+     * setter free
+     * @param string $free
+     * @return self
+     */
     public function setFree(string $free): self
     {
         $this->free = $free;
         return $this;
     }
 
+    /**
+     * getter pro
+     * @return string
+     */
     public function getPro(): string
     {
         return $this->pro;
     }
 
+    /**
+     * setter pro
+     * @param string $pro
+     * @return self
+     */
     public function setPro(string $pro): self
     {
         $this->pro = $pro;
