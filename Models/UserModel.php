@@ -11,28 +11,38 @@ class UserModel extends Model
     /* key primary id */
     protected int $id;
 
-    /* user email */
+    /* column email */
     protected string $email;
 
-    /* user password */
+    /* column password */
     protected string $password;
 
-    /* user pro status */
+    /* column pro status */
     protected string $pro;
 
-    /* user roles */
+    /* column roles */
     protected $roles;
 
+    /* magic method __construct */
     public function __construct()
     {
         $this->table = "user";
     }
 
+    /**
+     * finder by email
+     * @param string $email
+     * @return void
+     */
     public function findOneByEmail(string $email)
     {
         return $this->requete("SELECT * FROM {$this->table} WHERE email = ?", [$email])->fetch();
     }
 
+    /**
+     * setter session
+     * @return void
+     */
     public function setSession()
     {
         $_SESSION['user'] = [
@@ -43,55 +53,101 @@ class UserModel extends Model
         ];
     }
 
-    public function getId()
+    /**
+     * getter id
+     * @return integer
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId($id)
+    /**
+     * setter id
+     * @param integer $id
+     * @return self
+     */
+    public function setId(int $id): self
     {
         $this->id = $id;
         return $this;
     }
 
-    public function getEmail()
+    /**
+     * getter email
+     * @return string
+     */
+    public function getEmail(): string
     {
         return $this->email;
     }
 
-    public function setEmail($email)
+    /**
+     * setter email
+     * @param string $email
+     * @return self
+     */
+    public function setEmail(string $email): self
     {
         $this->email = $email;
         return $this;
     }
 
-    public function getPassword()
+    /**
+     * getter password
+     * @return string
+     */
+    public function getPassword(): string
     {
         return $this->password;
     }
 
-    public function setPassword($password)
+    /**
+     * setter password
+     * @param string $password
+     * @return self
+     */
+    public function setPassword(string $password): self
     {
         $this->password = $password;
         return $this;
     }
 
-    public function getPro()
+    /**
+     * getter pro
+     * @return string
+     */
+    public function getPro(): string
     {
         return $this->pro;
     }
 
-    public function setPro($pro)
+    /**
+     * setter pro
+     * @param string $pro
+     * @return self
+     */
+    public function setPro(string $pro): self
     {
         $this->pro = $pro;
         return $this;
     }
 
+    /**
+     * getter roles
+     * @return void
+     */
     public function getRoles()
     {
         return $this->roles;
     }
 
+    /**
+     * setter pro
+     * @param $roles
+     * @param string $method
+     * @return void
+     */
     public function setRoles($roles, string $method = "decode")
     {
         if ($method == "encode")
