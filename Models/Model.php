@@ -5,7 +5,10 @@ use App\Core\Database;
 
 class Model extends Database
 {
+    /* instance db */
     private $db;
+
+    /* db table */
     protected $table;
 
     /**
@@ -33,9 +36,9 @@ class Model extends Database
     /**
      * model->findBy(['key' => $value])
      * @param array $targets
-     * @return void
+     * @return array
      */
-    public function findBy(array $targets)
+    public function findBy(array $targets): array
     {
         $fields = [];
         $values = [];
@@ -54,9 +57,9 @@ class Model extends Database
 
     /**
      * model->findAll();
-     * @return void
+     * @return array
      */
-    public function findAll()
+    public function findAll(): array
     {
         $query = $this->requete("SELECT * FROM " . $this->table);
         return $query->fetchAll();
@@ -65,9 +68,9 @@ class Model extends Database
     /**
      * model->findAllOrderBy('id DESC')
      * @param string $orderBy
-     * @return void
+     * @return array
      */
-    public function findAllOrderBy(string $orderBy)
+    public function findAllOrderBy(string $orderBy): array
     {
         $query = $this->requete("SELECT * FROM {$this->table} ORDER BY $orderBy");
         return $query->fetchAll();
@@ -77,7 +80,7 @@ class Model extends Database
      * model->findAllOrderByLimit('id DESC', 6);
      * @param string $orderBy
      * @param integer $limit
-     * @return void
+     * @return array
      */
     public function findAllOrderByLimit(string $orderBy, int $limit): array
     {
