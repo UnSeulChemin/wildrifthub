@@ -35,11 +35,11 @@ class AdminController extends Controller
 
         // class instance
         $todoModel = new TodoModel;
-        $admins = $todoModel->findAllOrderBy('id DESC');
+        $todos = $todoModel->findAllOrderBy('id DESC');
 
         // view
         $this->title = 'WildRift Hub | Admin';
-        $this->render('admin/index', ['contactForm' => $form->create(), 'admins' => $admins]);
+        $this->render('admin/index', ['contactForm' => $form->create(), 'todos' => $todos]);
     }
 
     /**

@@ -2,7 +2,7 @@
 
     <?= $contactForm; ?>
 
-    <?php foreach($admins as $image): ?>
+    <?php foreach($todos as $image): ?>
         <p><?= $image->content ?></p>
     <?php endforeach; ?>
 

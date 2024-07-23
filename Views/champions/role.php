@@ -1,7 +1,7 @@
 <section class="section-content">
 
    <section class="flex-center-wrap-gap-35">
-        <?php foreach($champions as $image): ?>
+        <?php foreach($championsRole as $image): ?>
             <div class="div-card">
                <figure class="figure-image">
                     <a role="link" class="flex" href="<?= $pathRedirect; ?>champions/champion/<?= $image->name ?>">

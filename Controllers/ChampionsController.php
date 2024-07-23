@@ -59,13 +59,13 @@ class ChampionsController extends Controller
 
         // class instance
         $championModel = new ChampionModel;
-        $champions = $championModel->findBy(['role' => $role]);
+        $championsRole = $championModel->findBy(['role' => $role]);
 
         // functions static
         $pathRedirect = Functions::getPathRedirect();
 
         // view
         $this->title = 'WildRift Hub | '. ucfirst($role);
-        $this->render('champions/role', ['champions' => $champions, 'pathRedirect' => $pathRedirect]);
+        $this->render('champions/role', ['championsRole' => $championsRole, 'pathRedirect' => $pathRedirect]);
     }
 }
