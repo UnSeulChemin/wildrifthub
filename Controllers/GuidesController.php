@@ -14,7 +14,7 @@ class GuidesController extends Controller
     {
         // class instance
         $guideModel = new GuideModel;
-        $guide = $guideModel->findAllPaginate('id ASC', 8, 1);
+        $guides = $guideModel->findAllPaginate('id ASC', 8, 1);
         $count = $guideModel->countPaginate(8);
 
         // functions static
@@ -22,7 +22,33 @@ class GuidesController extends Controller
 
         // view
         $this->title = 'WildRift Hub | Guides';
-        $this->render('guides/index', ['guide' => $guide, 'count' => $count, 'pathRedirect' => $pathRedirect]);
+        $this->render('guides/index', ['guides' => $guides, 'count' => $count, 'pathRedirect' => $pathRedirect]);
+    }
+
+    /**
+     * route /guides/page/{page}
+     * @param $page
+     * @return void
+     */
+    public function page($page = null): void
+    {
+        // checker path int
+        Functions::checkerPathInt($page);
+
+        // class instance
+        $guideModel = new GuideModel;
+        $guides = $guideModel->findAllPaginate('id ASC', 8, $page);
+        $count = $guideModel->countPaginate(8);
+
+        // checker path count
+        Functions::checkerPathCount($count);
+
+        // functions static
+        $pathRedirect = Functions::getPathRedirect();
+
+        // view
+        $this->title = 'WildRift Hub | Guides | Page '.$page;
+        $this->render('guides/index', ['guides' => $guides, 'count' => $count, 'pathRedirect' => $pathRedirect]);
     }
 
     /**
@@ -45,32 +71,6 @@ class GuidesController extends Controller
         // view
         $this->title = 'WildRift Hub | '.ucfirst($guide->name);
         $this->render('guides/guide', ['guide' => $guide, 'pathRedirect' => $pathRedirect]);
-    }
-
-    /**
-     * route /guides/page/{page}
-     * @param $page
-     * @return void
-     */
-    public function page($page = null): void
-    {
-        // checker path int
-        Functions::checkerPathInt($page);
-
-        // class instance
-        $guideModel = new GuideModel;
-        $guide = $guideModel->findAllPaginate('id ASC', 8, $page);
-        $count = $guideModel->countPaginate(8);
-
-        // checker path count
-        Functions::checkerPathCount($count);
-
-        // functions static
-        $pathRedirect = Functions::getPathRedirect();
-
-        // view
-        $this->title = 'WildRift Hub | Guides | Page '.$page;
-        $this->render('guides/index', ['guide' => $guide, 'count' => $count, 'pathRedirect' => $pathRedirect]);
     }
 
     /**

@@ -1,7 +1,7 @@
 <section class="section-content">
 
     <section class="flex-center-wrap-gap-35">
-        <?php foreach($guide as $image): ?>
+        <?php foreach($guides as $image): ?>
             <div class="div-card">
                <figure class="figure-image">
                     <a role="link" class="flex" href="<?= $pathRedirect; ?>guides/guide/<?= $image->name ?>">
