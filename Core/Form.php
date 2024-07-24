@@ -78,6 +78,13 @@ class Form
         return true;
     }
 
+    /**
+     * form start form
+     * @param string $method
+     * @param string $action
+     * @param array $attributes
+     * @return self
+     */
     public function startForm(string $method = 'post', string $action = '#', array $attributes = []): self
     {
         $this->formCode .= "<form action='$action' method='$method'";
@@ -85,6 +92,10 @@ class Form
         return $this;
     }
 
+    /**
+     * form end form
+     * @return self
+     */
     public function endForm(): self
     {
         $this->formCode .= '</form>';
@@ -127,6 +138,13 @@ class Form
         return $this;
     }
 
+    /**
+     * form add select
+     * @param string $name
+     * @param array $options
+     * @param array $attributes
+     * @return self
+     */
     public function addSelect(string $name, array $options, array $attributes = []):self
     {
         $this->formCode .= "<select name='$name'";
@@ -141,6 +159,12 @@ class Form
         return $this;
     }
 
+    /**
+     * form add button
+     * @param string $text
+     * @param array $attributes
+     * @return self
+     */
     public function addButton(string $text, array $attributes = []): self
     {
         $this->formCode .= '<button ';
@@ -149,6 +173,11 @@ class Form
         return $this;
     }
 
+    /**
+     * self addAttributes
+     * @param array $attributes
+     * @return string
+     */
     private function addAttributes(array $attributes): string
     {
         $string = '';
