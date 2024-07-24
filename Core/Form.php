@@ -102,6 +102,11 @@ class Form
         return $this;
     }
 
+    /**
+     * form start div
+     * @param array $attributes
+     * @return self
+     */
     public function startDiv(array $attributes = []): self
     {
         $this->formCode .= '<div';
@@ -109,12 +114,23 @@ class Form
         return $this;
     }
 
+    /**
+     * form end div
+     * @return self
+     */
     public function endDiv(): self
     {
         $this->formCode .= '</div>';
         return $this;
     }
 
+    /**
+     * form add input
+     * @param string $type
+     * @param string $name
+     * @param array $attributes
+     * @return self
+     */
     public function addInput(string $type, string $name, array $attributes = []): self
     {
         $this->formCode .= "<input type='$type' name='$name'";
@@ -122,6 +138,13 @@ class Form
         return $this;
     }
 
+    /**
+     * form add label for
+     * @param string $for
+     * @param string $text
+     * @param array $attributes
+     * @return self
+     */
     public function addLabelFor(string $for, string $text, array $attributes = []): self
     {
         $this->formCode .= "<label for='$for'";
@@ -130,6 +153,13 @@ class Form
         return $this;
     }
 
+    /**
+     * form add textarea
+     * @param string $name
+     * @param string $value
+     * @param array $attributes
+     * @return self
+     */
     public function addTextarea(string $name, string $value = '', array $attributes = []): self
     {
         $this->formCode .= "<textarea name='$name'";
@@ -145,7 +175,7 @@ class Form
      * @param array $attributes
      * @return self
      */
-    public function addSelect(string $name, array $options, array $attributes = []):self
+    public function addSelect(string $name, array $options, array $attributes = []): self
     {
         $this->formCode .= "<select name='$name'";
         $this->formCode .= $attributes ? $this->addAttributes($attributes).'>' : '>';
