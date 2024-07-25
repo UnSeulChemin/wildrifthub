@@ -5,8 +5,8 @@ use App\Core\Trait\AllChampionsNameTrait;
 use App\Core\Trait\AllChampionsRoleTrait;
 use App\Core\Trait\AllChampionsDifficultyTrait;
 use App\Core\Trait\AllGuidesNameTrait;
-use App\Core\Trait\AllPathsDenied;
 use App\Core\Trait\AllPathsBasename;
+use App\Core\Trait\AllPathsDenied;
 
 class Functions
 {
@@ -22,11 +22,11 @@ class Functions
     /* containt all guides name */
     use AllGuidesNameTrait;
 
-    /* containt all paths denied */
-    use AllPathsDenied;
-
     /* containt all paths basename */
     use AllPathsBasename;
+
+    /* containt all paths denied */
+    use AllPathsDenied;
 
     /**
      * checker session empty
@@ -121,22 +121,22 @@ class Functions
     }
 
     /**
-     * checker path denied
-     * @return boolean
-     */
-    public static function checkerPathDenied(): bool
-    {
-        if (in_array(basename($_GET['p']), self::ALL_PATHS_DENIED)) { self::pathRedirectCurrent(); }
-        return true;
-    }
-
-    /**
      * checker path basename
      * @return boolean
      */
     public static function checkerPathBasename(): bool
     {
         if (!in_array(basename($_GET['p']), self::ALL_PATHS_BASENAME)) { self::pathRedirectCurrent(); }
+        return true;
+    }
+
+    /**
+     * checker path denied
+     * @return boolean
+     */
+    public static function checkerPathDenied(): bool
+    {
+        if (in_array(basename($_GET['p']), self::ALL_PATHS_DENIED)) { self::pathRedirectCurrent(); }
         return true;
     }
 
