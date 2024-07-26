@@ -143,7 +143,7 @@ class UserModel extends Model
     }
 
     /**
-     * setter pro
+     * setter roles
      * @param $roles
      * @param string $method
      * @return void
