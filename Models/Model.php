@@ -8,7 +8,7 @@ class Model extends Database
     /* instance db */
     private $db;
 
-    /* db table */
+    /* table db */
     protected $table;
 
     /**
@@ -206,7 +206,7 @@ class Model extends Database
      * @param array|null $attributes
      * @return void
      */
-    public function requete(string $sql, array $attributes = null)
+    protected function requete(string $sql, array $attributes = null)
     {
         $this->db = Database::getInstance();
 
