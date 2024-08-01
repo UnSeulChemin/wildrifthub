@@ -15,7 +15,7 @@
         <?php endforeach; ?>
     </section>
 
-    <nav role="navigation" aria-label="Pages navigation" class="flex-center-center">
+    <nav role="navigation" aria-label="Pages navigation" class="flex-center-center-gap-25">
         <?php
         $base = basename($_GET["p"]);
         if (!is_numeric($base)): $base = 1; endif;

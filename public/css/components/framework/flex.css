@@ -51,12 +51,12 @@
     align-items: center;
 }
 
-.flex-center-center-gap-20
+.flex-center-center-gap-25
 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .flex-center-center-gap-50

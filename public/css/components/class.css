@@ -99,14 +99,8 @@
     background-color: var(--background-color-header);
     box-sizing: border-box;
 
-    margin-right: 25px;
     padding: 8px;
     border-radius: 5px;
-}
-
-.link-paginate:last-child
-{
-    margin-right: 0;
 }
 
 .link-paginate:hover
