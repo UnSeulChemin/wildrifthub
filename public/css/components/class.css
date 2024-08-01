@@ -3,8 +3,8 @@
 {
     background-color: var(--background-color-section);
 
-    margin: 25px 0;
-    padding: 30px 0;
+    margin: 30px 0;
+    padding: 20px 0;
 }
 
 .section-latest
@@ -106,6 +106,9 @@
 .link-card
 {
     width: 100%;
+    font-weight: bold;
+    letter-spacing: 2px;
+    word-spacing: 1px;
     color: var(--color-link);
     background-color: var(--background-color-header);
     box-sizing: border-box;

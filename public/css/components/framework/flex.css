@@ -59,6 +59,14 @@
     gap: 20px;
 }
 
+.flex-center-center-gap-35
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
 .flex-left-center-gap-50
 {
     display: flex;
