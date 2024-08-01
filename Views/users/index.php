@@ -12,20 +12,28 @@
 
 <?php else: ?>
 
-    <div class="flex-center-center">
-        <p class="m-0">Register an account first here</p>
+    <div class="m-b-30">
+        <p class="m-0">If you don't have an account.</p>
+        <p class="m-0 bold">Register an account here</p>
     </div>
 
-    <div class="m-t-20">
+    <div class="m-b-40">
         <a role="link" class="link-section" href="users/register">Register</a>
     </div>
 
-    <div class="flex-center-center m-t-20">
-        <p class="m-0">if u already have an account login here</p>
+    <div class="m-b-30">
+        <p class="m-0">If u already have an account.</p>
+        <p class="m-0 bold">Login here</p>
     </div>
 
-    <div class="m-t-20">
+    <div class="m-b-40">
         <a role="link" class="link-section" href="users/login">Login</a>
+    </div>
+
+    <div>
+        <p class="m-0">First login.</p>
+        <p class="m-0">Step 2.</p>
+        <p class="m-0">Step 3.</p>
     </div>
 
 <?php endif; ?>

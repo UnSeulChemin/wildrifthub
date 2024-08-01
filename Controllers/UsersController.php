@@ -139,7 +139,7 @@ class UsersController extends Controller
                 ->addInput('password', 'password',
                     ['placeholder' => 'Password', 'required' => true])
             ->endDiv()
-            ->addButton('Registration', ['type' => 'submit', 'class' => 'link-submit', 'role' => 'button'])
+            ->addButton('Register', ['type' => 'submit', 'class' => 'link-submit', 'role' => 'button'])
             ->endForm();
         return $form;
     }
