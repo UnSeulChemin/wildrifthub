@@ -1,4 +1,4 @@
-<section class="section-latest m-t-30">
+<section class="section-latest">
 
         <h2>Latest champions</h2>
 
@@ -12,9 +12,9 @@
 
 </section>
 
-<section class="section-content">
+<section class="section-display">
 
-   <section class="flex-center-wrap-gap-35">
+   <section class="flex-center-wrap-gap-50">
         <?php foreach($champions as $image): ?>
             <div class="div-card">
                <figure class="figure-image">

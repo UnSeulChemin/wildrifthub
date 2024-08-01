@@ -12,7 +12,16 @@
     text-align: left;
     background-color: var(--background-color-section);
 
-    padding: 25px;
+    margin-top: 30px;
+    padding: 40px;
+}
+
+.section-display
+{
+    background-color: var(--background-color-section);
+
+    margin: 30px 0;
+    padding: 50px 0;
 }
 
 /* Section Card */
@@ -66,6 +75,9 @@
 .link-section
 {
     width: 175px;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+    font-weight: bold;
     color: var(--color-link);
     background-color: var(--background-color-header);
     box-sizing: border-box;
