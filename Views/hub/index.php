@@ -17,7 +17,7 @@
         <?php endforeach; ?>
     </section>
 
-    <div class="m-b-20 flex-center-center-gap-35">
+    <div class="m-b-40 flex-center-center-gap-35">
         <a class="link-section" href="guides"">Guides</a>
         <a class="link-section" href="guides/all"">All guides</a>
     </div>
