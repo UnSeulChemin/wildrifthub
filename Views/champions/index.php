@@ -2,7 +2,7 @@
 
         <h2>Latest champions</h2>
 
-        <div class="flex-left-center-gap-50 m-t-20">
+        <div class="flex-left-center-gap-50">
             <?php foreach($championsLatest as $image): ?>
                 <div>
                     <a class="link-card" href="champions/champion/<?= $image->name ?>"><?= ucfirst($image->name) ?></a>
@@ -14,7 +14,7 @@
 
 <section class="section-display">
 
-   <section class="flex-center-wrap-gap-50">
+   <section class="flex-center-wrap-gap-50 m-b-30">
         <?php foreach($champions as $image): ?>
             <div class="div-card">
                <figure class="figure-image">
@@ -29,7 +29,7 @@
         <?php endforeach; ?>
     </section>
 
-    <div class="m-t-30">
+    <div>
         <a class="link-section" href="javascript:history.go(-1)">Back</a>
     </div>
 

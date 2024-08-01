@@ -1,6 +1,6 @@
-<section class="section-content">
+<section class="section-display">
 
-    <section class="flex-center-wrap-gap-50">
+    <section class="flex-center-wrap-gap-50 m-b-30">
         <?php foreach($guides as $image): ?>
             <div class="div-card">
                <figure class="figure-image">
@@ -15,7 +15,7 @@
         <?php endforeach; ?>
     </section>
 
-    <nav role="navigation" aria-label="Pages navigation" class="flex-center-center m-t-30">
+    <nav role="navigation" aria-label="Pages navigation" class="flex-center-center">
         <?php
         $base = basename($_GET["p"]);
         if (!is_numeric($base)): $base = 1; endif;
