@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\TodoModel;
+use App\Models\UserModel;
 use App\Core\Form;
 use App\Core\Functions;
 
@@ -40,6 +41,25 @@ class AdminController extends Controller
         // view
         $this->title = 'WildRift Hub | Admin';
         $this->render('admin/index', ['contactForm' => $form->create(), 'todos' => $todos]);
+    }
+
+    public function users()
+    {
+        // checker session admin
+        if (!Functions::checkerSessionAdmin()):
+            header('Location: '.Functions::getPathRedirect().'./'); exit;
+        endif;
+
+        // class instance
+        $userModel = new UserModel;
+        $users = $userModel->findAllOrderBy('roles ASC');
+
+        // functions static
+        $pathRedirect = Functions::getPathRedirect();
+
+        // view
+        $this->title = 'WildRift Hub | Admin | Users';
+        $this->render('admin/users', ['users' => $users, 'pathRedirect' => $pathRedirect]);
     }
 
     /**
