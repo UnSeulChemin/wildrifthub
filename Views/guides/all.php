@@ -1,6 +1,6 @@
-<section class="section-content">
+<section class="section-display">
 
-   <section class="flex-center-wrap-gap-50">
+    <section class="flex-center-wrap-gap-50 m-b-30">
         <?php foreach($guides as $image): ?>
             <div class="div-card">
                 <figure class="figure-image">
@@ -15,7 +15,7 @@
         <?php endforeach; ?>
     </section>
 
-    <div class="m-t-30">
+    <div>
         <a class="link-section" href="javascript:history.go(-1)">Back</a>
     </div>
 

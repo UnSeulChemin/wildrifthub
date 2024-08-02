@@ -27,30 +27,26 @@
 
     </section>
 
-    <section class="section-card-recommended flex-around-center m-b-30">
+    <section class="section-card-recommended flex-center-center-gap-25 m-b-30">
 
-            <article class="flex-gap-50">
+        <article class="flex">
+            <p class="m-0">Core build</p>
+            <p class="m-0">relation item... </p>
+            <p class="m-0">luden</p>
+            <p class="m-0">orbe</p>
+        </article>
 
-                <div class="flex">
-                    <p class="m-0">Core build</p>
-                    <p class="m-0">relation item... </p>
-                    <p class="m-0">luden</p>
-                    <p class="m-0">orbe</p>
-                </div>
+        <article class="flex">
+            <p class="m-0">Rune</p>
+            <p class="m-0">luden</p>
+            <p class="m-0">orbe</p>
+        </article>
 
-                <div class="flex">
-                    <p class="m-0">Rune</p>
-                    <p class="m-0">luden</p>
-                    <p class="m-0">orbe</p>
-                </div>
-
-                <div class="flex">
-                    <p class="m-0">Spell</p>
-                    <p class="m-0">luden</p>
-                    <p class="m-0">orbe</p>
-                </div>
-
-            </article>
+        <article class="flex">
+            <p class="m-0">Spell</p>
+            <p class="m-0">luden</p>
+            <p class="m-0">orbe</p>
+        </article>
 
     </section>
 

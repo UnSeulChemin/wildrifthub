@@ -1,19 +1,23 @@
 <section class="section-content">
 
-    <h4><?= $guide->name ?></h4>
+    <h2><?= ucfirst($guide->name) ?></h2>
    
-    <section class="section-card-image m-t-50">
+    <section class="section-card-image m-b-40">
 
         <figure class="figure-card-id">
             <img alt="<?= $guide->name ?>"
             src="<?= $pathRedirect; ?>public/images/guides/thumbnail/<?= $guide->thumbnail.".".$guide->extension ?>">
         </figure>
 
-        <p><?= $guide->content ?></p>
+    </section>
+
+    <section class="section-card-recommended m-b-40">
+
+        <article class="m-0"><?= $guide->content ?></article>
 
     </section>
 
-    <div class="m-t-30">
+    <div>
         <a class="link-section" href="javascript:history.go(-1)">Back</a>
     </div>
 
