@@ -1,6 +1,6 @@
 <section class="section-content">
 
-   <section class="flex-center-wrap-gap-35">
+   <section class="flex-center-wrap-gap-50">
         <?php foreach($championsRole as $image): ?>
             <div class="div-card">
                <figure class="figure-image">

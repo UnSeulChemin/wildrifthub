@@ -47,14 +47,14 @@
 {
     background-color: var(--background-color-content);
 
-    padding: 20px;
+    padding: 30px;
 }
 
 .section-card-content
 {
     background-color: var(--background-color-content);
 
-    padding: 20px;
+    padding: 30px;
 }
 
 /* Link */
@@ -125,6 +125,21 @@
 }
 
 .link-card:hover
+{
+    color: var(--background-color-section);
+    background-color: var(--color-link);
+}
+
+.link-role
+{
+    color: var(--color-link);
+    background-color: var(--background-color-section);
+
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.link-role:hover
 {
     color: var(--background-color-section);
     background-color: var(--color-link);

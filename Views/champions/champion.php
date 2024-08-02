@@ -1,6 +1,6 @@
 <section class="section-content">
 
-    <section class="section-card-head flex-around-center">
+    <section class="section-card-head flex-around-center m-b-40">
 
         <div>
             <h3><?= ucfirst($champion->name) ?></h3>
@@ -8,17 +8,17 @@
 
         <div>
             <h3>Role</h3>
-            <a href="<?= $pathRedirect; ?>champions/role/<?= $champion->role ?>"><?= ucfirst($champion->role) ?></a>
+            <a class="link-role" href="<?= $pathRedirect; ?>champions/role/<?= $champion->role ?>"><?= ucfirst($champion->role) ?></a>
         </div>
 
-        <div class="flex-center-center-gap-20">
+        <div class="flex-center-center-gap-25">
             <h3>Difficulty</h3>   
             <img class="difficulty" src="<?= $championDifficulty ?>">
         </div>
 
     </section>
 
-    <section class="section-card-image m-t-50">
+    <section class="section-card-image m-b-40">
 
         <figure class="figure-card-id">
             <img alt="<?= $champion->name ?>"
@@ -27,52 +27,52 @@
 
     </section>
 
-    <section class="section-card-recommended flex-around-center m-t-50">
+    <section class="section-card-recommended flex-around-center m-b-30">
 
             <article class="flex-gap-50">
 
                 <div class="flex">
-                    <p>Core build</p>
-                    <p>relation item... </p>
-                    <p>luden</p>
-                    <p>orbe</p>
+                    <p class="m-0">Core build</p>
+                    <p class="m-0">relation item... </p>
+                    <p class="m-0">luden</p>
+                    <p class="m-0">orbe</p>
                 </div>
 
                 <div class="flex">
-                    <p>Rune</p>
-                    <p>luden</p>
-                    <p>orbe</p>
+                    <p class="m-0">Rune</p>
+                    <p class="m-0">luden</p>
+                    <p class="m-0">orbe</p>
                 </div>
 
                 <div class="flex">
-                    <p>Spell</p>
-                    <p>luden</p>
-                    <p>orbe</p>
+                    <p class="m-0">Spell</p>
+                    <p class="m-0">luden</p>
+                    <p class="m-0">orbe</p>
                 </div>
 
             </article>
 
     </section>
 
-    <section class="section-card-content m-t-50">
+    <section class="section-card-content m-b-40">
 
         <article>
             <h5>Basic tips for <span class="active"><?= ucfirst($champion->name) ?></span></h5>
-            <p><?= nl2br($champion->free) ?></p>
+            <p class="m-0"><?= nl2br($champion->free) ?></p>
         </article>
 
         <article>
             <h5>Pro tips for <span class="active"><?= ucfirst($champion->name) ?></span></h5>
             <?php if ($sessionPro): ?>
-                <p><?= nl2br($champion->pro) ?></p>
+                <p class="m-0"><?= nl2br($champion->pro) ?></p>
             <?php else: ?>
-                <p>u need to be pro.. click here (grissé?)</p>
+                <p class="m-0">u need to be pro.. click here (grissé?)</p>
             <?php endif; ?>
         </article>
 
     </section>
 
-    <div class="m-t-30">
+    <div>
         <a class="link-section" href="javascript:history.go(-1)">Back</a>
     </div>
 
