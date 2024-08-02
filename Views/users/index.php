@@ -3,11 +3,11 @@
 <?php if ($sessionUser): ?>
 
     <?php if ($sessionPro): ?>
-        <p>Alraedy pro</p>
-        <p>See all hero tips here</p>
+        <p class="m-0">Already pro</p>
+        <p class="m-0">See all hero tips here</p>
     <?php else: ?>
-        <p>Alraedy loged.</p>
-        <p>Click here to become pro</p>
+        <p class="m-0">Already loged.</p>
+        <p class="m-0">Click here to become pro</p>
     <?php endif; ?>
 
 <?php else: ?>
