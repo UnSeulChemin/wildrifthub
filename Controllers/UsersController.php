@@ -128,9 +128,13 @@ class UsersController extends Controller
             header('Location: '.Functions::getPathRedirect().'./');
         endif;
 
+        // class instance
+        $userModel = new UserModel;
+        $user = $userModel->find($_SESSION['user']['id']);
+
         // view
         $this->title = 'WildRift Hub | Profile';
-        $this->render('users/profile');
+        $this->render('users/profile', ['user' => $user]);
     }
 
     /**
