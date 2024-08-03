@@ -118,6 +118,58 @@ class UsersController extends Controller
     }
 
     /**
+     * route /users/profile
+     * @return void
+     */
+    public function profile(): void
+    {
+        // checker session user
+        if (!Functions::checkerSessionUser()):
+            header('Location: '.Functions::getPathRedirect().'./');
+        endif;
+
+        // view
+        $this->title = 'WildRift Hub | Profile';
+        $this->render('users/profile');
+    }
+
+    /**
+     * route /users/updateEmail
+     * @return void
+     */
+    public function updateEmail(): void
+    {
+        // checker session user
+        if (!Functions::checkerSessionUser()):
+            header('Location: '.Functions::getPathRedirect().'./');
+        endif;
+
+        // class instance
+        $userModel = new UserModel;
+        $user = $userModel->find($_SESSION['user']['id']);
+
+        // environment variables
+        $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
+
+        // form validate
+        if (Form::validate($_POST, ['email']))
+        {
+            $userModel = new UserModel;
+            $userModel->setId($user->id)->setEmail($email);
+            if ($userModel->update()):
+                header('Location: ./'); exit;
+            endif;
+        }
+
+        // form create
+        $form = self::updateForm($user->email);
+
+        // view
+        $this->title = 'PlaygroundPOO | Profile | Email';
+        $this->render('users/updateEmail', ['updateForm' => $form->create()]);
+    }
+
+    /**
      * self registerForm
      * @param string|null $email
      * @param string|null $password
@@ -167,6 +219,28 @@ class UsersController extends Controller
                     ['placeholder' => 'Password', 'required' => true])
             ->endDiv()
             ->addButton('Login', ['type' => 'submit', 'class' => 'link-submit', 'role' => 'button'])
+            ->endForm();
+        return $form;
+    }
+
+    /**
+     * self updateForm
+     * @param string|null $email
+     * @return Form
+     */
+    private static function updateForm(string $email = null): Form
+    {
+        // checker path denied
+        Functions::checkerPathDenied();
+
+        // form
+        $form = new Form;
+        $form->startForm()
+            ->startDiv()
+                ->addInput('email', 'email',
+                    ['placeholder' => 'Email', 'value' => $email, 'required' => true, 'autofocus' => true])
+            ->endDiv()
+            ->addButton('Validate', ['type' => 'submit', 'class' => 'link-submit', 'role' => 'button'])
             ->endForm();
         return $form;
     }

@@ -3,9 +3,15 @@
 <?php if ($sessionUser): ?>
 
     <?php if ($sessionPro): ?>
+        <div class="m-b-30">
+            <a class="link-profile" href="users/profile">Profile</a>
+        </div>
         <p class="m-0">Already pro</p>
         <p class="m-0">See all hero tips here</p>
     <?php else: ?>
+        <div class="m-b-30">
+            <a class="link-profile" href="users/profile">Profile</a>
+        </div>
         <p class="m-0">Already loged.</p>
         <p class="m-0">Click here to become pro</p>
     <?php endif; ?>

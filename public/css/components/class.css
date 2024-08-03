@@ -157,6 +157,22 @@
     background-color: var(--color-link);
 }
 
+.link-profile
+{
+    color: var(--color-link);
+    background-color: var(--background-color-header);
+    width: 100px;
+
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.link-profile:hover
+{
+    color: var(--background-color-section);
+    background-color: var(--color-link);
+}
+
 .link-submit
 {
     width: 250px;
