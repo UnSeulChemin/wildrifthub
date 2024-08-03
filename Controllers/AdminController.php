@@ -103,7 +103,7 @@ class AdminController extends Controller
         
         // view
         $this->title = 'PlaygroundPOO | Admin | '.$user->id;
-        $this->render('admin/userUpdate', ['form' => $form->create()]);
+        $this->render('admin/userUpdate', ['updateForm' => $form->create()]);
     }
 
     /**
