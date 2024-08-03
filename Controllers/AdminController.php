@@ -43,7 +43,11 @@ class AdminController extends Controller
         $this->render('admin/index', ['contactForm' => $form->create(), 'todos' => $todos]);
     }
 
-    public function users()
+    /**
+     * route /admin/users
+     * @return void
+     */
+    public function users(): void
     {
         // checker session admin
         if (!Functions::checkerSessionAdmin()):
@@ -52,7 +56,7 @@ class AdminController extends Controller
 
         // class instance
         $userModel = new UserModel;
-        $users = $userModel->findAllOrderBy('roles ASC');
+        $users = $userModel->findAllOrderBy('id DESC');
 
         // functions static
         $pathRedirect = Functions::getPathRedirect();

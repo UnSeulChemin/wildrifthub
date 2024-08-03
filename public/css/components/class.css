@@ -57,6 +57,18 @@
     padding: 30px;
 }
 
+/* Article */
+.article-content
+{
+    padding: 30px 0;
+    border-bottom: 3px solid var(--background-color-header);
+}
+
+.article-content:first-of-type
+{
+    border-top: 3px solid var(--background-color-header);    
+}
+
 /* Link */
 .link-menu
 {

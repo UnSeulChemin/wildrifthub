@@ -3,20 +3,21 @@
     <h2>Users</h2>
 
     <?php foreach($users as $user): ?>
+
         <article class="article-content">
-            <div>
-                <p class="bold"><?= $user->email ?></p>
+
+            <div class="m-b-30">
+                <p class="m-0"><?= $user->email ?></p>
+                <p class="m-0"><?= $user->roles ?></p>
             </div>
-            <div>
-                <p><?= $user->roles ?></p>
+
+            <div class="flex-center-center-gap-50">
+                <a class="link-section" href="<?= $pathRedirect; ?>admin/updateUser/<?= $user->id ?>">Update</a>
+                <a class="link-section" href="<?= $pathRedirect; ?>admin/deleteUser/<?= $user->id ?>">Delete</a>
             </div>
-            <div>
-                <a class="link-form" href="<?= $pathRedirect; ?>admin/updateUser/<?= $user->id ?>">Update</a>
-            </div>
-            <div>
-                <a class="link-form" href="<?= $pathRedirect; ?>admin/deleteUser/<?= $user->id ?>">Delete</a>
-            </div>
+
         </article>
+
     <?php endforeach; ?>
 
 </section>
