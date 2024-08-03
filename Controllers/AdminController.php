@@ -67,6 +67,67 @@ class AdminController extends Controller
     }
 
     /**
+     * route /admin/updateUser/{id}
+     * @param integer $id
+     * @return void
+     */
+    public function updateUser(int $id): void
+    {
+        // checker session admin
+        if (!Functions::checkerSessionAdmin()):
+            header('Location: '.Functions::getPathRedirect().'./'); exit;
+        endif;
+
+        // class instance
+        $userModel = new UserModel;
+        $user = $userModel->find($id);
+        
+        // checker exist
+        Functions::checkerExist($user);
+
+        // environment variables
+        $email = isset($_POST['email']) ? strip_tags($_POST['email']) : '';
+
+        // form validate
+        if (Form::validate($_POST, ['email']))
+        {
+            $userModel = new UserModel;
+            $userModel->setId($user->id)->setEmail($email);
+            if ($userModel->update()):
+                header('Location: ../users'); exit;
+            endif;
+        }
+
+        // form create
+        $form = self::updateForm($user->email);
+        
+        // view
+        $this->title = 'PlaygroundPOO | Admin | '.$user->id;
+        $this->render('admin/userUpdate', ['form' => $form->create()]);
+    }
+
+    /**
+     * route /admin/deleteUser/{id}
+     * @param integer $id
+     * @return void
+     */
+    public function deleteUser(int $id): void
+    {
+        // checker session admin
+        if (!Functions::checkerSessionAdmin()):
+            header('Location: '.Functions::getPathRedirect().'./'); exit;
+        endif;
+
+        // class instance
+        $userModel = new UserModel;
+
+        // delete validate
+        if ($userModel->delete($id)):
+            header('Location: ../users'); exit;
+        endif;
+    }
+
+    /**
      * self contactForm
      * @param string|null $todo
      * @return Form
@@ -82,6 +143,28 @@ class AdminController extends Controller
             ->startDiv()
                 ->addInput('text', 'todo',
                 ['placeholder' => 'Todo', 'value' => $todo, 'required' => true, 'autofocus' => true])
+            ->endDiv()
+            ->addButton('Validate', ['type' => 'submit', 'class' => 'link-submit', 'role' => 'button'])
+            ->endForm();
+        return $form;
+    }
+
+    /**
+     * self updateForm
+     * @param string|null $email
+     * @return Form
+     */
+    private static function updateForm(string $email = null): Form
+    {
+        // checker path denied
+        Functions::checkerPathDenied();
+
+        // form
+        $form = new Form;
+        $form->startForm()
+            ->startDiv()
+                ->addInput('email', 'email',
+                    ['placeholder' => 'Email', 'value' => $email, 'required' => true, 'autofocus' => true])
             ->endDiv()
             ->addButton('Validate', ['type' => 'submit', 'class' => 'link-submit', 'role' => 'button'])
             ->endForm();

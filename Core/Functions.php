@@ -121,6 +121,17 @@ class Functions
     }
 
     /**
+     * checker exist
+     * @param $value
+     * @return boolean
+     */
+    public static function checkerExist($value): bool
+    {
+        if (!$value) { self::pathRedirect(); }
+        return true;
+    }
+
+    /**
      * checker path basename
      * @return boolean
      */
