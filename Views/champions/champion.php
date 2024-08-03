@@ -3,12 +3,12 @@
     <section class="section-card-head flex-around-center m-b-40">
 
         <div>
-            <h3><?= ucfirst($champion->name) ?></h3>
+            <h3><?= ucfirst(strip_tags($champion->name)) ?></h3>
         </div>
 
         <div>
             <h3>Role</h3>
-            <a class="link-role" href="<?= $pathRedirect; ?>champions/role/<?= $champion->role ?>"><?= ucfirst($champion->role) ?></a>
+            <a class="link-role" href="<?= $pathRedirect; ?>champions/role/<?= $champion->role ?>"><?= ucfirst(strip_tags($champion->role)) ?></a>
         </div>
 
         <div class="flex-center-center-gap-25">
@@ -21,7 +21,7 @@
     <section class="section-card-image m-b-40">
 
         <figure class="figure-card-id">
-            <img alt="<?= $champion->name ?>"
+            <img alt="<?= strip_tags($champion->name) ?>"
             src="<?= $pathRedirect; ?>public/images/champions/splashart/<?= $champion->splashart.".".$champion->extension ?>">
         </figure>
 
@@ -53,14 +53,14 @@
     <section class="section-card-content m-b-40">
 
         <article>
-            <h5>Basic tips for <span class="active"><?= ucfirst($champion->name) ?></span></h5>
-            <p class="m-0"><?= nl2br($champion->free) ?></p>
+            <h5>Basic tips for <span class="active"><?= ucfirst(strip_tags($champion->name)) ?></span></h5>
+            <p class="m-0"><?= nl2br(strip_tags($champion->free)) ?></p>
         </article>
 
         <article>
-            <h5>Pro tips for <span class="active"><?= ucfirst($champion->name) ?></span></h5>
+            <h5>Pro tips for <span class="active"><?= ucfirst(strip_tags($champion->name)) ?></span></h5>
             <?php if ($sessionPro): ?>
-                <p class="m-0"><?= nl2br($champion->pro) ?></p>
+                <p class="m-0"><?= nl2br(strip_tags($champion->pro)) ?></p>
             <?php else: ?>
                 <p class="m-0">u need to be pro.. click here (grissé?)</p>
             <?php endif; ?>

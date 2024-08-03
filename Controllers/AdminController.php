@@ -94,7 +94,7 @@ class AdminController extends Controller
             $userModel = new UserModel;
             $userModel->setId($user->id)->setEmail($email);
             if ($userModel->update()):
-                header('Location: ./'); exit;
+                header('Location: ../users'); exit;
             endif;
         }
 

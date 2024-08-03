@@ -161,7 +161,7 @@ class UsersController extends Controller
             $userModel = new UserModel;
             $userModel->setId($user->id)->setEmail($email);
             if ($userModel->update()):
-                header('Location: ./'); exit;
+                header('Location: profile'); exit;
             endif;
         }
 
